@@ -1,13 +1,11 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Heart, User } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Link, useLocation } from 'react-router-dom';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,12 +17,44 @@ const Header = () => {
 
   const navItems = [
     { label: 'Inicio', href: '/' },
-    { label: 'Sobre Mí', href: '/sobre-mi' },
-    { label: 'Habilidades', href: '/habilidades' },
-    { label: 'Proyectos', href: '/proyectos' },
-    { label: 'Experiencia', href: '/experiencia' },
-    { label: 'Contacto', href: '/contacto' },
+    { label: 'Sobre Mí', href: '/#sobre-mi' },
+    { label: 'Habilidades', href: '/#habilidades' },
+    { label: 'Proyectos', href: '/#proyectos' },
+    { label: 'Experiencia', href: '/#experiencia' },
+    { label: 'Contacto', href: '/#contacto' },
   ];
+
+  const handleNavigation = (href) => {
+    if (href.startsWith('/#')) {
+      // Si estamos en otra página, navegar a home primero
+      if (window.location.pathname !== '/') {
+        window.location.href = href;
+      } else {
+        // Ya estamos en home, solo hacer scroll
+        const element = document.querySelector(href.substring(1));
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    } else {
+      // Navegación normal
+      window.location.href = href;
+    }
+    setIsMenuOpen(false);
+  };
+
+  const handleTherapyNavigation = (type) => {
+    if (type === 'couples') {
+      window.location.href = '/terapia-pareja';
+    } else if (type === 'individual') {
+      window.location.href = '/terapia-individual';
+    }
+    setIsMenuOpen(false);
+  };
+
+  const handleLogoClick = () => {
+    window.location.href = '/';
+  };
 
   return (
     <motion.header
@@ -42,34 +72,47 @@ const Header = () => {
           {/* Logo */}
           <motion.div
             whileHover={{ scale: 1.05 }}
-            className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent"
+            className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent cursor-pointer"
+            onClick={handleLogoClick}
           >
-            <Link to="/">Patricia Rojas</Link>
+            Psicología & Bienestar
           </motion.div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item, index) => (
-              <motion.div
+              <motion.button
                 key={item.label}
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
                 whileHover={{ y: -2 }}
+                className="text-foreground hover:text-accent transition-colors duration-300 font-medium"
+                onClick={() => handleNavigation(item.href)}
               >
-                <Link
-                  to={item.href}
-                  className={`text-foreground hover:text-accent transition-colors duration-300 font-medium ${
-                    location.pathname === item.href ? 'text-accent font-semibold' : ''
-                  }`}
-                >
-                  {item.label}
-                </Link>
-              </motion.div>
+                {item.label}
+              </motion.button>
             ))}
-            <Button variant="default" className="bg-gradient-primary shadow-hover">
-              Descargar CV
-            </Button>
+            
+            {/* Therapy Buttons */}
+            <div className="flex items-center space-x-3">
+              <Button 
+                variant="outline" 
+                className="border-sage text-sage hover:bg-sage hover:text-white shadow-hover transition-all duration-300"
+                onClick={() => handleTherapyNavigation('couples')}
+              >
+                <Heart size={16} className="mr-2" />
+                Terapia de Pareja
+              </Button>
+              <Button 
+                variant="default" 
+                className="bg-gradient-primary shadow-hover hover:shadow-glow transition-all duration-300"
+                onClick={() => handleTherapyNavigation('individual')}
+              >
+                <User size={16} className="mr-2" />
+                Terapia Individual
+              </Button>
+            </div>
           </div>
 
           {/* Mobile Menu Button */}
@@ -93,20 +136,34 @@ const Header = () => {
           >
             <div className="flex flex-col space-y-4">
               {navItems.map((item) => (
-                <Link
+                <button
                   key={item.label}
-                  to={item.href}
-                  className={`text-foreground hover:text-accent transition-colors duration-300 font-medium py-2 ${
-                    location.pathname === item.href ? 'text-accent font-semibold' : ''
-                  }`}
-                  onClick={() => setIsMenuOpen(false)}
+                  className="text-foreground hover:text-accent transition-colors duration-300 font-medium py-2 text-left"
+                  onClick={() => handleNavigation(item.href)}
                 >
                   {item.label}
-                </Link>
+                </button>
               ))}
-              <Button variant="default" className="bg-gradient-primary mt-4">
-                Descargar CV
-              </Button>
+              
+              {/* Mobile Therapy Buttons */}
+              <div className="flex flex-col space-y-3 pt-4 border-t border-border">
+                <Button 
+                  variant="outline" 
+                  className="border-sage text-sage hover:bg-sage hover:text-white w-full"
+                  onClick={() => handleTherapyNavigation('couples')}
+                >
+                  <Heart size={16} className="mr-2" />
+                  Terapia de Pareja
+                </Button>
+                <Button 
+                  variant="default" 
+                  className="bg-gradient-primary w-full"
+                  onClick={() => handleTherapyNavigation('individual')}
+                >
+                  <User size={16} className="mr-2" />
+                  Terapia Individual
+                </Button>
+              </div>
             </div>
           </motion.div>
         )}
