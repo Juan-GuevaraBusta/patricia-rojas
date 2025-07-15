@@ -140,8 +140,95 @@ const About = () => {
           </div>
         </motion.div>
 
+        {/* Mi Enfoque Terapéutico */}
+        <motion.div variants={itemVariants} className="mb-16">
+          <Card className="shadow-elegant">
+            <CardHeader>
+              <CardTitle className="text-2xl text-center flex items-center justify-center">
+                <Heart className="mr-3 text-accent" size={28} />
+                Mi Enfoque Terapéutico
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-6">
+              <p className="text-muted-foreground leading-relaxed">
+                Mi trabajo se desarrolla en un espacio confidencial, empático y libre de juicios, pensado 
+                para que cada persona pueda conectar con su historia, emociones y pensamientos de 
+                manera segura y auténtica. Creo firmemente que cuando nos sentimos escuchados y 
+                comprendidos, es posible explorar con mayor claridad tanto aquello que nos duele como 
+                aquello que nos moviliza.
+              </p>
+              <p className="text-muted-foreground leading-relaxed">
+                Me enfoco en comprender y trabajar el estilo de afrontamiento de cada consultante: cómo 
+                responde ante el malestar y qué estrategias ha desarrollado para protegerse. Abordo este 
+                proceso desde un enfoque integrativo, con una base sólida en la Terapia de Aceptación y 
+                Compromiso (ACT), que promueve una relación más flexible, consciente y compasiva con la 
+                experiencia interna.
+              </p>
+              <p className="text-muted-foreground leading-relaxed">
+                En el trabajo con parejas, integro los principios del Método Gottman, un enfoque respaldado 
+                por décadas de investigación científica, que ha identificado los elementos clave para 
+                construir y sostener relaciones estables, saludables y emocionalmente conectadas.
+              </p>
+              <p className="text-muted-foreground leading-relaxed">
+                En la práctica, esto significa ayudar a las personas a observar sus pensamientos sin quedar 
+                atrapadas en ellos, validar sus emociones sin dejar que las paralicen, y avanzar hacia una 
+                vida más plena mediante acciones alineadas con sus valores personales y relacionales.
+              </p>
+            </CardContent>
+          </Card>
+        </motion.div>
+
+        {/* Formato de Sesiones */}
+        <motion.div variants={itemVariants} className="mb-16">
+          <Card className="shadow-elegant">
+            <CardHeader>
+              <CardTitle className="text-2xl text-center flex items-center justify-center">
+                <Target className="mr-3 text-accent" size={28} />
+                Formato de las Sesiones
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="grid md:grid-cols-3 gap-6">
+                <div className="bg-card p-4 rounded-lg shadow-hover border-l-4 border-accent">
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className="w-3 h-3 bg-accent rounded-full"></div>
+                    <span className="font-medium text-foreground">Modalidad:</span>
+                  </div>
+                  <span className="text-muted-foreground">Presencial u Online</span>
+                </div>
+                <div className="bg-card p-4 rounded-lg shadow-hover border-l-4 border-accent">
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className="w-3 h-3 bg-accent rounded-full"></div>
+                    <span className="font-medium text-foreground">Frecuencia:</span>
+                  </div>
+                  <span className="text-muted-foreground">Una vez por semana es lo más recomendable, aunque puede ajustarse a cada situación</span>
+                </div>
+                <div className="bg-card p-4 rounded-lg shadow-hover border-l-4 border-accent">
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className="w-3 h-3 bg-accent rounded-full"></div>
+                    <span className="font-medium text-foreground">Duración:</span>
+                  </div>
+                  <span className="text-muted-foreground">50 minutos por sesión</span>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </motion.div>
+
+        {/* Testimonio */}
+        <motion.div variants={itemVariants} className="mb-16">
+          <Card className="shadow-elegant bg-gradient-secondary">
+            <CardContent className="p-8 text-center">
+              <blockquote className="text-lg italic text-sage-dark mb-4">
+                "Me ayudó a comprender mi ansiedad y a conectarme con mis objetivos de vida."
+              </blockquote>
+              <cite className="text-muted-foreground">— Paciente, 2025</cite>
+            </CardContent>
+          </Card>
+        </motion.div>
+
         {/* Formación Complementaria */}
-        <motion.div variants={itemVariants}>
+        <motion.div variants={itemVariants} className="mb-16">
           <Card className="shadow-elegant bg-gradient-to-br from-background to-muted/20">
             <CardHeader className="text-center">
               <CardTitle className="text-2xl flex items-center justify-center">

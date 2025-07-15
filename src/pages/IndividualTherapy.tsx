@@ -179,7 +179,7 @@ const IndividualTherapy = () => {
               <Button 
                 variant="outline" 
                 className="border-sage text-sage hover:bg-sage hover:text-white"
-                onClick={() => handleNavigation('/terapia-pareja')}
+                onClick={() => handleNavigation('/couples-therapy')}
               >
                 <Heart size={16} className="mr-2" />
                 Terapia de Pareja
@@ -224,7 +224,7 @@ const IndividualTherapy = () => {
                 <Button 
                   variant="outline" 
                   className="border-sage text-sage hover:bg-sage hover:text-white w-full"
-                  onClick={() => handleNavigation('/terapia-pareja')}
+                  onClick={() => handleNavigation('/couples-therapy')}
                 >
                   <Heart size={16} className="mr-2" />
                   Terapia de Pareja
@@ -747,7 +747,7 @@ const IndividualTherapy = () => {
             <Button variant="ghost" onClick={() => handleNavigation('/')} className="text-white hover:text-sage-light">
               Inicio
             </Button>
-            <Button variant="ghost" onClick={() => handleNavigation('/terapia-pareja')} className="text-white hover:text-sage-light">
+            <Button variant="ghost" onClick={() => handleNavigation('/couples-therapy')} className="text-white hover:text-sage-light">
               Terapia de Pareja
             </Button>
           </div>

@@ -185,7 +185,7 @@ const CouplesTherapy = () => {
               <Button 
                 variant="outline" 
                 className="border-steel-blue text-steel-blue hover:bg-steel-blue hover:text-white"
-                onClick={() => handleNavigation('/terapia-individual')}
+                onClick={() => handleNavigation('/individual-therapy')}
               >
                 <User size={16} className="mr-2" />
                 Terapia Individual
@@ -230,7 +230,7 @@ const CouplesTherapy = () => {
                 <Button 
                   variant="outline" 
                   className="border-steel-blue text-steel-blue hover:bg-steel-blue hover:text-white w-full"
-                  onClick={() => handleNavigation('/terapia-individual')}
+                  onClick={() => handleNavigation('/individual-therapy')}
                 >
                   <User size={16} className="mr-2" />
                   Terapia Individual
@@ -630,7 +630,7 @@ const CouplesTherapy = () => {
             <Button variant="ghost" onClick={() => handleNavigation('/')} className="text-white hover:text-sage-light">
               Inicio
             </Button>
-            <Button variant="ghost" onClick={() => handleNavigation('/terapia-individual')} className="text-white hover:text-sage-light">
+            <Button variant="ghost" onClick={() => handleNavigation('/individual-therapy')} className="text-white hover:text-sage-light">
               Terapia Individual
             </Button>
           </div>

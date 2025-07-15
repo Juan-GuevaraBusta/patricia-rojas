@@ -1,12 +1,13 @@
 import { motion } from 'framer-motion';
-import { ArrowDown, Mail, Phone, MapPin } from 'lucide-react';
+import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 import { containerVariants, itemVariants } from '@/utils/animations';
 
 const Hero = () => {
 
   return (
-    <section id="inicio" className="min-h-screen flex items-center justify-center relative overflow-hidden">
+    <section id="inicio" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-gradient-secondary opacity-10" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,hsl(var(--magenta)/0.1),transparent_50%)]" />
@@ -23,9 +24,9 @@ const Hero = () => {
           className="mb-8"
         >
           <h1 className="text-5xl md:text-7xl font-bold mb-6">
-            <span className="block text-foreground">Patricia Rojas R.</span>
-            <span className="block bg-gradient-primary bg-clip-text text-transparent text-3xl md:text-4xl mt-4">
-              Psicóloga Clínica
+            <span className="block text-foreground">Hola, soy</span>
+            <span className="block bg-gradient-primary bg-clip-text text-transparent">
+              Patricia Rojas
             </span>
           </h1>
         </motion.div>
@@ -34,44 +35,34 @@ const Hero = () => {
           variants={itemVariants}
           className="mb-8"
         >
-          <p className="text-xl md:text-2xl text-accent mb-4 font-semibold">
-            Maestría en Consejería Clínica y Salud Mental (Cum Laude)
+          <p className="text-xl md:text-2xl text-muted-foreground mb-4">
+            Psicóloga Clínica
           </p>
-          <div className="flex flex-col md:flex-row gap-4 justify-center items-center mb-6">
-            <div className="bg-gradient-secondary px-6 py-3 rounded-full">
-              <span className="text-lg font-medium text-foreground">Terapia de Parejas</span>
-            </div>
-            <div className="text-muted-foreground">&</div>
-            <div className="bg-gradient-secondary px-6 py-3 rounded-full">
-              <span className="text-lg font-medium text-foreground">Terapia Individual</span>
-            </div>
-          </div>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Te acompaño a sanar tus relaciones y reconectar contigo mismo. 
-            Más de 25 años de experiencia profesional con enfoque en ACT y Método Gottman.
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+            Te acompaño en tu proceso de crecimiento personal y bienestar emocional.
+            Especializada en terapia individual y de pareja con enfoque humanista.
           </p>
         </motion.div>
 
         <motion.div
           variants={itemVariants}
-          className="mb-8"
+          className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12"
         >
-          <h3 className="text-xl text-foreground mb-6">¿Cuál es el tipo de acompañamiento ideal para ti?</h3>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button 
-              size="lg" 
-              className="bg-gradient-primary shadow-hover hover:shadow-glow transition-all duration-300 min-w-[280px]"
-            >
-              Quiero trabajar en mi relación de pareja
-            </Button>
-            <Button 
-              variant="outline" 
-              size="lg"
-              className="border-accent text-accent hover:bg-accent hover:text-accent-foreground min-w-[280px]"
-            >
-              Quiero trabajar en mí
-            </Button>
-          </div>
+          <Button 
+            size="lg" 
+            className="bg-gradient-primary shadow-hover hover:shadow-glow transition-all duration-300"
+            asChild
+          >
+            <Link to="/individual-therapy">Terapia Individual</Link>
+          </Button>
+          <Button 
+            variant="outline" 
+            size="lg"
+            className="border-accent text-accent hover:bg-accent hover:text-accent-foreground"
+            asChild
+          >
+            <Link to="/couples-therapy">Terapia en Pareja</Link>
+          </Button>
         </motion.div>
 
         <motion.div
@@ -79,9 +70,9 @@ const Hero = () => {
           className="flex justify-center space-x-6 mb-16"
         >
           {[
-            { Icon: Mail, href: 'mailto:patriciarojaspsicologia@gmail.com', label: 'Email' },
-            { Icon: Phone, href: 'tel:+573115578592', label: 'Teléfono' },
-            { Icon: MapPin, href: '#', label: 'Ubicación' }
+            { Icon: Github, href: '#', label: 'GitHub' },
+            { Icon: Linkedin, href: '#', label: 'LinkedIn' },
+            { Icon: Mail, href: '#', label: 'Email' }
           ].map(({ Icon, href, label }) => (
             <motion.a
               key={label}
@@ -104,7 +95,6 @@ const Hero = () => {
             transition={{ duration: 2, repeat: Infinity }}
             className="flex flex-col items-center cursor-pointer"
           >
-            <span className="text-sm text-muted-foreground mb-2">Conoce más sobre mí</span>
             <ArrowDown size={20} className="text-accent" />
           </motion.div>
         </motion.div>
