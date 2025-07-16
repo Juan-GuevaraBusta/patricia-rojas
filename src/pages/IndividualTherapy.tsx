@@ -31,6 +31,7 @@ const IndividualTherapy = () => {
     setIsMenuOpen(false);
   };
 
+  // Datos para los motivos de consulta frecuentes
   const mainTopics = [
     {
       title: "Ansiedad, ataques de pánico",
@@ -60,14 +61,151 @@ const IndividualTherapy = () => {
       title: "Duelos por pérdida, ruptura, migración, cambio",
       icon: Heart,
       description: "Acompañamiento en procesos de duelo y pérdidas significativas",
-      hasExtendedContent: true
+      content: {
+        definition: "El duelo es un proceso emocional, cognitivo y corporal natural que experimentamos tras una pérdida significativa. Es una respuesta natural a la pérdida de un ser querido, y para la mayoría de las personas, los síntomas del duelo comienzan a disminuir con el tiempo.",
+        scope: "No se limita únicamente a la muerte de un ser querido: también puede desencadenarse por la pérdida de una relación, un trabajo, una etapa vital, la salud, la migración o incluso ideales profundamente arraigados.",
+        individual: "Cada persona vive el duelo de manera distinta. No hay una forma \"correcta\" de sentir, y lo que para una persona puede ser transitorio, para otra puede convertirse en un proceso profundo y doloroso que requiere acompañamiento terapéutico.",
+        stages: [
+          { name: "Negación", description: "dificultad para aceptar la pérdida o lo ocurrido" },
+          { name: "Ira", description: "sentimientos de injusticia, enfado hacia uno mismo, los demás o la situación" },
+          { name: "Negociación", description: "intentos mentales de cambiar o revertir la pérdida" },
+          { name: "Depresión", description: "tristeza profunda, vacío, aislamiento, desesperanza" },
+          { name: "Aceptación", description: "integración de la pérdida en la vida y apertura a nuevas experiencias" }
+        ],
+        reactions: {
+          emotional: [
+            "Tristeza, ira, culpa, alivio, ansiedad",
+            "Confusión, soledad, sensación de vacío",
+            "Ambivalencia emocional (sentimientos contradictorios)"
+          ],
+          physical: [
+            "Fatiga y debilidad generalizada",
+            "Opresión en el pecho, dificultades respiratorias",
+            "Alteraciones del sueño (insomnio o hipersomnia)",
+            "Falta de apetito o cambios en patrones alimentarios",
+            "Molestias gastrointestinales, dolores de cabeza",
+            "Susceptibilidad aumentada a enfermedades"
+          ],
+          cognitive: [
+            "Dificultad para concentrarse y tomar decisiones",
+            "Pensamientos recurrentes sobre la persona perdida",
+            "Sensación de irrealidad o despersonalización",
+            "Problemas de memoria y atención",
+            "Ocasionalmente, experiencias sensoriales breves (sentir presencia, voces)"
+          ],
+          behavioral: [
+            "Llanto frecuente e incontrolable",
+            "Retraimiento social y aislamiento",
+            "Hiperactividad o inquietud motora",
+            "Evitación de recuerdos o, por el contrario, búsqueda obsesiva de ellos",
+            "Cambios en rutinas y hábitos",
+            "Comportamientos de búsqueda de la persona perdida"
+          ]
+        },
+        pathological: {
+          definition: "El duelo puede volverse clínicamente problemático cuando cumple criterios diagnósticos para el Trastorno de Duelo Prolongado, según el Manual Diagnóstico y Estadístico de los Trastornos Mentales, DSM-5-TR. Este diagnóstico se considera cuando, tras al menos 12 meses desde la pérdida (6 meses en niños y adolescentes), la persona sigue experimentando un nivel de malestar intenso que interfiere significativamente con su funcionamiento diario.",
+          criteria: [
+            "Anhelo o nostalgia persistente e intensa por la persona fallecida",
+            "Tristeza o dolor emocional profundo relacionado con la pérdida",
+            "Preocupación constante por el fallecido o por las circunstancias de su muerte",
+            "Alteración en el sentido de identidad (sensación de haber perdido una parte de sí mismo tras la muerte del ser querido)"
+          ],
+          symptoms: [
+            "Dificultad para aceptar la muerte",
+            "Incredulidad, entumecimiento emocional o sensación de irrealidad",
+            "Retraimiento social o desconfianza hacia los demás",
+            "Incapacidad para reanudar la vida cotidiana o establecer metas",
+            "Evitación persistente de recordatorios de la pérdida",
+            "Sentimientos de vacío o pérdida de sentido vital",
+            "Reducción en la capacidad para experimentar emociones positivas",
+            "Malestar o deterioro significativo en el funcionamiento social, laboral o familiar"
+          ],
+          note: "Este tipo de duelo no es simplemente \"un duelo más largo\", sino una condición que requiere intervención clínica especializada, idealmente con psicoterapia centrada en el procesamiento del dolor, la reconexión con el presente y la resignificación de la pérdida.",
+          seekHelp: [
+            "Los síntomas persisten intensamente por más de 12 meses",
+            "No se puede retomar la vida cotidiana",
+            "Aparecen síntomas depresivos severos o ideación suicida",
+            "Se experimenta una tristeza completamente paralizante",
+            "La persona se siente atrapada en negación o enojo crónico",
+            "Hay pensamientos persistentes de muerte o culpa extrema",
+            "Se desarrollan problemas de salud física relacionados"
+          ],
+          riskFactors: {
+            loss: [
+              "Muerte súbita, traumática o inesperada",
+              "Muerte por suicidio, homicidio o accidente",
+              "Pérdida de un hijo o pareja",
+              "Múltiples pérdidas simultáneas",
+              "Circunstancias ambiguas de la muerte"
+            ],
+            relationship: [
+              "Relación muy estrecha o dependiente",
+              "Relación conflictiva no resuelta",
+              "Cuidador principal del fallecido"
+            ],
+            personal: [
+              "Historia de trastornos mentales previos",
+              "Experiencias traumáticas pasadas",
+              "Estilo de apego inseguro",
+              "Baja autoestima o recursos de afrontamiento limitados"
+            ],
+            social: [
+              "Falta de apoyo social",
+              "Aislamiento geográfico o cultural",
+              "Dificultades económicas derivadas de la pérdida"
+            ]
+          }
+        },
+        therapy: {
+          intro: "La terapia psicológica no busca \"acelerar\" el duelo, sino acompañarte, sostenerte emocionalmente y ayudarte a darle sentido a lo que estás viviendo.",
+          objectives: [
+            "Facilitar la expresión emocional sin juicio",
+            "Ayudar a procesar la pérdida de manera gradual y respetando tu ritmo",
+            "Desarrollar estrategias de afrontamiento saludables y efectivas",
+            "Reconstruir el significado y encontrar formas de honrar la memoria",
+            "Fortalecer la red de apoyo y mejorar las relaciones interpersonales",
+            "Prevenir complicaciones como depresión o trastorno de duelo prolongado"
+          ],
+          approaches: [
+            "Terapia de duelo específica y centrada en la pérdida",
+            "Terapia cognitivo-conductual para síntomas de ansiedad y depresión",
+            "Terapia narrativa para reconstruir la historia personal",
+            "Terapia de grupo con personas en situaciones similares",
+            "Enfoques integrativos que combinan múltiples perspectivas"
+          ],
+          selfHelp: {
+            healthy: [
+              "Permitirse sentir y expresar emociones",
+              "Mantener rutinas básicas de autocuidado",
+              "Buscar apoyo en familiares y amigos cercanos",
+              "Crear rituales de recuerdo significativos",
+              "Practicar técnicas de relajación y mindfulness",
+              "Mantener actividad física moderada",
+              "Evitar decisiones importantes inmediatamente"
+            ],
+            warning: [
+              "Aislamiento social prolongado",
+              "Consumo excesivo de alcohol o sustancias",
+              "Ideación suicida o de autolesión",
+              "Incapacidad total para funcionar en la vida diaria",
+              "Síntomas físicos que empeoran progresivamente"
+            ]
+          },
+          hope: "El duelo es una experiencia profundamente humana que surge ante cualquier pérdida significativa: no solo por la muerte de un ser querido, sino también por rupturas, migraciones, cambios vitales, pérdida de salud o proyectos importantes. Aunque doloroso, el duelo puede convertirse en una oportunidad para crecer, resignificar y profundizar en nuestra vida emocional. Con el apoyo adecuado y el tiempo necesario para tu proceso único, es posible integrar la pérdida en tu vida de una forma que honre tanto lo que has perdido como tu capacidad de adaptación, crecimiento y renovación. Tu dolor es válido y merece ser atendido con compasión. No estás solo en este proceso. Buscar ayuda profesional es un acto de valentía y autocuidado que puede marcar una diferencia significativa en tu bienestar."
+        },
+        theories: {
+          bowlby: "La teoría del vínculo de Bowlby describe el desarrollo psicoemocional sano en el ser humano. La persona desarrolla de forma instintiva vínculos (apegos), y el mantenimiento de un vínculo se experimenta como fuente de seguridad. Esta teoría explica por qué las pérdidas de figuras significativas generan tanto sufrimiento: rompen los vínculos de apego que nos proporcionan seguridad emocional.",
+          contemporary: "La investigación sobre duelo está alcanzando el centenario de la publicación del clásico ensayo de Freud \"Duelo y Melancolía\" (1917), un texto de gran significancia para el desarrollo teórico posterior. Los modelos actuales han evolucionado considerablemente desde entonces, reconociendo la complejidad y variabilidad individual del proceso."
+        }
+      }
     },
     {
       title: "Crecimiento personal",
       icon: Target,
-      description: "Desarrollo interno para vivir con mayor autenticidad y bienestar",
+      description: "Baja autoestima, inseguridad, perdón, propósito de vida",
       content: {
         definition: "El crecimiento personal es un proceso consciente de desarrollo interno que nos permite ampliar nuestra comprensión de nosotros mismos, fortalecer habilidades emocionales, cultivar el bienestar y vivir de manera más coherente con nuestros valores.",
+        clarification: "No se trata de \"ser alguien distinto\", sino de reconectar con lo esencial, descubrir recursos internos y vivir con mayor autenticidad.",
         benefits: [
           "Mayor autoconocimiento y autoestima",
           "Mejora en la toma de decisiones y en las relaciones",
@@ -87,11 +225,13 @@ const IndividualTherapy = () => {
           "Si quieres mejorar tu bienestar y construir relaciones más sanas",
           "Ante cambios vitales, decisiones importantes o crisis existenciales",
           "Si deseas conocerte más, fortalecer tu identidad o hacer cambios desde adentro"
-        ]
+        ],
+        therapyHelp: "La terapia no solo alivia el malestar, también es un espacio para crecer. Te acompaña en el descubrimiento de fortalezas, la exploración de tus deseos auténticos y la construcción de una vida con mayor plenitud y sentido. A través de técnicas basadas en evidencia (ACT, mindfulness, enfoque humanista y sistémico), puedes avanzar hacia una versión más consciente y alineada de ti mismo."
       }
     }
   ];
 
+  // Otros motivos de consulta
   const otherReasons = [
     {
       title: "Relaciones afectivas",
@@ -109,54 +249,6 @@ const IndividualTherapy = () => {
       title: "Toma de decisiones bloqueada por confusión o miedo",
       description: "Clarificación de valores y objetivos para superar la parálisis decisional."
     }
-  ];
-
-  const griefStages = [
-    { name: "Negación", description: "dificultad para aceptar la pérdida o lo ocurrido" },
-    { name: "Ira", description: "sentimientos de injusticia, enfado hacia uno mismo, los demás o la situación" },
-    { name: "Negociación", description: "intentos mentales de cambiar o revertir la pérdida" },
-    { name: "Depresión", description: "tristeza profunda, vacío, aislamiento, desesperanza" },
-    { name: "Aceptación", description: "integración de la pérdida en la vida y apertura a nuevas experiencias" }
-  ];
-
-  const griefReactions = {
-    emotional: [
-      "Tristeza, ira, culpa, alivio, ansiedad",
-      "Confusión, soledad, sensación de vacío",
-      "Ambivalencia emocional (sentimientos contradictorios)"
-    ],
-    physical: [
-      "Fatiga y debilidad generalizada",
-      "Opresión en el pecho, dificultades respiratorias",
-      "Alteraciones del sueño (insomnio o hipersomnia)",
-      "Falta de apetito o cambios en patrones alimentarios",
-      "Molestias gastrointestinales, dolores de cabeza",
-      "Susceptibilidad aumentada a enfermedades"
-    ],
-    cognitive: [
-      "Dificultad para concentrarse y tomar decisiones",
-      "Pensamientos recurrentes sobre la persona perdida",
-      "Sensación de irrealidad o despersonalización",
-      "Problemas de memoria y atención",
-      "Ocasionalmente, experiencias sensoriales breves"
-    ],
-    behavioral: [
-      "Llanto frecuente e incontrolable",
-      "Retraimiento social y aislamiento",
-      "Hiperactividad o inquietud motora",
-      "Evitación de recuerdos o búsqueda obsesiva de ellos",
-      "Cambios en rutinas y hábitos",
-      "Comportamientos de búsqueda de la persona perdida"
-    ]
-  };
-
-  const therapyObjectives = [
-    "Facilitar la expresión emocional sin juicio",
-    "Ayudar a procesar la pérdida de manera gradual y respetando tu ritmo",
-    "Desarrollar estrategias de afrontamiento saludables y efectivas",
-    "Reconstruir el significado y encontrar formas de honrar la memoria",
-    "Fortalecer la red de apoyo y mejorar las relaciones interpersonales",
-    "Prevenir complicaciones como depresión o trastorno de duelo prolongado"
   ];
 
   return (
@@ -329,7 +421,7 @@ const IndividualTherapy = () => {
                   </AccordionTrigger>
                   <AccordionContent className="px-6 pb-6">
                     <div className="space-y-6">
-                      {/* Contenido específico para cada tema */}
+                      {/* Contenido específico para Ansiedad */}
                       {topic.title.includes("Ansiedad") && (
                         <div className="space-y-6">
                           <div>
@@ -406,22 +498,355 @@ const IndividualTherapy = () => {
                         </div>
                       )}
 
-                      {/* Duelo - referencia a sección extendida */}
-                      {topic.hasExtendedContent && (
-                        <div className="bg-steel-blue/5 p-6 rounded-lg">
-                          <p className="text-sage-dark font-medium mb-3">
-                            El duelo es un tema complejo que requiere atención especializada.
-                          </p>
-                          <p className="text-muted-foreground mb-4">
-                            Encuentra información detallada sobre el proceso de duelo, sus etapas, reacciones comunes y cuándo buscar ayuda en la sección especializada más abajo.
-                          </p>
-                          <Button 
-                            variant="outline" 
-                            onClick={() => document.getElementById('duelo-section')?.scrollIntoView({ behavior: 'smooth' })}
-                            className="border-steel-blue text-steel-blue hover:bg-steel-blue hover:text-white"
-                          >
-                            Ver sección completa de Duelo
-                          </Button>
+                      {/* Duelo Content */}
+                      {topic.title.includes("Duelos") && (
+                        <div className="space-y-8">
+                          <div>
+                            <h4 className="font-semibold text-sage-dark mb-3">¿Qué es el duelo?</h4>
+                            <p className="text-muted-foreground leading-relaxed mb-4">
+                              {topic.content.definition}
+                            </p>
+                            <p className="text-muted-foreground leading-relaxed mb-4">
+                              {topic.content.scope}
+                            </p>
+                            <p className="text-muted-foreground leading-relaxed mb-6">
+                              {topic.content.individual}
+                            </p>
+                          </div>
+
+                          <div>
+                            <h4 className="font-semibold text-sage-dark mb-4">¿Cómo se vive el duelo?</h4>
+                            <h5 className="text-lg font-medium text-steel-blue mb-4">Las Cinco Etapas de Kübler-Ross</h5>
+                            <p className="text-muted-foreground mb-6">
+                              La teoría de las 5 fases del duelo de la psiquiatra Elisabeth Kübler-Ross es uno de los modelos psicológicos más célebres en todo el mundo. Estas etapas incluyen (no necesariamente en orden):
+                            </p>
+                            
+                            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
+                              {topic.content.stages.map((stage, idx) => (
+                                <Card key={idx} className="shadow-elegant hover:shadow-hover transition-all duration-300">
+                                  <CardHeader className="pb-3">
+                                    <CardTitle className="text-lg text-sage-dark flex items-center gap-3">
+                                      <div className="w-8 h-8 bg-gradient-primary rounded-full flex items-center justify-center text-white font-bold text-sm">
+                                        {idx + 1}
+                                      </div>
+                                      {stage.name}
+                                    </CardTitle>
+                                  </CardHeader>
+                                  <CardContent className="pt-0">
+                                    <p className="text-sm text-muted-foreground">{stage.description}</p>
+                                  </CardContent>
+                                </Card>
+                              ))}
+                            </div>
+                            
+                            <Alert>
+                              <AlertCircle className="h-4 w-4" />
+                              <AlertDescription>
+                                <strong>Importante:</strong> Hoy sabemos que el duelo no sigue un orden rígido ni lineal. Cada persona lo 
+                                vive a su propio ritmo, pudiendo avanzar, retroceder o permanecer más tiempo en ciertas etapas. Lo fundamental 
+                                en el acompañamiento terapéutico es ayudar a la persona a aceptar la realidad de la pérdida, gestionar sus 
+                                emociones con compasión y avanzar en su proceso de adaptación a una vida que ha cambiado. El objetivo terapéutico 
+                                no es acelerar el proceso, sino acompañarlo con empatía y herramientas de contención.
+                              </AlertDescription>
+                            </Alert>
+                          </div>
+
+                          <div>
+                            <h4 className="font-semibold text-sage-dark mb-6">Reacciones Comunes ante el Duelo</h4>
+                            
+                            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                              <Card className="shadow-elegant">
+                                <CardHeader>
+                                  <CardTitle className="text-blue-gray text-lg flex items-center gap-2">
+                                    <Heart className="w-5 h-5" />
+                                    Emocionales
+                                  </CardTitle>
+                                </CardHeader>
+                                <CardContent className="space-y-2">
+                                  {topic.content.reactions.emotional.map((reaction, idx) => (
+                                    <div key={idx} className="text-sm text-muted-foreground">• {reaction}</div>
+                                  ))}
+                                </CardContent>
+                              </Card>
+
+                              <Card className="shadow-elegant">
+                                <CardHeader>
+                                  <CardTitle className="text-magenta text-lg flex items-center gap-2">
+                                    <Activity className="w-5 h-5" />
+                                    Físicas
+                                  </CardTitle>
+                                </CardHeader>
+                                <CardContent className="space-y-2">
+                                  {topic.content.reactions.physical.map((reaction, idx) => (
+                                    <div key={idx} className="text-sm text-muted-foreground">• {reaction}</div>
+                                  ))}
+                                </CardContent>
+                              </Card>
+
+                              <Card className="shadow-elegant">
+                                <CardHeader>
+                                  <CardTitle className="text-steel-blue text-lg flex items-center gap-2">
+                                    <Brain className="w-5 h-5" />
+                                    Cognitivas
+                                  </CardTitle>
+                                </CardHeader>
+                                <CardContent className="space-y-2">
+                                  {topic.content.reactions.cognitive.map((reaction, idx) => (
+                                    <div key={idx} className="text-sm text-muted-foreground">• {reaction}</div>
+                                  ))}
+                                </CardContent>
+                              </Card>
+
+                              <Card className="shadow-elegant">
+                                <CardHeader>
+                                  <CardTitle className="text-sage text-lg flex items-center gap-2">
+                                    <Target className="w-5 h-5" />
+                                    Conductuales
+                                  </CardTitle>
+                                </CardHeader>
+                                <CardContent className="space-y-2">
+                                  {topic.content.reactions.behavioral.map((reaction, idx) => (
+                                    <div key={idx} className="text-sm text-muted-foreground">• {reaction}</div>
+                                  ))}
+                                </CardContent>
+                              </Card>
+                            </div>
+                          </div>
+
+                          <div>
+                            <h4 className="font-semibold text-sage-dark mb-6">¿Cómo puede ayudarte la psicoterapia?</h4>
+                            
+                            <Card className="shadow-elegant bg-gradient-secondary mb-6">
+                              <CardContent className="p-6">
+                                <p className="text-sage-dark text-center mb-6 italic">
+                                  {topic.content.therapy.intro}
+                                </p>
+
+                                <div className="mb-6">
+                                  <h5 className="font-semibold text-sage-dark mb-4">Objetivos Terapéuticos</h5>
+                                  <div className="grid md:grid-cols-2 gap-4">
+                                    {topic.content.therapy.objectives.map((objective, index) => (
+                                      <div key={index} className="bg-card p-4 rounded-lg shadow-hover">
+                                        <div className="flex items-start gap-3">
+                                          <div className="w-8 h-8 bg-gradient-primary rounded-full flex items-center justify-center flex-shrink-0">
+                                            <CheckCircle className="w-4 h-4 text-white" />
+                                          </div>
+                                          <p className="text-sm text-muted-foreground">{objective}</p>
+                                        </div>
+                                      </div>
+                                    ))}
+                                  </div>
+                                </div>
+
+                                <div>
+                                  <h5 className="font-semibold text-sage-dark mb-4">Enfoques Terapéuticos Efectivos</h5>
+                                  <div className="space-y-3">
+                                    {topic.content.therapy.approaches.map((approach, idx) => (
+                                      <div key={idx} className="flex items-start gap-3">
+                                        <ArrowRight className="w-4 h-4 text-steel-blue mt-1 flex-shrink-0" />
+                                        <span className="text-sm text-muted-foreground">{approach}</span>
+                                      </div>
+                                    ))}
+                                  </div>
+                                </div>
+                              </CardContent>
+                            </Card>
+
+                            <div className="grid md:grid-cols-2 gap-6 mb-6">
+                              <Card className="shadow-elegant">
+                                <CardHeader>
+                                  <CardTitle className="text-sage text-lg">Recursos de Autoayuda - Estrategias Saludables</CardTitle>
+                                </CardHeader>
+                                <CardContent className="space-y-3">
+                                  {topic.content.therapy.selfHelp.healthy.map((strategy, idx) => (
+                                    <div key={idx} className="flex items-start gap-3">
+                                      <CheckCircle className="w-4 h-4 text-sage mt-1 flex-shrink-0" />
+                                      <span className="text-sm text-muted-foreground">{strategy}</span>
+                                    </div>
+                                  ))}
+                                </CardContent>
+                              </Card>
+
+                              <Card className="shadow-elegant border-destructive/20">
+                                <CardHeader>
+                                  <CardTitle className="text-destructive text-lg">Señales de Alarma</CardTitle>
+                                </CardHeader>
+                                <CardContent className="space-y-3">
+                                  {topic.content.therapy.selfHelp.warning.map((warning, idx) => (
+                                    <div key={idx} className="flex items-start gap-3">
+                                      <AlertCircle className="w-4 h-4 text-destructive mt-1 flex-shrink-0" />
+                                      <span className="text-sm text-muted-foreground">{warning}</span>
+                                    </div>
+                                  ))}
+                                </CardContent>
+                              </Card>
+                            </div>
+
+                            <Card className="shadow-elegant bg-gradient-primary text-white">
+                              <CardHeader>
+                                <CardTitle className="text-2xl text-center">Mensaje de Esperanza</CardTitle>
+                              </CardHeader>
+                              <CardContent>
+                                <p className="leading-relaxed text-center">
+                                  {topic.content.therapy.hope}
+                                </p>
+                              </CardContent>
+                            </Card>
+                          </div>
+
+                          <div>
+                            <h4 className="font-semibold text-sage-dark mb-6">¿Cuándo el duelo se vuelve patológico?</h4>
+                            
+                            <Card className="shadow-elegant mb-6">
+                              <CardHeader>
+                                <CardTitle className="text-sage-dark">Trastorno de Duelo Prolongado (DSM-5-TR)</CardTitle>
+                              </CardHeader>
+                              <CardContent>
+                                <p className="text-muted-foreground mb-4">
+                                  {topic.content.pathological.definition}
+                                </p>
+                                
+                                <div className="space-y-6">
+                                  <div>
+                                    <h5 className="font-semibold text-sage-dark mb-3">Criterios Diagnósticos Principales:</h5>
+                                    <div className="space-y-3">
+                                      {topic.content.pathological.criteria.map((criteria, idx) => (
+                                        <div key={idx} className="flex items-start gap-3">
+                                          <CheckCircle className="w-5 h-5 text-sage mt-0.5 flex-shrink-0" />
+                                          <span className="text-muted-foreground">{criteria}</span>
+                                        </div>
+                                      ))}
+                                    </div>
+                                  </div>
+
+                                  <div>
+                                    <h5 className="font-semibold text-sage-dark mb-3">Síntomas Asociados Frecuentes:</h5>
+                                    <div className="space-y-3">
+                                      {topic.content.pathological.symptoms.map((symptom, idx) => (
+                                        <div key={idx} className="flex items-start gap-3">
+                                          <div className="w-2 h-2 bg-steel-blue rounded-full mt-2 flex-shrink-0" />
+                                          <span className="text-muted-foreground text-sm">{symptom}</span>
+                                        </div>
+                                      ))}
+                                    </div>
+                                  </div>
+
+                                  <div className="bg-steel-blue/10 p-4 rounded-lg border border-steel-blue/20">
+                                    <p className="text-steel-blue font-medium">
+                                      {topic.content.pathological.note}
+                                    </p>
+                                  </div>
+                                </div>
+                              </CardContent>
+                            </Card>
+
+                            <Card className="shadow-elegant border-destructive/20 mb-6">
+                              <CardHeader>
+                                <CardTitle className="text-destructive">Cuándo Buscar Ayuda Profesional</CardTitle>
+                              </CardHeader>
+                              <CardContent>
+                                <p className="text-muted-foreground mb-4">Es recomendable buscar apoyo especializado cuando:</p>
+                                <div className="space-y-2">
+                                  {topic.content.pathological.seekHelp.map((signal, idx) => (
+                                    <div key={idx} className="flex items-start gap-3">
+                                      <AlertCircle className="w-4 h-4 text-destructive mt-1 flex-shrink-0" />
+                                      <span className="text-sm text-muted-foreground">{signal}</span>
+                                    </div>
+                                  ))}
+                                </div>
+                              </CardContent>
+                            </Card>
+
+                            <div>
+                              <h5 className="font-semibold text-sage-dark mb-4">Factores de Riesgo para Duelo Complicado</h5>
+                              
+                              <div className="grid md:grid-cols-2 gap-6">
+                                <Card className="shadow-elegant">
+                                  <CardHeader>
+                                    <CardTitle className="text-steel-blue text-base">Relacionados con la pérdida</CardTitle>
+                                  </CardHeader>
+                                  <CardContent className="space-y-2">
+                                    {topic.content.pathological.riskFactors.loss.map((factor, idx) => (
+                                      <div key={idx} className="flex items-start gap-2">
+                                        <div className="w-2 h-2 bg-steel-blue rounded-full mt-2 flex-shrink-0" />
+                                        <span className="text-sm text-muted-foreground">{factor}</span>
+                                      </div>
+                                    ))}
+                                  </CardContent>
+                                </Card>
+
+                                <Card className="shadow-elegant">
+                                  <CardHeader>
+                                    <CardTitle className="text-magenta text-base">Relacionados con la relación</CardTitle>
+                                  </CardHeader>
+                                  <CardContent className="space-y-2">
+                                    {topic.content.pathological.riskFactors.relationship.map((factor, idx) => (
+                                      <div key={idx} className="flex items-start gap-2">
+                                        <div className="w-2 h-2 bg-magenta rounded-full mt-2 flex-shrink-0" />
+                                        <span className="text-sm text-muted-foreground">{factor}</span>
+                                      </div>
+                                    ))}
+                                  </CardContent>
+                                </Card>
+
+                                <Card className="shadow-elegant">
+                                  <CardHeader>
+                                    <CardTitle className="text-sage text-base">Factores personales</CardTitle>
+                                  </CardHeader>
+                                  <CardContent className="space-y-2">
+                                    {topic.content.pathological.riskFactors.personal.map((factor, idx) => (
+                                      <div key={idx} className="flex items-start gap-2">
+                                        <div className="w-2 h-2 bg-sage rounded-full mt-2 flex-shrink-0" />
+                                        <span className="text-sm text-muted-foreground">{factor}</span>
+                                      </div>
+                                    ))}
+                                  </CardContent>
+                                </Card>
+
+                                <Card className="shadow-elegant">
+                                  <CardHeader>
+                                    <CardTitle className="text-blue-gray text-base">Factores sociales</CardTitle>
+                                  </CardHeader>
+                                  <CardContent className="space-y-2">
+                                    {topic.content.pathological.riskFactors.social.map((factor, idx) => (
+                                      <div key={idx} className="flex items-start gap-2">
+                                        <div className="w-2 h-2 bg-blue-gray rounded-full mt-2 flex-shrink-0" />
+                                        <span className="text-sm text-muted-foreground">{factor}</span>
+                                      </div>
+                                    ))}
+                                  </CardContent>
+                                </Card>
+                              </div>
+                            </div>
+                          </div>
+
+                          <div>
+                            <h4 className="font-semibold text-sage-dark mb-4">Perspectivas Científicas del Duelo</h4>
+                            
+                            <div className="space-y-6">
+                              <Card className="shadow-elegant">
+                                <CardHeader>
+                                  <CardTitle className="text-steel-blue text-lg">Teoría del Apego (John Bowlby)</CardTitle>
+                                </CardHeader>
+                                <CardContent>
+                                  <p className="text-muted-foreground text-sm leading-relaxed">
+                                    {topic.content.theories.bowlby}
+                                  </p>
+                                </CardContent>
+                              </Card>
+
+                              <Card className="shadow-elegant border-sage/20">
+                                <CardHeader>
+                                  <CardTitle className="text-sage text-lg">Modelos Contemporáneos</CardTitle>
+                                </CardHeader>
+                                <CardContent>
+                                  <p className="text-muted-foreground text-sm leading-relaxed">
+                                    {topic.content.theories.contemporary}
+                                  </p>
+                                </CardContent>
+                              </Card>
+                            </div>
+                          </div>
                         </div>
                       )}
 
@@ -434,8 +859,7 @@ const IndividualTherapy = () => {
                               {topic.content.definition}
                             </p>
                             <p className="text-sage-dark text-sm italic">
-                              No se trata de "ser alguien distinto", sino de reconectar con lo esencial, 
-                              descubrir recursos internos y vivir con mayor autenticidad.
+                              {topic.content.clarification}
                             </p>
                           </div>
 
@@ -481,13 +905,21 @@ const IndividualTherapy = () => {
                           <div className="bg-gradient-secondary p-6 rounded-lg">
                             <h4 className="font-semibold text-sage-dark mb-3">5. ¿Cómo puede ayudarte la psicoterapia en este camino?</h4>
                             <p className="text-sage-dark">
-                              La terapia no solo alivia el malestar, también es un espacio para crecer. Te acompaña en el 
-                              descubrimiento de fortalezas, la exploración de tus deseos auténticos y la construcción de 
-                              una vida con mayor plenitud y sentido. A través de técnicas basadas en evidencia (ACT, 
-                              mindfulness, enfoque humanista y sistémico), puedes avanzar hacia una versión más 
-                              consciente y alineada de ti mismo.
+                              {topic.content.therapyHelp}
                             </p>
                           </div>
+                        </div>
+                      )}
+
+                      {/* Placeholder para otros contenidos */}
+                      {!topic.title.includes("Ansiedad") && !topic.title.includes("Depresión") && !topic.title.includes("Duelos") && !topic.title.includes("Crecimiento") && (
+                        <div className="bg-steel-blue/5 p-6 rounded-lg">
+                          <p className="text-sage-dark font-medium">
+                            Contenido pendiente por agregar para: {topic.title}
+                          </p>
+                          <p className="text-muted-foreground text-sm mt-2">
+                            Este contenido se desarrollará en las siguientes iteraciones
+                          </p>
                         </div>
                       )}
                     </div>
@@ -499,7 +931,7 @@ const IndividualTherapy = () => {
         </motion.div>
       </section>
 
-      {/* Otros Motivos */}
+      {/* Otros Motivos de Consulta */}
       <section className="py-16 px-6 bg-white/30">
         <div className="container mx-auto">
           <motion.div variants={itemVariants} className="text-center mb-12">
@@ -535,324 +967,6 @@ const IndividualTherapy = () => {
               </motion.div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Sección Extendida de Duelo */}
-      <section id="duelo-section" className="py-16 px-6 bg-sage/5">
-        <div className="container mx-auto max-w-6xl">
-          <motion.div variants={itemVariants} className="text-center mb-12">
-            <Badge variant="secondary" className="mb-4">Información Especializada</Badge>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-sage-dark">
-              Proceso de Duelo: Comprensión Profunda
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              El duelo es un proceso emocional, cognitivo y corporal natural que experimentamos tras una pérdida significativa.
-            </p>
-          </motion.div>
-
-          {/* Definición del Duelo */}
-          <motion.div variants={itemVariants} className="mb-12">
-            <Card className="shadow-elegant">
-              <CardHeader>
-                <CardTitle className="text-2xl text-sage-dark">¿Qué es el duelo?</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <p className="text-muted-foreground leading-relaxed">
-                  El duelo es un proceso emocional, cognitivo y corporal natural que experimentamos tras una pérdida significativa. 
-                  No se limita únicamente a la muerte de un ser querido: también puede desencadenarse por la pérdida de una relación, 
-                  un trabajo, una etapa vital, la salud, la migración o incluso ideales profundamente arraigados.
-                </p>
-                <p className="text-muted-foreground leading-relaxed">
-                  Cada persona vive el duelo de manera distinta. No hay una forma "correcta" de sentir, y lo que para una persona 
-                  puede ser transitorio, para otra puede convertirse en un proceso profundo y doloroso que requiere acompañamiento terapéutico.
-                </p>
-              </CardContent>
-            </Card>
-          </motion.div>
-
-          {/* Las 5 Etapas */}
-          <motion.div variants={itemVariants} className="mb-12">
-            <h3 className="text-2xl font-bold text-sage-dark mb-6 text-center">
-              Las Cinco Etapas de Kübler-Ross
-            </h3>
-            <p className="text-muted-foreground mb-6 text-center max-w-3xl mx-auto">
-              Estas etapas no siguen un orden rígido ni lineal. Cada persona lo vive a su propio ritmo:
-            </p>
-            
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {griefStages.map((stage, idx) => (
-                <Card key={idx} className="shadow-elegant hover:shadow-hover transition-all duration-300">
-                  <CardHeader className="pb-3">
-                    <CardTitle className="text-lg text-sage-dark flex items-center gap-3">
-                      <div className="w-8 h-8 bg-gradient-primary rounded-full flex items-center justify-center text-white font-bold text-sm">
-                        {idx + 1}
-                      </div>
-                      {stage.name}
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent className="pt-0">
-                    <p className="text-sm text-muted-foreground">{stage.description}</p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-            
-            <Alert className="mt-6">
-              <AlertCircle className="h-4 w-4" />
-              <AlertDescription>
-                <strong>Importante:</strong> Hoy sabemos que el duelo no sigue un orden rígido ni lineal. Cada persona lo 
-                vive a su propio ritmo, pudiendo avanzar, retroceder o permanecer más tiempo en ciertas etapas. Lo fundamental 
-                en el acompañamiento terapéutico es ayudar a la persona a aceptar la realidad de la pérdida, gestionar sus 
-                emociones con compasión y avanzar en su proceso de adaptación a una vida que ha cambiado.
-              </AlertDescription>
-            </Alert>
-          </motion.div>
-
-          {/* Reacciones Comunes */}
-          <motion.div variants={itemVariants} className="mb-12">
-            <h3 className="text-2xl font-bold text-sage-dark mb-8 text-center">
-              Reacciones Comunes ante el Duelo
-            </h3>
-            
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              <Card className="shadow-elegant">
-                <CardHeader>
-                  <CardTitle className="text-blue-gray text-lg flex items-center gap-2">
-                    <Heart className="w-5 h-5" />
-                    Emocionales
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-2">
-                  {griefReactions.emotional.map((reaction, idx) => (
-                    <div key={idx} className="text-sm text-muted-foreground">• {reaction}</div>
-                  ))}
-                </CardContent>
-              </Card>
-
-              <Card className="shadow-elegant">
-                <CardHeader>
-                  <CardTitle className="text-magenta text-lg flex items-center gap-2">
-                    <Activity className="w-5 h-5" />
-                    Físicas
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-2">
-                  {griefReactions.physical.map((reaction, idx) => (
-                    <div key={idx} className="text-sm text-muted-foreground">• {reaction}</div>
-                  ))}
-                </CardContent>
-              </Card>
-
-              <Card className="shadow-elegant">
-                <CardHeader>
-                  <CardTitle className="text-steel-blue text-lg flex items-center gap-2">
-                    <Brain className="w-5 h-5" />
-                    Cognitivas
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-2">
-                  {griefReactions.cognitive.map((reaction, idx) => (
-                    <div key={idx} className="text-sm text-muted-foreground">• {reaction}</div>
-                  ))}
-                </CardContent>
-              </Card>
-
-              <Card className="shadow-elegant">
-                <CardHeader>
-                  <CardTitle className="text-sage text-lg flex items-center gap-2">
-                    <Target className="w-5 h-5" />
-                    Conductuales
-                  </CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-2">
-                  {griefReactions.behavioral.map((reaction, idx) => (
-                    <div key={idx} className="text-sm text-muted-foreground">• {reaction}</div>
-                  ))}
-                </CardContent>
-              </Card>
-            </div>
-          </motion.div>
-
-          {/* Duelo Patológico */}
-          <motion.div variants={itemVariants} className="mb-12">
-            <h3 className="text-2xl font-bold text-sage-dark mb-6 text-center">
-              ¿Cuándo el duelo se vuelve patológico?
-            </h3>
-            
-            <Card className="shadow-elegant mb-6">
-              <CardHeader>
-                <CardTitle className="text-sage-dark">Trastorno de Duelo Prolongado (DSM-5-TR)</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground mb-4">
-                  El DSM-5-TR especifica que la pérdida de un ser querido debe haber ocurrido al menos 12 meses antes 
-                  de que se pueda hacer un diagnóstico. Hablamos de duelo prolongado o complicado cuando, pasado un 
-                  periodo considerable, la persona presenta:
-                </p>
-                
-                <div className="space-y-6">
-                  <div>
-                    <h4 className="font-semibold text-sage-dark mb-3">Criterios Diagnósticos Principales:</h4>
-                    <div className="space-y-3">
-                      {[
-                        "Anhelo o nostalgia persistente e intensa por la persona fallecida",
-                        "Tristeza o dolor emocional profundo relacionado con la pérdida",
-                        "Preocupación constante por el fallecido o por las circunstancias de su muerte",
-                        "Alteración en el sentido de identidad (sensación de haber perdido una parte de sí mismo tras la muerte del ser querido)"
-                      ].map((criteria, idx) => (
-                        <div key={idx} className="flex items-start gap-3">
-                          <CheckCircle className="w-5 h-5 text-sage mt-0.5 flex-shrink-0" />
-                          <span className="text-muted-foreground">{criteria}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div>
-                    <h4 className="font-semibold text-sage-dark mb-3">Síntomas Asociados Frecuentes:</h4>
-                    <div className="space-y-3">
-                      {[
-                        "Dificultad para aceptar la muerte",
-                        "Incredulidad, entumecimiento emocional o sensación de irrealidad",
-                        "Retraimiento social o desconfianza hacia los demás",
-                        "Incapacidad para reanudar la vida cotidiana o establecer metas",
-                        "Evitación persistente de recordatorios de la pérdida",
-                        "Sentimientos de vacío o pérdida de sentido vital",
-                        "Reducción en la capacidad para experimentar emociones positivas",
-                        "Malestar o deterioro significativo en el funcionamiento social, laboral o familiar"
-                      ].map((symptom, idx) => (
-                        <div key={idx} className="flex items-start gap-3">
-                          <div className="w-2 h-2 bg-steel-blue rounded-full mt-2 flex-shrink-0" />
-                          <span className="text-muted-foreground text-sm">{symptom}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  <div className="bg-steel-blue/10 p-4 rounded-lg border border-steel-blue/20">
-                    <p className="text-steel-blue font-medium">
-                      Este tipo de duelo no es simplemente "un duelo más largo", sino una condición que requiere 
-                      intervención clínica especializada, idealmente con psicoterapia centrada en el procesamiento 
-                      del dolor, la reconexión con el presente y la resignificación de la pérdida.
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="shadow-elegant border-destructive/20">
-              <CardHeader>
-                <CardTitle className="text-destructive">Cuándo Buscar Ayuda Profesional</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground mb-4">Es recomendable buscar apoyo especializado cuando:</p>
-                <div className="space-y-2">
-                  {[
-                    "Los síntomas persisten intensamente por más de 12 meses",
-                    "No se puede retomar la vida cotidiana",
-                    "Aparecen síntomas depresivos severos o ideación suicida",
-                    "Se experimenta una tristeza completamente paralizante",
-                    "La persona se siente atrapada en negación o enojo crónico",
-                    "Hay pensamientos persistentes de muerte o culpa extrema",
-                    "Se desarrollan problemas de salud física relacionados"
-                  ].map((signal, idx) => (
-                    <div key={idx} className="flex items-start gap-3">
-                      <AlertCircle className="w-4 h-4 text-destructive mt-1 flex-shrink-0" />
-                      <span className="text-sm text-muted-foreground">{signal}</span>
-                    </div>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-          </motion.div>
-
-          {/* Cómo ayuda la terapia */}
-          <motion.div variants={itemVariants} className="mb-12">
-            <Card className="shadow-elegant bg-gradient-secondary">
-              <CardHeader>
-                <CardTitle className="text-2xl text-sage-dark text-center">
-                  ¿Cómo puede acompañarte la psicoterapia en un proceso de duelo?
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sage-dark text-center mb-6 italic">
-                  La terapia psicológica no busca "acelerar" el duelo, sino acompañarte, sostenerte 
-                  emocionalmente y ayudarte a darle sentido a lo que estás viviendo.
-                </p>
-
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {therapyObjectives.map((objective, index) => (
-                    <div key={index} className="bg-card p-4 rounded-lg shadow-hover">
-                      <div className="flex items-start gap-3">
-                        <div className="w-8 h-8 bg-gradient-primary rounded-full flex items-center justify-center flex-shrink-0">
-                          <CheckCircle className="w-4 h-4 text-white" />
-                        </div>
-                        <p className="text-sm text-muted-foreground">{objective}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-          </motion.div>
-
-          {/* Mensaje de Esperanza */}
-          <motion.div variants={itemVariants}>
-            <Card className="shadow-elegant bg-gradient-primary text-white">
-              <CardContent className="p-8 text-center">
-                <h3 className="text-2xl font-bold mb-6">Mensaje de Esperanza</h3>
-                <div className="space-y-4 leading-relaxed">
-                  <p>
-                    El duelo es una experiencia profundamente humana que surge ante cualquier pérdida significativa: 
-                    no solo por la muerte de un ser querido, sino también por rupturas, migraciones, cambios vitales, 
-                    pérdida de salud o proyectos importantes. Aunque doloroso, el duelo puede convertirse en una 
-                    oportunidad para crecer, resignificar y profundizar en nuestra vida emocional.
-                  </p>
-                  <p>
-                    Con el apoyo adecuado y el tiempo necesario para tu proceso único, es posible integrar la pérdida 
-                    en tu vida de una forma que honre tanto lo que has perdido como tu capacidad de adaptación, 
-                    crecimiento y renovación.
-                  </p>
-                  <p className="font-semibold text-lg">
-                    Tu dolor es válido y merece ser atendido con compasión. No estás solo en este proceso. 
-                    Buscar ayuda profesional es un acto de valentía y autocuidado que puede marcar una diferencia 
-                    significativa en tu bienestar.
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* CTA Final */}
-      <section className="py-16 px-6 bg-steel-blue/5">
-        <div className="container mx-auto max-w-4xl text-center">
-          <motion.div variants={itemVariants}>
-            <h2 className="text-3xl font-bold mb-6 text-sage-dark">
-              Tu bienestar emocional es prioritario
-            </h2>
-            <p className="text-lg text-muted-foreground mb-8">
-              No estás solo en este proceso. Buscar ayuda profesional es un acto de valentía y 
-              autocuidado que puede marcar una diferencia significativa en tu bienestar.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-gradient-primary shadow-hover hover:shadow-glow">
-                <Calendar className="w-5 h-5 mr-2" />
-                Agendar Sesión
-              </Button>
-              <Button variant="outline" size="lg" className="border-steel-blue text-steel-blue hover:bg-steel-blue hover:text-white">
-                <Phone className="w-5 h-5 mr-2" />
-                Consulta Inicial
-              </Button>
-              <Button variant="ghost" size="lg" className="text-sage hover:bg-sage/10">
-                <Mail className="w-5 h-5 mr-2" />
-                Enviar Mensaje
-              </Button>
-            </div>
-          </motion.div>
         </div>
       </section>
 

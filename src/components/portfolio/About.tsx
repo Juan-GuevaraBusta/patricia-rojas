@@ -1,3 +1,4 @@
+import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { User, Heart, Target, Award, MapPin, Book } from 'lucide-react';
@@ -9,6 +10,7 @@ const About = () => {
     threshold: 0.1,
     triggerOnce: true,
   });
+  console.log("About component rendering");
 
   const stats = [
     { icon: Award, number: '25+', label: 'Años de experiencia' },
@@ -21,7 +23,7 @@ const About = () => {
     'Manejo de Infidelidad – Instituto Gottman',
     'Terapia de Pareja, Niveles 1 y 2 – Instituto Gottman',
     'Terapias Psicológicas de Tercera Generación – Universidad Pontificia Bolivariana de Santander',
-    'Terapia de Aceptación y Compromiso (ACT) – Universidad Pontificia Bolivariana de Santander'
+    'Terapia de Aceptación y Compromiso (ACT) – Universidad Pontificia Bolivariana de Santander',
   ];
 
   return (
@@ -30,7 +32,7 @@ const About = () => {
         ref={ref}
         variants={containerVariants}
         initial="hidden"
-        animate={inView ? "visible" : "hidden"}
+        animate={inView ? 'visible' : 'hidden'}
         className="container mx-auto px-6"
       >
         <motion.div variants={itemVariants} className="text-center mb-16">
@@ -48,11 +50,13 @@ const About = () => {
             <Card className="overflow-hidden shadow-elegant">
               <CardContent className="p-0">
                 <div className="aspect-square bg-gradient-secondary relative">
-                  {/* Placeholder para imagen de perfil */}
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-40 h-40 rounded-full bg-card shadow-hover flex items-center justify-center">
-                      <User size={60} className="text-accent" />
-                    </div>
+                    {/* Reemplaza el placeholder con una imagen real si es necesario */}
+                    <img
+                      src="/path/to/profile-image.jpg"
+                      alt="Patricia Rojas R."
+                      className="w-40 h-40 rounded-full object-cover shadow-hover"
+                    />
                   </div>
                 </div>
               </CardContent>
@@ -138,44 +142,6 @@ const About = () => {
               </motion.div>
             ))}
           </div>
-        </motion.div>
-
-        {/* Mi Enfoque Terapéutico */}
-        <motion.div variants={itemVariants} className="mb-16">
-          <Card className="shadow-elegant">
-            <CardHeader>
-              <CardTitle className="text-2xl text-center flex items-center justify-center">
-                <Heart className="mr-3 text-accent" size={28} />
-                Mi Enfoque Terapéutico
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-6">
-              <p className="text-muted-foreground leading-relaxed">
-                Mi trabajo se desarrolla en un espacio confidencial, empático y libre de juicios, pensado 
-                para que cada persona pueda conectar con su historia, emociones y pensamientos de 
-                manera segura y auténtica. Creo firmemente que cuando nos sentimos escuchados y 
-                comprendidos, es posible explorar con mayor claridad tanto aquello que nos duele como 
-                aquello que nos moviliza.
-              </p>
-              <p className="text-muted-foreground leading-relaxed">
-                Me enfoco en comprender y trabajar el estilo de afrontamiento de cada consultante: cómo 
-                responde ante el malestar y qué estrategias ha desarrollado para protegerse. Abordo este 
-                proceso desde un enfoque integrativo, con una base sólida en la Terapia de Aceptación y 
-                Compromiso (ACT), que promueve una relación más flexible, consciente y compasiva con la 
-                experiencia interna.
-              </p>
-              <p className="text-muted-foreground leading-relaxed">
-                En el trabajo con parejas, integro los principios del Método Gottman, un enfoque respaldado 
-                por décadas de investigación científica, que ha identificado los elementos clave para 
-                construir y sostener relaciones estables, saludables y emocionalmente conectadas.
-              </p>
-              <p className="text-muted-foreground leading-relaxed">
-                En la práctica, esto significa ayudar a las personas a observar sus pensamientos sin quedar 
-                atrapadas en ellos, validar sus emociones sin dejar que las paralicen, y avanzar hacia una 
-                vida más plena mediante acciones alineadas con sus valores personales y relacionales.
-              </p>
-            </CardContent>
-          </Card>
         </motion.div>
 
         {/* Formato de Sesiones */}
@@ -269,6 +235,29 @@ const About = () => {
                   garantizando la más alta calidad en mi práctica clínica.
                 </p>
               </div>
+            </CardContent>
+          </Card>
+        </motion.div>
+
+        {/* Navegación a Enfoques Terapéuticos */}
+        <motion.div variants={itemVariants} className="text-center mb-16">
+          <Card className="max-w-2xl mx-auto shadow-elegant bg-gradient-to-br from-accent/5 to-accent/10 border border-accent/20">
+            <CardContent className="p-8">
+              <h3 className="text-2xl font-bold text-foreground mb-4">
+                ¿Quieres conocer mis enfoques terapéuticos?
+              </h3>
+              <p className="text-muted-foreground mb-6">
+                Descubre en detalle las metodologías y herramientas que utilizo en mi práctica: 
+                ACT, Método Gottman, Mindfulness y más.
+              </p>
+              <motion.button
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                onClick={() => document.getElementById('enfoques-terapeuticos')?.scrollIntoView({ behavior: 'smooth' })}
+                className="bg-accent text-primary-foreground px-8 py-3 rounded-lg font-medium shadow-hover hover:shadow-glow transition-all duration-300 mr-4"
+              >
+                Ver Enfoques Terapéuticos
+              </motion.button>
             </CardContent>
           </Card>
         </motion.div>
