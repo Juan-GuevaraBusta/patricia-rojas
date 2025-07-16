@@ -2,30 +2,55 @@ import { motion } from 'framer-motion';
 import { Heart, ArrowUp, Phone, Mail, MapPin, Instagram, Linkedin, MessageCircle, Clock, Shield, Award } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import { Link, useLocation } from 'react-router-dom';
 
 const Footer = () => {
+  const location = useLocation();
+  
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleNavigation = (href: string) => {
+    if (href.startsWith('#')) {
+      // Si estamos en la página principal y es un hash link
+      if (location.pathname === '/') {
+        const element = document.querySelector(href);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      } else {
+        // Si no estamos en la página principal, navegar primero y luego hacer scroll
+        window.location.href = '/' + href;
+      }
+    } else {
+      // Para links externos o rutas normales
+      if (href.startsWith('http') || href.startsWith('mailto:') || href.startsWith('tel:')) {
+        window.open(href, '_blank');
+      } else {
+        window.location.href = href;
+      }
+    }
   };
 
   const currentYear = new Date().getFullYear();
 
   const quickLinks = [
-    { label: 'Inicio', href: '#inicio' },
-    { label: 'Sobre Mí', href: '#sobre-mi' },
-    { label: 'Servicios', href: '#servicios' },
-    { label: 'Especialidades', href: '#especialidades' },
-    { label: 'Testimonios', href: '#testimonios' },
-    { label: 'Contacto', href: '#contacto' },
+    { label: 'Inicio', href: '/' },
+    { label: 'Sobre Mí', href: '/sobre-mi' },
+    { label: 'Habilidades', href: '/habilidades' },
+    { label: 'Proyectos', href: '/proyectos' },
+    { label: 'Experiencia', href: '/experiencia' },
+    { label: 'Contacto', href: '/contacto' },
   ];
 
   const services = [
-    { label: 'Terapia de Parejas', href: '#servicios' },
-    { label: 'Terapia Individual', href: '#servicios' },
-    { label: 'Terapia para Jóvenes', href: '#servicios' },
-    { label: 'Procesos de Duelo', href: '#especialidades' },
-    { label: 'Manejo de Ansiedad', href: '#especialidades' },
-    { label: 'Crecimiento Personal', href: '#especialidades' },
+    { label: 'Terapia de Parejas', href: '/couples-therapy' },
+    { label: 'Terapia Individual', href: '/individual-therapy' },
+    { label: 'Terapia para Jóvenes', href: '/individual-therapy' },
+    { label: 'Procesos de Duelo', href: '/individual-therapy' },
+    { label: 'Manejo de Ansiedad', href: '/individual-therapy' },
+    { label: 'Crecimiento Personal', href: '/individual-therapy' },
   ];
 
   const contactInfo = [
@@ -44,13 +69,13 @@ const Footer = () => {
     { 
       icon: MapPin, 
       label: 'CC Unicentro, Cali',
-      href: '#contacto',
+      href: '/contacto',
       description: 'Sesiones presenciales'
     },
     { 
       icon: Clock, 
       label: 'Lun - Vie: 8AM - 6PM',
-      href: '#contacto',
+      href: '/contacto',
       description: 'Horario de atención'
     },
   ];
@@ -147,14 +172,17 @@ const Footer = () => {
             <h4 className="text-lg font-semibold text-white">Enlaces Rápidos</h4>
             <div className="space-y-3">
               {quickLinks.map((link) => (
-                <motion.a
+                <motion.div
                   key={link.label}
-                  href={link.href}
                   whileHover={{ x: 5 }}
-                  className="block text-primary-foreground/80 hover:text-white transition-colors duration-300"
                 >
-                  {link.label}
-                </motion.a>
+                  <Link
+                    to={link.href}
+                    className="block text-primary-foreground/80 hover:text-white transition-colors duration-300"
+                  >
+                    {link.label}
+                  </Link>
+                </motion.div>
               ))}
             </div>
           </motion.div>
@@ -169,14 +197,17 @@ const Footer = () => {
             <h4 className="text-lg font-semibold text-white">Servicios</h4>
             <div className="space-y-3">
               {services.map((service) => (
-                <motion.a
+                <motion.div
                   key={service.label}
-                  href={service.href}
                   whileHover={{ x: 5 }}
-                  className="block text-primary-foreground/80 hover:text-white transition-colors duration-300"
                 >
-                  {service.label}
-                </motion.a>
+                  <Link
+                    to={service.href}
+                    className="block text-primary-foreground/80 hover:text-white transition-colors duration-300"
+                  >
+                    {service.label}
+                  </Link>
+                </motion.div>
               ))}
             </div>
           </motion.div>
@@ -191,18 +222,37 @@ const Footer = () => {
             <h4 className="text-lg font-semibold text-white">Contacto</h4>
             <div className="space-y-4">
               {contactInfo.map((contact, index) => (
-                <motion.a
+                <motion.div
                   key={index}
-                  href={contact.href}
                   whileHover={{ scale: 1.02 }}
                   className="flex items-start space-x-3 text-primary-foreground/80 hover:text-white transition-colors duration-300"
                 >
-                  <contact.icon size={18} className="mt-1 flex-shrink-0" />
-                  <div>
-                    <p className="font-medium">{contact.label}</p>
-                    <p className="text-sm opacity-75">{contact.description}</p>
-                  </div>
-                </motion.a>
+                  {contact.href.startsWith('http') || contact.href.startsWith('mailto:') ? (
+                    <a
+                      href={contact.href}
+                      target={contact.href.startsWith('http') ? '_blank' : '_self'}
+                      rel={contact.href.startsWith('http') ? 'noopener noreferrer' : ''}
+                      className="flex items-start space-x-3"
+                    >
+                      <contact.icon size={18} className="mt-1 flex-shrink-0" />
+                      <div>
+                        <p className="font-medium">{contact.label}</p>
+                        <p className="text-sm opacity-75">{contact.description}</p>
+                      </div>
+                    </a>
+                  ) : (
+                    <Link
+                      to={contact.href}
+                      className="flex items-start space-x-3"
+                    >
+                      <contact.icon size={18} className="mt-1 flex-shrink-0" />
+                      <div>
+                        <p className="font-medium">{contact.label}</p>
+                        <p className="text-sm opacity-75">{contact.description}</p>
+                      </div>
+                    </Link>
+                  )}
+                </motion.div>
               ))}
             </div>
 
