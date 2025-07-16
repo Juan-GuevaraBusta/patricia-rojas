@@ -1,15 +1,18 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { User, Heart, Target, Award, MapPin, Book } from 'lucide-react';
+import { User, Heart, Target, Award, MapPin, Book, ArrowRight } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
 import { containerVariants, itemVariants } from '@/utils/animations';
+import { useNavigate } from 'react-router-dom';
 
 const About = () => {
   const [ref, inView] = useInView({
     threshold: 0.1,
     triggerOnce: true,
   });
+  const navigate = useNavigate();
   console.log("About component rendering");
 
   const stats = [
@@ -25,6 +28,10 @@ const About = () => {
     'Terapias Psicológicas de Tercera Generación – Universidad Pontificia Bolivariana de Santander',
     'Terapia de Aceptación y Compromiso (ACT) – Universidad Pontificia Bolivariana de Santander',
   ];
+
+  const handleNavigateToApproaches = () => {
+    navigate('/enfoques-terapeuticos');
+  };
 
   return (
     <section id="sobre-mi" className="py-20 bg-muted/20">
@@ -243,6 +250,7 @@ const About = () => {
         <motion.div variants={itemVariants} className="text-center mb-16">
           <Card className="max-w-2xl mx-auto shadow-elegant bg-gradient-to-br from-accent/5 to-accent/10 border border-accent/20">
             <CardContent className="p-8">
+              <Book className="w-16 h-16 text-accent mx-auto mb-6" />
               <h3 className="text-2xl font-bold text-foreground mb-4">
                 ¿Quieres conocer mis enfoques terapéuticos?
               </h3>
@@ -250,14 +258,19 @@ const About = () => {
                 Descubre en detalle las metodologías y herramientas que utilizo en mi práctica: 
                 ACT, Método Gottman, Mindfulness y más.
               </p>
-              <motion.button
+              <motion.div
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                onClick={() => document.getElementById('enfoques-terapeuticos')?.scrollIntoView({ behavior: 'smooth' })}
-                className="bg-accent text-primary-foreground px-8 py-3 rounded-lg font-medium shadow-hover hover:shadow-glow transition-all duration-300 mr-4"
               >
-                Ver Enfoques Terapéuticos
-              </motion.button>
+                <Button
+                  onClick={handleNavigateToApproaches}
+                  className="bg-accent text-primary-foreground px-8 py-3 rounded-lg font-medium shadow-hover hover:shadow-glow transition-all duration-300"
+                >
+                  <Book className="mr-2" size={20} />
+                  Ver Enfoques Terapéuticos
+                  <ArrowRight className="ml-2" size={20} />
+                </Button>
+              </motion.div>
             </CardContent>
           </Card>
         </motion.div>

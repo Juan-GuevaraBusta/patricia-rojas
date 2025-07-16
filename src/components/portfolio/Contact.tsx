@@ -11,6 +11,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { Badge } from '@/components/ui/badge';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { containerVariants, itemVariants } from '@/utils/animations';
 
 const Contact = () => {
@@ -100,20 +101,76 @@ const Contact = () => {
 
   const faqItems = [
     {
-      question: '¿Cómo sé si necesito terapia?',
-      answer: 'Si sientes ansiedad, estrés, tristeza constante o dificultades en tus relaciones, la terapia puede ayudarte. También es útil durante procesos de duelo, cambios importantes o para crecimiento personal.'
+      question: '¿Realizas consultas online?',
+      answer: 'Sí, ofrezco sesiones virtuales a través de videollamada con la misma efectividad que las presenciales.'
     },
     {
-      question: '¿Cuántas sesiones necesitaré?',
-      answer: 'Depende de cada caso, pero generalmente se comienzan a notar cambios en un promedio de 3 a 5 sesiones. Trabajaremos juntos para establecer objetivos claros.'
+      question: '¿Cómo funcionan las sesiones online?',
+      answer: 'Utilizo aplicaciones seguras para videollamadas (WhatsApp, Zoom o Meet). El pago se realiza previamente a la sesión. Para garantizar la efectividad del proceso terapéutico, es importante mantener las mismas condiciones que en una sesión presencial: vestimenta adecuada, posición sentada cómoda y contacto visual directo con la cámara. Durante la sesión no está permitido comer o hacer alguna otra actividad, para que puedas mantener el enfoque y por respeto del espacio terapéutico.'
     },
     {
-      question: '¿Las sesiones online son igual de efectivas?',
-      answer: 'Sí, utilizo plataformas seguras y mantengo las mismas condiciones profesionales. Es importante tener un espacio privado y buena conexión a internet.'
+      question: '¿Cuánto dura cada sesión?',
+      answer: 'Las sesiones tienen una duración de 50 minutos cada una y se recomienda para empezar una sesión por semana. El proceso implica cambiar hábitos y el refuerzo es necesario.'
+    },
+    {
+      question: '¿En qué áreas te especializas?',
+      answer: 'Me especializo en terapia de parejas, acompañamiento en procesos de duelo, manejo de ansiedad y depresión, regulación emocional, comunicación efectiva y desarrollo del crecimiento personal.'
+    },
+    {
+      question: '¿Cómo reservo una cita?',
+      answer: 'Puedes agendar directamente desde el link en mi biografía o enviarme un DM.'
+    },
+    {
+      question: '¿Cuántas sesiones se necesitan para ver resultados?',
+      answer: 'Depende de cada caso, pero generalmente se comienzan a notar cambios en un promedio de 3 a 5 sesiones.'
+    },
+    {
+      question: '¿Trabajas con obra social/seguro médico?',
+      answer: 'No, solo particular.'
+    },
+    {
+      question: '¿Qué enfoque terapéutico utilizas?',
+      answer: 'Trabajo principalmente desde la Terapia de Aceptación y Compromiso (ACT) y el enfoque Cognitivo Conductual (TCC). Para el acompañamiento en terapia de parejas, me baso específicamente en la metodología Gottman, reconocida por su eficacia en la mejora de la comunicación y fortalecimiento del vínculo.'
+    },
+    {
+      question: '¿Atiendes niños?',
+      answer: 'No atiendo niños, atiendo jóvenes y adultos.'
+    },
+    {
+      question: '¿Qué debo esperar de la primera sesión?',
+      answer: 'La primera sesión es de evaluación donde conoceré tu situación actual y tus objetivos terapéuticos. Te explicaré cómo será el proceso y resolveré todas tus inquietudes. Mi prioridad es crear un ambiente seguro donde puedas expresarte con confianza.'
+    },
+    {
+      question: '¿Qué significa que habrá un ambiente seguro en las sesiones?',
+      answer: 'Significa que garantizo absoluta confidencialidad y un espacio libre de juicios sobre tus emociones, pensamientos, narrativas y orientaciones. Mi rol profesional no se basa en juzgar, sino en brindarte un acompañamiento terapéutico profesional donde puedas expresarte con total libertad.'
+    },
+    {
+      question: '¿Ofreces talleres o charlas para empresas/grupos?',
+      answer: 'Sí, ofrezco talleres para grupos y organizaciones.'
     },
     {
       question: '¿Qué pasa si necesito cancelar una cita?',
       answer: 'Solicito cancelaciones con 24 horas de anticipación para reprogramar sin costo adicional.'
+    },
+    {
+      question: '¿Cómo garantizas la confidencialidad en las sesiones online?',
+      answer: 'Utilizo plataformas seguras y encriptadas, y respeto estrictamente el código de ética profesional.'
+    },
+    {
+      question: '¿Cómo es el proceso de terapia de pareja?',
+      answer: 'Este enfoque, basado en la metodología Gottman, se centra en tres ejes fundamentales: comunicación, resolución de conflictos y conexión emocional. La mayoría de las sesiones se realizan en pareja, aunque algunas pueden ser individuales. Cada encuentro es dinámico e incluye ejercicios prácticos orientados a alcanzar los objetivos terapéuticos, así como el desarrollo de técnicas de comunicación para mejorar la resolución de conflictos.'
+    },
+    {
+      question: '¿Cómo es una sesión de psicoterapia y qué técnicas se utilizan?',
+      answer: 'Una sesión de psicoterapia es un espacio seguro y confidencial donde el consultante puede expresar sus pensamientos, emociones y experiencias sin ser juzgado. El objetivo es facilitar el autoconocimiento, la regulación emocional y el desarrollo de herramientas para afrontar dificultades.'
+    },
+    {
+      question: '¿Cómo saber si necesito terapia?',
+      answer: 'Si sientes ansiedad, estrés, tristeza constante o dificultades en tus relaciones, la terapia puede ayudarte. También es un espacio de apoyo durante procesos de duelo, cambios importantes en tu vida o la ruptura de una relación sentimental. No es necesario estar en crisis para buscar ayuda; la terapia también te permite mejorar tu comunicación, aprender a regular tus emociones y avanzar en tu crecimiento personal.'
+    },
+    {
+      question: '¿Atiendes parejas del mismo sexo?',
+      answer: 'Sí, atiendo parejas del mismo sexo.'
     }
   ];
 
@@ -360,29 +417,24 @@ const Contact = () => {
           </motion.div>
         </div>
 
-        {/* FAQ Section */}
+        {/* FAQ Section - Ahora con Accordion para mejor UX */}
         <motion.div variants={itemVariants} className="mb-16">
           <h3 className="text-2xl font-bold text-center mb-8">Preguntas Frecuentes</h3>
-          <div className="grid md:grid-cols-2 gap-6">
-            {faqItems.map((item, index) => (
-              <motion.div
-                key={index}
-                variants={itemVariants}
-                whileHover={{ y: -2 }}
-              >
-                <Card className="shadow-elegant hover:shadow-hover transition-all duration-300 h-full">
-                  <CardContent className="p-6">
-                    <h4 className="font-semibold text-foreground mb-3 flex items-start">
-                      <ArrowRight className="w-5 h-5 text-accent mr-2 mt-0.5 flex-shrink-0" />
-                      {item.question}
-                    </h4>
-                    <p className="text-muted-foreground leading-relaxed pl-7">
+          <div className="max-w-4xl mx-auto">
+            <Accordion type="single" collapsible className="space-y-4">
+              {faqItems.map((item, index) => (
+                <AccordionItem key={index} value={`faq-${index}`} className="border border-sage/20 rounded-lg px-6">
+                  <AccordionTrigger className="text-left text-sage-dark hover:text-sage font-semibold">
+                    {item.question}
+                  </AccordionTrigger>
+                  <AccordionContent className="pb-6">
+                    <p className="text-muted-foreground leading-relaxed">
                       {item.answer}
                     </p>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
           </div>
         </motion.div>
 

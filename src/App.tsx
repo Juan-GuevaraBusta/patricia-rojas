@@ -11,6 +11,7 @@ import Experience from "./components/portfolio/Experience";
 import Contact from "./components/portfolio/Contact";
 import IndividualTherapy from "./pages/IndividualTherapy";
 import CouplesTherapy from "./pages/CouplesTherapy";
+import TherapeuticApproaches from "./pages/TherapeuticApproaches";
 import Header from "./components/portfolio/Header";
 import Footer from "./components/portfolio/Footer";
 import NotFound from "./pages/NotFound";
@@ -41,6 +42,7 @@ const App = () => (
           <Route path="/proyectos" element={<PageLayout><Projects /></PageLayout>} />
           <Route path="/experiencia" element={<PageLayout><Experience /></PageLayout>} />
           <Route path="/contacto" element={<PageLayout><Contact /></PageLayout>} />
+          <Route path="/enfoques-terapeuticos" element={<PageLayout><TherapeuticApproaches /></PageLayout>} />
           <Route path="/individual-therapy" element={<IndividualTherapy />} />
           <Route path="/couples-therapy" element={<CouplesTherapy />} />
           <Route path="*" element={<NotFound />} />
