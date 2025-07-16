@@ -124,10 +124,7 @@ const Projects = () => {
   ];
 
   const scrollToContact = () => {
-    const element = document.querySelector('#contacto');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+    window.location.href = '/contacto';
   };
 
   return (

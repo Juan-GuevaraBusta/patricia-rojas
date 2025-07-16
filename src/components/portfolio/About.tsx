@@ -30,7 +30,7 @@ const About = () => {
   ];
 
   const handleNavigateToApproaches = () => {
-    navigate('/enfoques-terapeuticos');
+    navigate('/habilidades');
   };
 
   return (
@@ -116,11 +116,6 @@ const About = () => {
                 comunicarte con claridad, establecer límites saludables y tomar decisiones alineadas 
                 con tus verdaderas necesidades.
               </p>
-            </div>
-
-            <div className="flex items-center space-x-2 text-accent bg-muted/20 p-3 rounded-lg border">
-              <MapPin size={20} />
-              <span className="font-medium">Madrid, España • Sesiones presenciales y virtuales</span>
             </div>
           </motion.div>
         </div>

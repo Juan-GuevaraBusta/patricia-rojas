@@ -241,7 +241,7 @@ const Contact = () => {
         </motion.div>
 
         {/* Contact Information & Form */}
-        <div className="grid lg:grid-cols-2 gap-12 mb-16">
+        <div className="grid lg:grid-cols-2 gap-12 mb-16 flex items-center">
           {/* Contact Information */}
           <motion.div variants={itemVariants} className="space-y-8">
             <Card className="shadow-elegant">

@@ -44,7 +44,7 @@ const Header = () => {
             whileHover={{ scale: 1.05 }}
             className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent"
           >
-            <Link to="/">Patricia</Link>
+            <Link to="/"> Patricia Rojas</Link>
           </motion.div>
 
           {/* Desktop Navigation */}
@@ -69,9 +69,6 @@ const Header = () => {
                 </Link>
               </motion.div>
             ))}
-            <Button variant="default" className="bg-gradient-primary shadow-hover">
-              Descargar CV
-            </Button>
           </div>
 
           {/* Mobile Menu Button */}

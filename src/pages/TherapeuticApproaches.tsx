@@ -128,45 +128,11 @@ const TherapeuticApproaches = () => {
           animate={inView ? 'visible' : 'hidden'}
           className="container mx-auto px-6"
         >
-          {/* Botón de regreso */}
-          <motion.div variants={itemVariants} className="mb-8">
-            <Button 
-              variant="outline" 
-              onClick={() => navigate('/sobre-mi')}
-              className="flex items-center gap-2 hover:bg-accent hover:text-accent-foreground"
-            >
-              <ArrowLeft size={16} />
-              Volver a Mi Historia
-            </Button>
-          </motion.div>
-
-          {/* Header */}
-          <motion.div variants={itemVariants} className="text-center mb-16">
-            <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-primary bg-clip-text text-transparent">
-              Mis Enfoques Terapéuticos
-            </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Descubre las metodologías basadas en evidencia científica que utilizo para 
-              acompañarte en tu proceso de transformación personal y relacional.
-            </p>
-          </motion.div>
 
           {/* Mi Enfoque Terapéutico */}
           <motion.div variants={itemVariants} className="mb-16">
             <Card className="shadow-elegant">
-              <CardHeader>
-                <CardTitle className="text-2xl text-center flex items-center justify-center">
-                  <Heart className="mr-3 text-accent" size={28} />
-                  Mi Enfoque Terapéutico
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-6">
-                <div className="space-y-4 text-muted-foreground leading-relaxed">
-                  <p>Mi trabajo se desarrolla en un espacio confidencial, empático y libre de juicios, pensado para que cada persona pueda conectar con su historia, emociones y pensamientos de manera segura y auténtica.</p>
-                  <p>Me enfoco en comprender y trabajar el estilo de afrontamiento de cada consultante desde un enfoque integrativo, con base sólida en la Terapia de Aceptación y Compromiso (ACT).</p>
-                  <p>En parejas, integro los principios del Método Gottman, respaldado por décadas de investigación científica para construir relaciones estables y emocionalmente conectadas.</p>
-                </div>
-
+              <CardContent className="space-y-3">
                 {/* ACT Section */}
                 <div className="mt-8 p-6 bg-gradient-to-br from-accent/5 to-accent/10 rounded-lg border border-accent/20">
                   <h4 className="text-xl font-semibold text-foreground mb-4 flex items-center">
@@ -417,18 +383,28 @@ const TherapeuticApproaches = () => {
                   estoy aquí para acompañarte en tu camino hacia el bienestar emocional.
                 </p>
                 <div className="grid md:grid-cols-2 gap-4 mb-6">
-                  <div className="bg-primary-foreground/10 p-4 rounded-lg">
+                  <motion.div 
+                    className="bg-primary-foreground/10 p-4 rounded-lg cursor-pointer hover:bg-primary-foreground/20 transition-all duration-300"
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    onClick={() => navigate('/individual-therapy')}
+                  >
                     <h4 className="font-semibold text-primary-foreground mb-2">Terapia Individual</h4>
                     <p className="text-primary-foreground/80 text-sm">
                       ACT, Mindfulness y herramientas personalizadas para tu crecimiento personal
                     </p>
-                  </div>
-                  <div className="bg-primary-foreground/10 p-4 rounded-lg">
+                  </motion.div>
+                  <motion.div 
+                    className="bg-primary-foreground/10 p-4 rounded-lg cursor-pointer hover:bg-primary-foreground/20 transition-all duration-300"
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.98 }}
+                    onClick={() => navigate('/couples-therapy')}
+                  >
                     <h4 className="font-semibold text-primary-foreground mb-2">Terapia de Pareja</h4>
                     <p className="text-primary-foreground/80 text-sm">
                       Método Gottman para fortalecer y sanar tu relación
                     </p>
-                  </div>
+                  </motion.div>
                 </div>
                 <motion.div
                   whileHover={{ scale: 1.02 }}
