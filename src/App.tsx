@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -29,6 +30,7 @@ const PageLayout = ({ children }: { children: React.ReactNode }) => (
   </div>
 );
 
+// Componente para hacer scroll hacia arriba en cada cambio de ruta
 function ScrollToTop() {
   const { pathname } = useLocation();
 
@@ -39,13 +41,13 @@ function ScrollToTop() {
   return null;
 }
 
-
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Portfolio />} />
           <Route path="/sobre-mi" element={<PageLayout><About /></PageLayout>} />
@@ -64,7 +66,3 @@ const App = () => (
 );
 
 export default App;
-
-function useEffect(arg0: () => void, arg1: string[]) {
-  throw new Error("Function not implemented.");
-}
