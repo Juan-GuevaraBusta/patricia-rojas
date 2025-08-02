@@ -130,15 +130,13 @@ Sí es posible, aunque requiere un proceso profundo que involucra tres elementos
             fortalecer conexión emocional y superar una infidelidad.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-            <Button size="lg" className="bg-gradient-primary shadow-hover hover:shadow-glow">
-              <Calendar className="w-5 h-5 mr-2" />
-              Agendar Sesión
-            </Button>
-            <Button variant="outline" size="lg" className="border-sage text-sage hover:bg-sage hover:text-white">
-              <MessageCircle className="w-5 h-5 mr-2" />
-              Sesión Introductoria
-            </Button>
+          <div className="flex justify-center mb-12">
+            <a href="https://wa.me/573118361642" target="_blank" rel="noopener noreferrer">
+              <Button size="lg" className="bg-gradient-primary shadow-hover hover:shadow-glow">
+                <Calendar className="w-5 h-5 mr-2" />
+                Agendar Primera Sesión
+              </Button>
+            </a>
           </div>
 
           <p className="text-sage-dark font-medium">
@@ -284,18 +282,13 @@ Sí es posible, aunque requiere un proceso profundo que involucra tres elementos
               Te acompaño en un proceso profesional hacia una relación más sólida y conectada.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-gradient-primary shadow-hover hover:shadow-glow">
-                <Calendar className="w-5 h-5 mr-2" />
-                Agendar Primera Sesión
-              </Button>
-              <Button variant="outline" size="lg" className="border-sage text-sage hover:bg-sage hover:text-white">
-                Solicitar Sesión Introductoria
-              </Button>
-              <Button variant="ghost" size="lg" className="text-steel-blue hover:bg-steel-blue/10">
-                <MessageCircle className="w-5 h-5 mr-2" />
-                Enviar un Mensaje
-              </Button>
+            <div className="flex justify-center">
+              <a href="https://wa.me/573118361642" target="_blank" rel="noopener noreferrer">
+                <Button size="lg" className="bg-gradient-primary shadow-hover hover:shadow-glow">
+                  <Calendar className="w-5 h-5 mr-2" />
+                  Agendar Primera Sesión
+                </Button>
+              </a>
             </div>
           </motion.div>
         </div>
@@ -304,7 +297,7 @@ Sí es posible, aunque requiere un proceso profundo que involucra tres elementos
       {/* Footer Simple */}
       <footer className="py-8 px-6 bg-sage-dark text-white">
         <div className="container mx-auto text-center">
-          <p className="mb-4">© 2025 Psicología & Bienestar. Acompañándote en tu crecimiento.</p>
+          <p className="mb-4">© 2025 Patricia Rojas Psicóloga - Terapia Individual y de Parejas. Acompañándote en tu crecimiento.</p>
           <div className="flex justify-center space-x-6">
             <Button variant="ghost" onClick={() => window.location.href = '/'} className="text-white hover:text-sage-light">
               Inicio

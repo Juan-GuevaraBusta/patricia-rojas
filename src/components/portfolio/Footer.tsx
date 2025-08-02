@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Heart, ArrowUp, Phone, Mail, MapPin, Instagram, Linkedin, MessageCircle, Clock, Shield, Award } from 'lucide-react';
+import { Heart, ArrowUp, Phone, Mail, MapPin, Instagram, MessageCircle, Clock, Shield, Award } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Link, useLocation } from 'react-router-dom';
@@ -39,10 +39,10 @@ const Footer = () => {
     { label: 'Inicio', href: '/' },
     { label: 'Sobre Mí', href: '/sobre-mi' },
     { label: 'Enfoque', href: '/habilidades' },
-    { label: 'Terapia Individual', href: '/proyectos' },
+    { label: 'Terapia Individual', href: '/individual-therapy' },
     { label: 'Terapia de Pareja', href: '/couples-therapy' },
     { label: 'Testimonios', href: '/experiencia' },
-    { label: 'Preguntas Frecuentes', href: '/contacto' },
+    { label: 'Contacto', href: '/contacto' },
   ];
 
   const services = [
@@ -57,8 +57,8 @@ const Footer = () => {
   const contactInfo = [
     { 
       icon: Phone, 
-      label: '+57 311 557 8592',
-      href: 'https://wa.me/573115578592',
+      label: '+57 311 836 1642',
+      href: 'https://wa.me/573118361642',
       description: 'WhatsApp disponible'
     },
     { 
@@ -77,7 +77,7 @@ const Footer = () => {
       icon: Clock, 
       label: 'Lun - Vie: 8AM - 6PM',
       href: '/contacto',
-      description: 'Horario de atención'
+      description: 'Sáb: 8AM - 12PM'
     },
   ];
 
@@ -89,16 +89,20 @@ const Footer = () => {
       color: 'hover:text-terracota'
     },
     { 
-      icon: Linkedin, 
-      href: '#', 
-      label: 'LinkedIn',
-      color: 'hover:text-steel-blue'
-    },
-    { 
       icon: MessageCircle, 
-      href: 'https://wa.me/573115578592', 
+      href: 'https://wa.me/573118361642', 
       label: 'WhatsApp',
       color: 'hover:text-sage'
+    },
+    { 
+      icon: () => (
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-4.59v13.59a2.83 2.83 0 0 1-5.66 0 2.83 2.83 0 0 1 2.83-2.83c.28 0 .56.04.83.1V9.76a6.54 6.54 0 0 0-1.83-.25 6.59 6.59 0 0 0-6.59 6.59 6.59 6.59 0 0 0 13.18 0V9.69a8.48 8.48 0 0 0 5.77 2.26V8.35a4.79 4.79 0 0 1-0.17-1.66z"/>
+        </svg>
+      ), 
+      href: 'https://tiktok.com/@patriciarojaspsicologa', 
+      label: 'TikTok',
+      color: 'hover:text-steel-blue'
     },
   ];
 
@@ -138,8 +142,8 @@ const Footer = () => {
                 </svg>
               </motion.div>
               <div>
-                <h3 className="text-2xl font-bold">Patricia Rojas R.</h3>
-                <p className="text-primary-foreground/80">Psicóloga Clínica</p>
+                <h3 className="text-2xl font-bold">Patricia Rojas</h3>
+                <p className="text-primary-foreground/80">Psicóloga Master - Especializada en Terapia Individual y de Parejas</p>
               </div>
             </div>
             
@@ -294,7 +298,7 @@ const Footer = () => {
               className="text-primary-foreground/80 text-sm flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-4"
             >
               <div className="flex items-center">
-                <span>© {currentYear} Patricia Rojas R.</span>
+                <span>© {currentYear} Patricia Rojas Psicóloga</span>
                 <Heart size={16} className="mx-2 text-red-400" fill="currentColor" />
                 <span>Todos los derechos reservados</span>
               </div>
@@ -352,7 +356,7 @@ const Footer = () => {
           className="mt-6 text-center text-xs text-primary-foreground/60"
         >
           <p>
-            Patricia Rojas R. - Psicóloga • Registro Profesional Vigente • 
+            Patricia Rojas Psicóloga - Terapia Individual y de Parejas • Registro Profesional Vigente • 
             Sesiones bajo estricta confidencialidad según normativa de salud mental
           </p>
         </motion.div>

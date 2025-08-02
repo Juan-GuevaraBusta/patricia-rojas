@@ -28,7 +28,7 @@ const Header = () => {
     { label: 'Testimonios', href: '/experiencia' },
     { label: 'Terapia Individual', href: '/individual-therapy' },
     { label: 'Terapia de Pareja', href: '/couples-therapy' },
-    { label: 'Contacto', href: '/contacto' },
+    { label: 'Preguntas Frecuentes', href: '/contacto' },
   ];
 
   // Función para obtener las clases de color según la página y estado de scroll

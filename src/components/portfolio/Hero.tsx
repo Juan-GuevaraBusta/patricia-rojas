@@ -30,15 +30,15 @@ const Hero = () => {
     { number: '25+', label: 'Años de experiencia', icon: Award },
     { number: '15+', label: 'Años en psicoterapia', icon: Target },
     { number: '100%', label: 'Confidencialidad', icon: MapPin },
-    { number: '24/7', label: 'Disponibilidad online', icon: Clock },
+    { number: 'Presencial y Virtual', label: 'Modalidades', icon: Clock },
   ];
 
   const contactInfo = [
     {
       icon: Phone,
       title: 'WhatsApp',
-      value: '+57 311 557 8592',
-      link: 'https://wa.me/573115578592'
+      value: '+57 311 836 1642',
+      link: 'https://wa.me/573118361642'
     },
     {
       icon: Mail,
@@ -141,7 +141,7 @@ const Hero = () => {
             className="mb-12"
           >
             <p className="text-xl md:text-2xl text-steel-blue mb-6 font-bold">
-              Psicóloga Master especializada en terapia de pareja y terapia individual con jóvenes y adultos
+              Psicóloga Master Especializada en Terapia Individual y de Parejas
             </p>
             <p className="text-lg text-steel-blue max-w-3xl mx-auto leading-relaxed font-semibold">
               Te acompaño en tu proceso de crecimiento personal y bienestar emocional a sanar tus relaciones y reconectar contigo mismo.
@@ -150,29 +150,14 @@ const Hero = () => {
 
           <motion.div
             variants={itemVariants}
-            className="flex flex-col sm:flex-row gap-4 justify-center mb-16"
+            className="flex justify-center mb-16"
           >
-            <Button 
-              size="lg" 
-              className="bg-terracota hover:bg-terracota/90 text-white shadow-hover hover:shadow-glow transition-all duration-300"
-              asChild
-            >
-              <Link to="/individual-therapy">
-                <User className="w-5 h-5 mr-2" />
-                Terapia Individual
-              </Link>
-            </Button>
-            <Button 
-              variant="outline" 
-              size="lg"
-              className="border-steel-blue text-steel-blue hover:bg-steel-blue hover:text-white"
-              asChild
-            >
-              <Link to="/couples-therapy">
-                <Heart className="w-5 h-5 mr-2" />
-                Terapia de Pareja
-              </Link>
-            </Button>
+            <a href="https://wa.me/573118361642" target="_blank" rel="noopener noreferrer">
+              <Button size="lg" className="bg-terracota hover:bg-terracota/90 text-white shadow-hover hover:shadow-glow">
+                <Calendar className="w-5 h-5 mr-2" />
+                Agendar Primera Sesión
+              </Button>
+            </a>
           </motion.div>
         </motion.div>
       </section>
@@ -324,6 +309,18 @@ const Hero = () => {
                     <p className="text-sm text-muted-foreground">
                       {contact.value}
                     </p>
+                    {contact.link.startsWith('http') || contact.link.startsWith('mailto:') ? (
+                      <a 
+                        href={contact.link} 
+                        target={contact.link.startsWith('http') ? '_blank' : '_self'}
+                        rel={contact.link.startsWith('http') ? 'noopener noreferrer' : ''}
+                        className="inline-block mt-3"
+                      >
+                        <Button variant="outline" size="sm">
+                          Contactar
+                        </Button>
+                      </a>
+                    ) : null}
                   </CardContent>
                 </Card>
               </motion.div>
@@ -331,22 +328,13 @@ const Hero = () => {
           </div>
 
           <motion.div variants={itemVariants} className="text-center">
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-terracota hover:bg-terracota/90 text-white shadow-hover hover:shadow-glow">
-                <Calendar className="w-5 h-5 mr-2" />
-                Agendar Sesión
-              </Button>
-              <Button 
-                variant="outline" 
-                size="lg"
-                className="border-steel-blue text-steel-blue hover:bg-steel-blue hover:text-white"
-                asChild
-              >
-                <Link to="/contacto">
-                  <Mail className="w-5 h-5 mr-2" />
-                  Más información
-                </Link>
-              </Button>
+            <div className="flex justify-center">
+              <a href="https://wa.me/573118361642" target="_blank" rel="noopener noreferrer">
+                <Button size="lg" className="bg-terracota hover:bg-terracota/90 text-white shadow-hover hover:shadow-glow">
+                  <Calendar className="w-5 h-5 mr-2" />
+                  Agendar Primera Sesión
+                </Button>
+              </a>
             </div>
           </motion.div>
         </motion.div>
