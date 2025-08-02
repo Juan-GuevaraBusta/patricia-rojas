@@ -56,8 +56,8 @@ const App = () => (
           <Route path="/experiencia" element={<PageLayout><Experience /></PageLayout>} />
           <Route path="/contacto" element={<PageLayout><Contact /></PageLayout>} />
           <Route path="/enfoques-terapeuticos" element={<PageLayout><TherapeuticApproaches /></PageLayout>} />
-          <Route path="/individual-therapy" element={<IndividualTherapy />} />
-          <Route path="/couples-therapy" element={<CouplesTherapy />} />
+          <Route path="/individual-therapy" element={<PageLayout><IndividualTherapy/></PageLayout>} />
+          <Route path="/couples-therapy" element={<PageLayout><CouplesTherapy /></PageLayout>} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

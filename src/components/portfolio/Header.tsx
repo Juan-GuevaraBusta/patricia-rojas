@@ -24,7 +24,7 @@ const Header = () => {
     { label: 'Inicio', href: '/' },
     { label: 'Sobre Mí', href: '/sobre-mi' },
     { label: 'Enfoque', href: '/habilidades' },
-    { label: 'Terapia Individual', href: '/proyectos' },
+    { label: 'Terapia Individual', href: '/individual-therapy' },
     { label: 'Terapia de Pareja', href: '/couples-therapy' },
     { label: 'Testimonios', href: '/experiencia' },
     { label: 'Preguntas Frecuentes', href: '/contacto' },
