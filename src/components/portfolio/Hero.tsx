@@ -56,16 +56,34 @@ const Hero = () => {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Principal */}
+      {/* Hero Principal con Video de Fondo */}
       <section id="inicio" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
-        {/* Background Pattern with Butterfly Elements */}
-        <div className="absolute inset-0 bg-gradient-secondary opacity-10" />
+        {/* Video de Fondo */}
+        <div className="absolute inset-0 w-full h-full">
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="w-full h-full object-cover opacity-40"
+          >
+            {/* Tu video */}
+            <source src="/videos/video.mp4" type="video/mp4" />
+            {/* Fallback para navegadores que no soportan video */}
+            Tu navegador no soporta la reproducción de video.
+          </video>
+        </div>
+
+        {/* Overlay blanco para dar más opacidad blanca al video */}
+        <div className="absolute inset-0 bg-white/30" />
+        
+        {/* Elementos decorativos de fondo (mantienen la estética original) */}
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,hsl(var(--sage)/0.1),transparent_50%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_60%,hsl(var(--steel-blue)/0.1),transparent_50%)]" />
         
         {/* Floating Butterfly Elements */}
         <motion.div 
-          className="absolute top-20 right-20 opacity-20"
+          className="absolute top-20 right-20 opacity-80"
           animate={{ 
             y: [-10, 10, -10],
             rotate: [0, 5, -5, 0]
@@ -83,7 +101,7 @@ const Hero = () => {
         </motion.div>
         
         <motion.div 
-          className="absolute bottom-32 left-16 opacity-15"
+          className="absolute bottom-32 left-16 opacity-80"
           animate={{ 
             y: [10, -10, 10],
             rotate: [0, -3, 3, 0]
@@ -94,12 +112,13 @@ const Hero = () => {
             ease: "easeInOut" 
           }}
         >
-          <svg width="30" height="30" viewBox="0 0 100 100" className="text-sage">
+          <svg width="30" height="30" viewBox="0 0 100 100" className="text-terracota">
             <path d="M50 20 C30 10, 10 30, 30 50 C10 70, 30 90, 50 80 C70 90, 90 70, 70 50 C90 30, 70 10, 50 20 Z" fill="currentColor"/>
             <circle cx="50" cy="50" r="2" fill="currentColor"/>
           </svg>
         </motion.div>
 
+        {/* Contenido Principal */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -111,7 +130,7 @@ const Hero = () => {
             className="mb-8"
           >
             <h1 className="text-5xl md:text-7xl font-bold mb-6">
-              <span className="block bg-gradient-primary bg-clip-text text-transparent">
+              <span className="block text-steel-blue font-bold">
                 Soy Patricia Rojas
               </span>
             </h1>
@@ -121,10 +140,10 @@ const Hero = () => {
             variants={itemVariants}
             className="mb-12"
           >
-            <p className="text-xl md:text-2xl text-muted-foreground mb-6 font-medium">
+            <p className="text-xl md:text-2xl text-steel-blue mb-6 font-bold">
               Psicóloga Master especializada en terapia de pareja y terapia individual con jóvenes y adultos
             </p>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg text-steel-blue max-w-3xl mx-auto leading-relaxed font-semibold">
               Te acompaño en tu proceso de crecimiento personal y bienestar emocional a sanar tus relaciones y reconectar contigo mismo.
             </p>
           </motion.div>

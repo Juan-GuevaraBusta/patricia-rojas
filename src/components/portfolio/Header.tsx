@@ -8,6 +8,9 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
+  
+  // Detectar si estamos en la página de inicio
+  const isHomePage = location.pathname === '/';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,6 +29,35 @@ const Header = () => {
     { label: 'Testimonios', href: '/experiencia' },
     { label: 'Preguntas Frecuentes', href: '/contacto' },
   ];
+
+  // Función para obtener las clases de color según la página y estado de scroll
+  const getTextColorClasses = () => {
+    if (isHomePage && !isScrolled) {
+      // En home y sin scroll: texto azul steel-blue más grueso
+      return 'text-steel-blue hover:text-steel-blue/80 font-semibold';
+    } else {
+      // En otras páginas o con scroll: colores originales
+      return 'text-foreground hover:text-terracota';
+    }
+  };
+
+  const getLogoColorClasses = () => {
+    if (isHomePage && !isScrolled) {
+      // En home y sin scroll: texto azul steel-blue
+      return 'text-steel-blue font-bold';
+    } else {
+      // En otras páginas o con scroll: gradiente original
+      return 'bg-gradient-primary bg-clip-text text-transparent';
+    }
+  };
+
+  const getMenuIconColorClasses = () => {
+    if (isHomePage && !isScrolled) {
+      return 'text-steel-blue hover:text-steel-blue/80';
+    } else {
+      return 'text-foreground hover:text-terracota';
+    }
+  };
 
   return (
     <motion.header
@@ -46,12 +78,17 @@ const Header = () => {
             className="flex items-center space-x-2"
           >
             <Link to="/" className="flex items-center space-x-2">
-              {/* Butterfly SVG */}
-              <svg width="24" height="24" viewBox="0 0 100 100" className="text-terracota">
+              {/* Butterfly SVG - color dinámico */}
+              <svg 
+                width="24" 
+                height="24" 
+                viewBox="0 0 100 100" 
+                className={isHomePage && !isScrolled ? 'text-steel-blue' : 'text-terracota'}
+              >
                 <path d="M50 20 C30 10, 10 30, 30 50 C10 70, 30 90, 50 80 C70 90, 90 70, 70 50 C90 30, 70 10, 50 20 Z" fill="currentColor"/>
                 <circle cx="50" cy="50" r="3" fill="currentColor"/>
               </svg>
-              <span className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent">
+              <span className={`text-2xl font-bold ${getLogoColorClasses()}`}>
                 Patricia Rojas
               </span>
             </Link>
@@ -71,8 +108,8 @@ const Header = () => {
                   to={item.href}
                   className={`font-medium transition-colors duration-300 ${
                     location.pathname === item.href
-                      ? 'text-terracota'
-                      : 'text-foreground hover:text-terracota'
+                      ? (isHomePage && !isScrolled ? 'text-steel-blue font-semibold' : 'text-terracota')
+                      : getTextColorClasses()
                   }`}
                 >
                   {item.label}
@@ -85,7 +122,7 @@ const Header = () => {
           <Button
             variant="ghost"
             size="icon"
-            className="md:hidden"
+            className={`md:hidden ${getMenuIconColorClasses()}`}
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -100,7 +137,7 @@ const Header = () => {
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden mt-4 pb-4"
           >
-            <div className="flex flex-col space-y-4">
+            <div className="flex flex-col space-y-4 bg-background/95 backdrop-blur-md rounded-lg p-4 shadow-elegant">
               {navItems.map((item) => (
                 <Link
                   key={item.label}
