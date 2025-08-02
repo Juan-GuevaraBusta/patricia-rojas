@@ -16,7 +16,7 @@ const Skills = () => {
     {
       title: 'Método Gottman para Parejas',
       icon: Heart,
-      color: 'text-magenta',
+      color: 'text-terracota',
       description: 'Enfoque basado en más de 40 años de investigación científica sobre relaciones exitosas, que identifica comportamientos que predicen la estabilidad de una relación.',
       procesos: [
         'Mapas de amor',
@@ -92,7 +92,7 @@ const Skills = () => {
 
   return (
     <>
-      <section id="habilidades" className="py-20">
+      <section id="enfoque" className="py-20">
         <motion.div
           ref={ref}
           variants={containerVariants}
@@ -137,7 +137,7 @@ const Skills = () => {
                       <div className="grid gap-2">
                         {enfoque.procesos.map((proceso, i) => (
                           <div key={i} className="flex items-start">
-                            <span className="w-2 h-2 bg-accent rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                            <span className="w-2 h-2 bg-terracota rounded-full mt-2 mr-3 flex-shrink-0"></span>
                             <span className="text-sm text-muted-foreground">{proceso}</span>
                           </div>
                         ))}
@@ -148,7 +148,7 @@ const Skills = () => {
                       <h4 className="font-semibold text-foreground mb-3">Aplicaciones:</h4>
                       <div className="flex flex-wrap gap-2">
                         {enfoque.aplicaciones.map((aplicacion) => (
-                          <Badge key={aplicacion} variant="outline" className="text-xs">
+                          <Badge key={aplicacion} variant="outline" className="text-xs border-terracota text-terracota">
                             {aplicacion}
                           </Badge>
                         ))}
@@ -167,10 +167,11 @@ const Skills = () => {
                 <h3 className="text-2xl font-bold text-foreground mb-4">
                   Mi Trabajo se Desarrolla en un Espacio Seguro
                 </h3>
-                <p>Mi trabajo se desarrolla en un espacio confidencial, empático y libre de juicios, pensado para que cada persona pueda conectar con su historia, emociones y pensamientos de manera segura y auténtica.</p>
+                <div className="space-y-4 text-muted-foreground leading-relaxed">
+                  <p>Mi trabajo se desarrolla en un espacio confidencial, empático y libre de juicios, pensado para que cada persona pueda conectar con su historia, emociones y pensamientos de manera segura y auténtica.</p>
                   <p>Me enfoco en comprender y trabajar el estilo de afrontamiento de cada consultante desde un enfoque integrativo, con base sólida en la Terapia de Aceptación y Compromiso (ACT).</p>
                   <p>En parejas, integro los principios del Método Gottman, respaldado por décadas de investigación científica para construir relaciones estables y emocionalmente conectadas.</p>
-                
+                </div>
               </CardContent>
             </Card>
           </motion.div>

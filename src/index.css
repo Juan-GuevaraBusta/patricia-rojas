@@ -8,7 +8,7 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Portfolio Color Palette - Modern Design System */
+    /* Portfolio Color Palette - Modern Design System with Terracotta */
     --background: 60 8% 96%; /* #f6f6f2 - cream white */
     --foreground: 158 21% 24%; /* #3e554d - dark green */
 
@@ -30,7 +30,7 @@ All colors MUST be HSL.
     --accent: 205 31% 53%; /* #5d8aa8 - steel blue */
     --accent-foreground: 60 8% 96%; /* #f6f6f2 */
 
-    --destructive: 318 70% 55%; /* #cc25b3 - magenta */
+    --destructive: 12 76% 61%; /* #cc5e47 - terracotta for warnings */
     --destructive-foreground: 60 8% 96%; /* #f6f6f2 */
 
     --border: 145 23% 78%; /* #C5D0C3 */
@@ -44,17 +44,18 @@ All colors MUST be HSL.
     --steel-blue: 205 31% 53%; /* #5d8aa8 */
     --blue-gray: 195 18% 50%; /* #7C939B */
     --cream: 60 8% 96%; /* #f6f6f2 */
-    --magenta: 318 70% 55%; /* #cc25b3 */
+    --terracota: 12 76% 61%; /* #cc5e47 - New terracotta accent */
 
-    /* Gradients */
+    /* Gradients - Updated to include terracotta */
     --gradient-primary: linear-gradient(135deg, hsl(var(--sage-dark)), hsl(var(--steel-blue)));
     --gradient-secondary: linear-gradient(135deg, hsl(var(--sage)), hsl(var(--sage-light)));
-    --gradient-accent: linear-gradient(135deg, hsl(var(--steel-blue)), hsl(var(--magenta)));
+    --gradient-accent: linear-gradient(135deg, hsl(var(--steel-blue)), hsl(var(--terracota)));
+    --gradient-terracotta: linear-gradient(135deg, hsl(var(--terracota)), hsl(var(--sage)));
 
     /* Shadows */
     --shadow-elegant: 0 10px 30px -10px hsl(var(--sage-dark) / 0.2);
     --shadow-hover: 0 20px 40px -10px hsl(var(--steel-blue) / 0.3);
-    --shadow-glow: 0 0 40px hsl(var(--magenta) / 0.2);
+    --shadow-glow: 0 0 40px hsl(var(--terracota) / 0.2);
 
     /* Animations */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -63,47 +64,32 @@ All colors MUST be HSL.
     --radius: 0.75rem;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
   .dark {
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
-
     --card: 222.2 84% 4.9%;
     --card-foreground: 210 40% 98%;
-
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
-
     --primary: 210 40% 98%;
     --primary-foreground: 222.2 47.4% 11.2%;
-
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
-
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
-
     --accent: 217.2 32.6% 17.5%;
     --accent-foreground: 210 40% 98%;
-
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
-
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
@@ -125,5 +111,32 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+/* Custom utility classes for terracotta */
+@layer utilities {
+  .text-terracota {
+    color: hsl(var(--terracota));
+  }
+  
+  .bg-terracota {
+    background-color: hsl(var(--terracota));
+  }
+  
+  .border-terracota {
+    border-color: hsl(var(--terracota));
+  }
+  
+  .hover\:bg-terracota:hover {
+    background-color: hsl(var(--terracota));
+  }
+  
+  .hover\:text-terracota:hover {
+    color: hsl(var(--terracota));
+  }
+
+  .bg-gradient-terracotta {
+    background-image: var(--gradient-terracotta);
   }
 }

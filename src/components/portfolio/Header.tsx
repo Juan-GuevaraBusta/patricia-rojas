@@ -20,10 +20,11 @@ const Header = () => {
   const navItems = [
     { label: 'Inicio', href: '/' },
     { label: 'Sobre Mí', href: '/sobre-mi' },
-    { label: 'Habilidades', href: '/habilidades' },
-    { label: 'Proyectos', href: '/proyectos' },
-    { label: 'Experiencia', href: '/experiencia' },
-    { label: 'Contacto', href: '/contacto' },
+    { label: 'Enfoque', href: '/habilidades' },
+    { label: 'Terapia Individual', href: '/proyectos' },
+    { label: 'Terapia de Pareja', href: '/couples-therapy' },
+    { label: 'Testimonios', href: '/experiencia' },
+    { label: 'Preguntas Frecuentes', href: '/contacto' },
   ];
 
   return (
@@ -39,12 +40,21 @@ const Header = () => {
     >
       <nav className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          {/* Logo */}
+          {/* Logo with Butterfly */}
           <motion.div
             whileHover={{ scale: 1.05 }}
-            className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent"
+            className="flex items-center space-x-2"
           >
-            <Link to="/"> Patricia Rojas</Link>
+            <Link to="/" className="flex items-center space-x-2">
+              {/* Butterfly SVG */}
+              <svg width="24" height="24" viewBox="0 0 100 100" className="text-terracota">
+                <path d="M50 20 C30 10, 10 30, 30 50 C10 70, 30 90, 50 80 C70 90, 90 70, 70 50 C90 30, 70 10, 50 20 Z" fill="currentColor"/>
+                <circle cx="50" cy="50" r="3" fill="currentColor"/>
+              </svg>
+              <span className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent">
+                Patricia Rojas
+              </span>
+            </Link>
           </motion.div>
 
           {/* Desktop Navigation */}
@@ -61,8 +71,8 @@ const Header = () => {
                   to={item.href}
                   className={`font-medium transition-colors duration-300 ${
                     location.pathname === item.href
-                      ? 'text-accent'
-                      : 'text-foreground hover:text-accent'
+                      ? 'text-terracota'
+                      : 'text-foreground hover:text-terracota'
                   }`}
                 >
                   {item.label}
@@ -97,15 +107,15 @@ const Header = () => {
                   to={item.href}
                   className={`font-medium py-2 transition-colors duration-300 ${
                     location.pathname === item.href
-                      ? 'text-accent'
-                      : 'text-foreground hover:text-accent'
+                      ? 'text-terracota'
+                      : 'text-foreground hover:text-terracota'
                   }`}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.label}
                 </Link>
               ))}
-              <Button variant="default" className="bg-gradient-primary mt-4">
+              <Button variant="default" className="bg-terracota hover:bg-terracota/90 text-white mt-4">
                 Descargar CV
               </Button>
             </div>

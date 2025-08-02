@@ -20,8 +20,8 @@ const Hero = () => {
       title: "Terapia de Pareja",
       description: "Fortalecimiento de relaciones con Método Gottman",
       icon: Heart,
-      color: "text-magenta",
-      bgColor: "bg-magenta/10",
+      color: "text-terracota",
+      bgColor: "bg-terracota/10",
       link: "/couples-therapy"
     }
   ];
@@ -58,10 +58,47 @@ const Hero = () => {
     <div className="min-h-screen">
       {/* Hero Principal */}
       <section id="inicio" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
-        {/* Background Pattern */}
+        {/* Background Pattern with Butterfly Elements */}
         <div className="absolute inset-0 bg-gradient-secondary opacity-10" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,hsl(var(--magenta)/0.1),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,hsl(var(--sage)/0.1),transparent_50%)]" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_60%,hsl(var(--steel-blue)/0.1),transparent_50%)]" />
+        
+        {/* Floating Butterfly Elements */}
+        <motion.div 
+          className="absolute top-20 right-20 opacity-20"
+          animate={{ 
+            y: [-10, 10, -10],
+            rotate: [0, 5, -5, 0]
+          }}
+          transition={{ 
+            duration: 6, 
+            repeat: Infinity, 
+            ease: "easeInOut" 
+          }}
+        >
+          <svg width="40" height="40" viewBox="0 0 100 100" className="text-terracota">
+            <path d="M50 20 C30 10, 10 30, 30 50 C10 70, 30 90, 50 80 C70 90, 90 70, 70 50 C90 30, 70 10, 50 20 Z" fill="currentColor"/>
+            <circle cx="50" cy="50" r="3" fill="currentColor"/>
+          </svg>
+        </motion.div>
+        
+        <motion.div 
+          className="absolute bottom-32 left-16 opacity-15"
+          animate={{ 
+            y: [10, -10, 10],
+            rotate: [0, -3, 3, 0]
+          }}
+          transition={{ 
+            duration: 8, 
+            repeat: Infinity, 
+            ease: "easeInOut" 
+          }}
+        >
+          <svg width="30" height="30" viewBox="0 0 100 100" className="text-sage">
+            <path d="M50 20 C30 10, 10 30, 30 50 C10 70, 30 90, 50 80 C70 90, 90 70, 70 50 C90 30, 70 10, 50 20 Z" fill="currentColor"/>
+            <circle cx="50" cy="50" r="2" fill="currentColor"/>
+          </svg>
+        </motion.div>
 
         <motion.div
           variants={containerVariants}
@@ -74,9 +111,8 @@ const Hero = () => {
             className="mb-8"
           >
             <h1 className="text-5xl md:text-7xl font-bold mb-6">
-              <span className="block text-foreground">Hola, soy</span>
               <span className="block bg-gradient-primary bg-clip-text text-transparent">
-                Patricia Rojas
+                Soy Patricia Rojas
               </span>
             </h1>
           </motion.div>
@@ -85,12 +121,11 @@ const Hero = () => {
             variants={itemVariants}
             className="mb-12"
           >
-            <p className="text-xl md:text-2xl text-muted-foreground mb-4">
-              Psicóloga Clínica
+            <p className="text-xl md:text-2xl text-muted-foreground mb-6 font-medium">
+              Psicóloga Master especializada en terapia de pareja y terapia individual con jóvenes y adultos
             </p>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              Te acompaño en tu proceso de crecimiento personal y bienestar emocional.
-              Especializada en terapia individual y de pareja con enfoque humanista.
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+              Te acompaño en tu proceso de crecimiento personal y bienestar emocional a sanar tus relaciones y reconectar contigo mismo.
             </p>
           </motion.div>
 
@@ -100,7 +135,7 @@ const Hero = () => {
           >
             <Button 
               size="lg" 
-              className="bg-gradient-primary shadow-hover hover:shadow-glow transition-all duration-300"
+              className="bg-terracota hover:bg-terracota/90 text-white shadow-hover hover:shadow-glow transition-all duration-300"
               asChild
             >
               <Link to="/individual-therapy">
@@ -111,7 +146,7 @@ const Hero = () => {
             <Button 
               variant="outline" 
               size="lg"
-              className="border-accent text-accent hover:bg-accent hover:text-accent-foreground"
+              className="border-steel-blue text-steel-blue hover:bg-steel-blue hover:text-white"
               asChild
             >
               <Link to="/couples-therapy">
@@ -168,7 +203,7 @@ const Hero = () => {
                       {service.description}
                     </p>
                     <Button 
-                      className="bg-gradient-primary shadow-hover hover:shadow-glow"
+                      className="bg-terracota hover:bg-terracota/90 text-white shadow-hover hover:shadow-glow"
                       asChild
                     >
                       <Link to={service.link}>
@@ -211,7 +246,7 @@ const Hero = () => {
               >
                 <Card className="p-6 shadow-elegant hover:shadow-hover transition-all duration-300">
                   <CardContent className="p-0">
-                    <stat.icon size={32} className="text-accent mx-auto mb-4" />
+                    <stat.icon size={32} className="text-terracota mx-auto mb-4" />
                     <div className="text-3xl font-bold text-foreground mb-2">
                       {stat.number}
                     </div>
@@ -260,7 +295,7 @@ const Hero = () => {
                   <CardContent className="p-6 text-center">
                     <motion.div
                       whileHover={{ scale: 1.1, rotate: 5 }}
-                      className="inline-flex p-3 rounded-full bg-accent/10 text-accent mb-4"
+                      className="inline-flex p-3 rounded-full bg-terracota/10 text-terracota mb-4"
                     >
                       <contact.icon size={24} />
                     </motion.div>
@@ -278,14 +313,14 @@ const Hero = () => {
 
           <motion.div variants={itemVariants} className="text-center">
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" className="bg-gradient-primary shadow-hover hover:shadow-glow">
+              <Button size="lg" className="bg-terracota hover:bg-terracota/90 text-white shadow-hover hover:shadow-glow">
                 <Calendar className="w-5 h-5 mr-2" />
                 Agendar Sesión
               </Button>
               <Button 
                 variant="outline" 
                 size="lg"
-                className="border-accent text-accent hover:bg-accent hover:text-accent-foreground"
+                className="border-steel-blue text-steel-blue hover:bg-steel-blue hover:text-white"
                 asChild
               >
                 <Link to="/contacto">

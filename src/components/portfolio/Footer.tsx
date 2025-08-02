@@ -38,10 +38,11 @@ const Footer = () => {
   const quickLinks = [
     { label: 'Inicio', href: '/' },
     { label: 'Sobre Mí', href: '/sobre-mi' },
-    { label: 'Habilidades', href: '/habilidades' },
-    { label: 'Proyectos', href: '/proyectos' },
-    { label: 'Experiencia', href: '/experiencia' },
-    { label: 'Contacto', href: '/contacto' },
+    { label: 'Enfoque', href: '/habilidades' },
+    { label: 'Terapia Individual', href: '/proyectos' },
+    { label: 'Terapia de Pareja', href: '/couples-therapy' },
+    { label: 'Testimonios', href: '/experiencia' },
+    { label: 'Preguntas Frecuentes', href: '/contacto' },
   ];
 
   const services = [
@@ -85,7 +86,7 @@ const Footer = () => {
       icon: Instagram, 
       href: 'https://instagram.com/patriciarojaspsicologa', 
       label: 'Instagram',
-      color: 'hover:text-magenta'
+      color: 'hover:text-terracota'
     },
     { 
       icon: Linkedin, 
@@ -112,8 +113,8 @@ const Footer = () => {
     <footer className="bg-primary text-primary-foreground relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-gradient-primary opacity-95" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_80%,hsl(var(--accent)/0.1),transparent_50%)]" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_20%,hsl(var(--magenta)/0.1),transparent_50%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_80%,hsl(var(--terracota)/0.1),transparent_50%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_20%,hsl(var(--steel-blue)/0.1),transparent_50%)]" />
       
       <div className="container mx-auto px-6 py-12 relative z-10">
         {/* Main Footer Content */}
@@ -130,7 +131,11 @@ const Footer = () => {
                 whileHover={{ scale: 1.1, rotate: 5 }}
                 className="p-3 rounded-full bg-white/20 backdrop-blur-sm"
               >
-                <Heart className="w-8 h-8 text-white" />
+                {/* Butterfly SVG Icon */}
+                <svg width="32" height="32" viewBox="0 0 100 100" className="text-white">
+                  <path d="M50 20 C30 10, 10 30, 30 50 C10 70, 30 90, 50 80 C70 90, 90 70, 70 50 C90 30, 70 10, 50 20 Z" fill="currentColor"/>
+                  <circle cx="50" cy="50" r="3" fill="currentColor"/>
+                </svg>
               </motion.div>
               <div>
                 <h3 className="text-2xl font-bold">Patricia Rojas R.</h3>
@@ -353,31 +358,42 @@ const Footer = () => {
         </motion.div>
       </div>
 
-      {/* Floating decoration elements */}
+      {/* Floating decoration elements with butterflies */}
       <motion.div
         animate={{ 
           y: [-20, 20, -20],
-          opacity: [0.3, 0.6, 0.3]
-        }}
-        transition={{ 
-          duration: 4, 
-          repeat: Infinity, 
-          ease: "easeInOut" 
-        }}
-        className="absolute top-10 right-10 w-12 h-12 rounded-full bg-white/10"
-      />
-      <motion.div
-        animate={{ 
-          y: [20, -20, 20],
-          opacity: [0.2, 0.5, 0.2]
+          opacity: [0.3, 0.6, 0.3],
+          rotate: [0, 5, -5, 0]
         }}
         transition={{ 
           duration: 6, 
           repeat: Infinity, 
           ease: "easeInOut" 
         }}
-        className="absolute bottom-20 left-20 w-8 h-8 rounded-full bg-white/10"
-      />
+        className="absolute top-10 right-10"
+      >
+        <svg width="24" height="24" viewBox="0 0 100 100" className="text-white/20">
+          <path d="M50 20 C30 10, 10 30, 30 50 C10 70, 30 90, 50 80 C70 90, 90 70, 70 50 C90 30, 70 10, 50 20 Z" fill="currentColor"/>
+        </svg>
+      </motion.div>
+      
+      <motion.div
+        animate={{ 
+          y: [20, -20, 20],
+          opacity: [0.2, 0.5, 0.2],
+          rotate: [0, -3, 3, 0]
+        }}
+        transition={{ 
+          duration: 8, 
+          repeat: Infinity, 
+          ease: "easeInOut" 
+        }}
+        className="absolute bottom-20 left-20"
+      >
+        <svg width="18" height="18" viewBox="0 0 100 100" className="text-white/15">
+          <path d="M50 20 C30 10, 10 30, 30 50 C10 70, 30 90, 50 80 C70 90, 90 70, 70 50 C90 30, 70 10, 50 20 Z" fill="currentColor"/>
+        </svg>
+      </motion.div>
     </footer>
   );
 };

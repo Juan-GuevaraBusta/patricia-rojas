@@ -13,7 +13,6 @@ const About = () => {
     triggerOnce: true,
   });
   const navigate = useNavigate();
-  console.log("About component rendering");
 
   const stats = [
     { icon: Award, number: '25+', label: 'Años de experiencia' },
@@ -58,12 +57,13 @@ const About = () => {
               <CardContent className="p-0">
                 <div className="aspect-square bg-gradient-secondary relative">
                   <div className="absolute inset-0 flex items-center justify-center">
-                    {/* Reemplaza el placeholder con una imagen real si es necesario */}
-                    <img
-                      src="/path/to/profile-image.jpg"
-                      alt="Patricia Rojas R."
-                      className="w-40 h-40 rounded-full object-cover shadow-hover"
-                    />
+                    {/* Butterfly placeholder for profile image */}
+                    <div className="w-40 h-40 rounded-full bg-terracota/20 flex items-center justify-center">
+                      <svg width="80" height="80" viewBox="0 0 100 100" className="text-terracota">
+                        <path d="M50 20 C30 10, 10 30, 30 50 C10 70, 30 90, 50 80 C70 90, 90 70, 70 50 C90 30, 70 10, 50 20 Z" fill="currentColor"/>
+                        <circle cx="50" cy="50" r="4" fill="currentColor"/>
+                      </svg>
+                    </div>
                   </div>
                 </div>
               </CardContent>
@@ -73,13 +73,13 @@ const About = () => {
           <motion.div variants={itemVariants} className="space-y-6">
             <div className="bg-card p-6 rounded-lg shadow-elegant border">
               <h3 className="text-2xl font-bold text-foreground mb-4 flex items-center">
-                <Heart className="mr-3 text-accent" size={24} />
+                <Heart className="mr-3 text-terracota" size={24} />
                 Mi Historia
               </h3>
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
-                  Soy <strong className="text-accent">PRR</strong>, psicóloga con una maestría en Consejería Clínica y Salud Mental 
-                  —<strong className="text-accent">reconocida Cum Laude</strong>— y más de 25 años de experiencia profesional. 
+                  Soy <strong className="text-terracota">Patricia Rojas R.</strong>, psicóloga con una maestría en Consejería Clínica y Salud Mental 
+                  —<strong className="text-terracota">reconocida Cum Laude</strong>— y más de 25 años de experiencia profesional. 
                   Comencé mi carrera en el ámbito organizacional, liderando procesos de selección, 
                   formación y bienestar laboral.
                 </p>
@@ -89,7 +89,7 @@ const About = () => {
                   bienestar emocional, sanar heridas del pasado y reconectar con un propósito vital.
                 </p>
                 <p>
-                  He tenido la oportunidad de vivir en <strong className="text-accent">El Salvador y Guatemala</strong>, países donde realicé 
+                  He tenido la oportunidad de vivir en <strong className="text-terracota">El Salvador y Guatemala</strong>, países donde realicé 
                   mis estudios de posgrado. Estas vivencias personales y profesionales ampliaron mi 
                   perspectiva y enriquecieron mi comprensión de la diversidad humana y sus realidades.
                 </p>
@@ -98,7 +98,7 @@ const About = () => {
                   personales profundos. Algunos los he superado con éxito, otros han sido fuente de 
                   aprendizaje y crecimiento. He conocido la frustración, la pérdida, pero también la 
                   alegría y la gratitud. Estas experiencias han fortalecido mi empatía, sensibilidad 
-                  y la convicción de que <strong className="text-accent">sanar es posible</strong> y que toda persona puede reconectarse 
+                  y la convicción de que <strong className="text-terracota">sanar es posible</strong> y que toda persona puede reconectarse 
                   con lo que realmente importa.
                 </p>
               </div>
@@ -106,12 +106,12 @@ const About = () => {
 
             <div className="bg-card p-6 rounded-lg shadow-elegant border">
               <h4 className="text-lg font-semibold text-foreground mb-4 flex items-center">
-                <Target className="mr-2 text-accent" size={20} />
+                <Target className="mr-2 text-terracota" size={20} />
                 Mi Propósito
               </h4>
               <p className="text-muted-foreground leading-relaxed">
                 Mi propósito es ayudarte a transformar lo que estás viviendo hoy y a descubrir 
-                nuevas formas de afrontar tu vida o tu relación. Ofrezco <strong className="text-accent">sesiones presenciales y 
+                nuevas formas de afrontar tu vida o tu relación. Ofrezco <strong className="text-terracota">sesiones presenciales y 
                 virtuales</strong>, personalizadas y empáticas, donde podrás desarrollar herramientas para 
                 comunicarte con claridad, establecer límites saludables y tomar decisiones alineadas 
                 con tus verdaderas necesidades.
@@ -132,7 +132,7 @@ const About = () => {
               >
                 <Card className="p-6 shadow-elegant hover:shadow-hover transition-all duration-300">
                   <CardContent className="p-0">
-                    <stat.icon size={32} className="text-accent mx-auto mb-4" />
+                    <stat.icon size={32} className="text-terracota mx-auto mb-4" />
                     <div className="text-3xl font-bold text-foreground mb-2">
                       {stat.number}
                     </div>
@@ -146,61 +146,12 @@ const About = () => {
           </div>
         </motion.div>
 
-        {/* Formato de Sesiones */}
-        <motion.div variants={itemVariants} className="mb-16">
-          <Card className="shadow-elegant">
-            <CardHeader>
-              <CardTitle className="text-2xl text-center flex items-center justify-center">
-                <Target className="mr-3 text-accent" size={28} />
-                Formato de las Sesiones
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="grid md:grid-cols-3 gap-6">
-                <div className="bg-card p-4 rounded-lg shadow-hover border-l-4 border-accent">
-                  <div className="flex items-center gap-3 mb-2">
-                    <div className="w-3 h-3 bg-accent rounded-full"></div>
-                    <span className="font-medium text-foreground">Modalidad:</span>
-                  </div>
-                  <span className="text-muted-foreground">Presencial u Online</span>
-                </div>
-                <div className="bg-card p-4 rounded-lg shadow-hover border-l-4 border-accent">
-                  <div className="flex items-center gap-3 mb-2">
-                    <div className="w-3 h-3 bg-accent rounded-full"></div>
-                    <span className="font-medium text-foreground">Frecuencia:</span>
-                  </div>
-                  <span className="text-muted-foreground">Una vez por semana es lo más recomendable, aunque puede ajustarse a cada situación</span>
-                </div>
-                <div className="bg-card p-4 rounded-lg shadow-hover border-l-4 border-accent">
-                  <div className="flex items-center gap-3 mb-2">
-                    <div className="w-3 h-3 bg-accent rounded-full"></div>
-                    <span className="font-medium text-foreground">Duración:</span>
-                  </div>
-                  <span className="text-muted-foreground">50 minutos por sesión</span>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </motion.div>
-
-        {/* Testimonio */}
-        <motion.div variants={itemVariants} className="mb-16">
-          <Card className="shadow-elegant bg-gradient-secondary">
-            <CardContent className="p-8 text-center">
-              <blockquote className="text-lg italic text-sage-dark mb-4">
-                "Me ayudó a comprender mi ansiedad y a conectarme con mis objetivos de vida."
-              </blockquote>
-              <cite className="text-muted-foreground">— Paciente, 2025</cite>
-            </CardContent>
-          </Card>
-        </motion.div>
-
         {/* Formación Complementaria */}
         <motion.div variants={itemVariants} className="mb-16">
           <Card className="shadow-elegant bg-gradient-to-br from-background to-muted/20">
             <CardHeader className="text-center">
               <CardTitle className="text-2xl flex items-center justify-center">
-                <Book className="mr-3 text-accent" size={28} />
+                <Book className="mr-3 text-terracota" size={28} />
                 Formación Complementaria
               </CardTitle>
               <p className="text-muted-foreground mt-4 max-w-3xl mx-auto">
@@ -216,24 +167,24 @@ const About = () => {
                     key={index} 
                     variants={itemVariants}
                     whileHover={{ scale: 1.02 }}
-                    className="bg-card p-4 rounded-lg shadow-hover border-l-4 border-accent"
+                    className="bg-card p-4 rounded-lg shadow-hover border-l-4 border-terracota"
                   >
                     <div className="flex items-start">
-                      <div className="w-3 h-3 bg-accent rounded-full mt-1 mr-3 flex-shrink-0"></div>
+                      <div className="w-3 h-3 bg-terracota rounded-full mt-1 mr-3 flex-shrink-0"></div>
                       <span className="text-muted-foreground font-medium">{formacion}</span>
                     </div>
                   </motion.div>
                 ))}
               </div>
               
-              <div className="mt-8 p-6 bg-accent/10 rounded-lg border border-accent/20">
+              <div className="mt-8 p-6 bg-terracota/10 rounded-lg border border-terracota/20">
                 <div className="flex items-center justify-center mb-4">
-                  <Award className="text-accent mr-2" size={24} />
-                  <span className="text-accent font-semibold">Especialización Reconocida</span>
+                  <Award className="text-terracota mr-2" size={24} />
+                  <span className="text-terracota font-semibold">Especialización Reconocida</span>
                 </div>
                 <p className="text-center text-muted-foreground">
                   Todas mis formaciones están respaldadas por instituciones de prestigio internacional 
-                  como el <strong className="text-accent">Instituto Gottman</strong> y la <strong className="text-accent">Universidad Pontificia Bolivariana</strong>,
+                  como el <strong className="text-terracota">Instituto Gottman</strong> y la <strong className="text-terracota">Universidad Pontificia Bolivariana</strong>,
                   garantizando la más alta calidad en mi práctica clínica.
                 </p>
               </div>
@@ -243,9 +194,9 @@ const About = () => {
 
         {/* Navegación a Enfoques Terapéuticos */}
         <motion.div variants={itemVariants} className="text-center mb-16">
-          <Card className="max-w-2xl mx-auto shadow-elegant bg-gradient-to-br from-accent/5 to-accent/10 border border-accent/20">
+          <Card className="max-w-2xl mx-auto shadow-elegant bg-gradient-to-br from-terracota/5 to-terracota/10 border border-terracota/20">
             <CardContent className="p-8">
-              <Book className="w-16 h-16 text-accent mx-auto mb-6" />
+              <Book className="w-16 h-16 text-terracota mx-auto mb-6" />
               <h3 className="text-2xl font-bold text-foreground mb-4">
                 ¿Quieres conocer mis enfoques terapéuticos?
               </h3>
@@ -259,7 +210,7 @@ const About = () => {
               >
                 <Button
                   onClick={handleNavigateToApproaches}
-                  className="bg-accent text-primary-foreground px-8 py-3 rounded-lg font-medium shadow-hover hover:shadow-glow transition-all duration-300"
+                  className="bg-terracota hover:bg-terracota/90 text-white px-8 py-3 rounded-lg font-medium shadow-hover hover:shadow-glow transition-all duration-300"
                 >
                   <Book className="mr-2" size={20} />
                   Ver Enfoques Terapéuticos
@@ -285,7 +236,7 @@ const About = () => {
               <motion.button
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="bg-gradient-primary text-primary-foreground px-8 py-3 rounded-lg font-medium shadow-hover hover:shadow-glow transition-all duration-300"
+                className="bg-terracota hover:bg-terracota/90 text-white px-8 py-3 rounded-lg font-medium shadow-hover hover:shadow-glow transition-all duration-300"
               >
                 Agenda tu primera sesión
               </motion.button>
