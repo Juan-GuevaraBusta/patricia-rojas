@@ -9,19 +9,15 @@ import { containerVariants, itemVariants } from '@/utils/animations';
 const Hero = () => {
   const services = [
     {
-      title: "Terapia Individual",
-      description: "Acompañamiento en ansiedad, depresión, duelos, crecimiento personal",
-      icon: User,
-      color: "text-steel-blue",
-      bgColor: "bg-steel-blue/10",
+      title: "TERAPIA INDIVIDUAL",
+      description: "El objetivo es ayudar al paciente a lograr un mejor conocimiento de si mismo, ayudándolo a entender sus emociones y pensamientos.",
+      image: "/images/terapia-individual.jpg", // Ruta de la imagen
       link: "/individual-therapy"
     },
     {
-      title: "Terapia de Pareja",
-      description: "Fortalecimiento de relaciones con Método Gottman",
-      icon: Heart,
-      color: "text-steel-blue",
-      bgColor: "bg-steel-blue/10",
+      title: "TERAPIA DE PAREJA",
+      description: "Si las discusiones van a más, si sentís la distancia emocional entre ambos o pensáis en separaros.",
+      image: "/images/terapia-pareja.jpg", // Ruta de la imagen
       link: "/couples-therapy"
     }
   ];
@@ -57,7 +53,7 @@ const Hero = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Principal con Fondo Limpio */}
-      <section id="inicio" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
+      <section id="inicio" className="min-h-screen flex items-center justify-center relative overflow-hidden">
         {/* Fondo limpio con gradiente sutil */}
         <div className="absolute inset-0 bg-gradient-to-br from-sage-light/20 via-white to-steel-blue/10" />
         
@@ -72,28 +68,28 @@ const Hero = () => {
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="container mx-auto px-6 relative z-10"
+          className="relative z-10 w-full"
         >
-          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-[80vh]">
+          <div className="grid lg:grid-cols-2 items-center min-h-screen">
             {/* Columna Izquierda - Video */}
             <motion.div
               variants={itemVariants}
-              className="order-2 lg:order-1"
+              className="order-2 lg:order-1 h-[50vh] lg:h-screen"
             >
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl h-[400px] md:h-[500px]">
+              <div className="relative h-full w-full">
                 <video
                   autoPlay
                   muted
                   loop
                   playsInline
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover opacity-25"
                 >
                   <source src="/videos/video.mp4" type="video/mp4" />
                   Tu navegador no soporta la reproducción de video.
                 </video>
                 {/* Overlay con mensaje en la parte inferior izquierda */}
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent p-4 md:p-6">
-                  <p className="text-white text-base md:text-lg font-medium leading-relaxed">
+                <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6">
+                  <p className="text-steel-blue text-base md:text-lg font-semibold leading-relaxed">
                     Te acompaño en tu proceso de crecimiento personal y bienestar emocional a sanar tus relaciones y reconectar contigo mismo.
                   </p>
                 </div>
@@ -103,7 +99,7 @@ const Hero = () => {
             {/* Columna Derecha - Contenido */}
             <motion.div
               variants={itemVariants}
-              className="order-1 lg:order-2 text-center lg:text-left h-[400px] md:h-[500px] flex flex-col justify-center"
+              className="order-1 lg:order-2 text-center lg:text-left h-[50vh] lg:h-screen flex flex-col justify-center px-6 lg:px-12"
             >
               <motion.div
                 variants={itemVariants}
@@ -186,26 +182,52 @@ const Hero = () => {
                 whileHover={{ y: -5, scale: 1.02 }}
                 className="h-full"
               >
-                <Card className="h-full shadow-elegant hover:shadow-hover transition-all duration-300">
-                  <CardContent className="p-8 text-center">
-                    <motion.div
-                      whileHover={{ rotate: 5, scale: 1.1 }}
-                      className={`inline-flex p-4 rounded-full ${service.bgColor} ${service.color} mb-6`}
+                <Card className="h-full shadow-elegant hover:shadow-hover transition-all duration-300 overflow-hidden flex flex-col">
+                  {/* Imagen superior - altura fija */}
+                  <div className="relative h-48 overflow-hidden flex-shrink-0">
+                    <img
+                      src={service.image}
+                      alt={service.title}
+                      className="w-full h-full object-cover"
+                      onError={(e) => {
+                        // Fallback si la imagen no carga - mostrar placeholder
+                        const target = e.currentTarget as HTMLImageElement;
+                        target.style.display = 'none';
+                        const placeholder = target.nextElementSibling as HTMLElement;
+                        if (placeholder) {
+                          placeholder.style.display = 'flex';
+                        }
+                      }}
+                    />
+                    {/* Placeholder si no hay imagen */}
+                    <div 
+                      className="w-full h-full bg-gradient-to-br from-sage-light to-steel-blue/20 flex items-center justify-center"
+                      style={{ display: 'none' }}
                     >
-                      <service.icon size={32} />
-                    </motion.div>
-                    <h3 className="text-2xl font-bold text-foreground mb-4">
-                      {service.title}
-                    </h3>
-                    <p className="text-muted-foreground mb-6 leading-relaxed">
-                      {service.description}
-                    </p>
+                      <div className="text-center text-sage-dark">
+                        <div className="text-4xl mb-2">📷</div>
+                        <p className="text-sm">Imagen no disponible</p>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Contenido inferior - altura flexible pero mínima */}
+                  <CardContent className="p-6 text-center flex-1 flex flex-col justify-between">
+                    <div>
+                      <h3 className="text-xl font-bold text-foreground mb-4">
+                        {service.title}
+                      </h3>
+                      <p className="text-muted-foreground mb-6 leading-relaxed text-sm">
+                        {service.description}
+                      </p>
+                    </div>
                     <Button 
-                      className="bg-sage hover:bg-sage/90 text-white shadow-hover hover:shadow-glow"
+                      variant="outline"
+                      className="border-sage text-sage hover:bg-sage hover:text-white transition-all duration-300 self-center"
                       asChild
                     >
                       <Link to={service.link}>
-                        Conocer más
+                        Informate aquí →
                       </Link>
                     </Button>
                   </CardContent>
@@ -242,7 +264,7 @@ const Hero = () => {
                 whileHover={{ scale: 1.05 }}
                 className="text-center"
               >
-                <Card className="p-6 shadow-elegant hover:shadow-hover transition-all duration-300">
+                <Card className="h-32 shadow-elegant hover:shadow-hover transition-all duration-300 flex flex-col justify-center">
                   <CardContent className="p-0">
                     <stat.icon size={32} className="text-steel-blue mx-auto mb-4" />
                     <div className="text-3xl font-bold text-foreground mb-2">
@@ -273,7 +295,7 @@ const Hero = () => {
               <Calendar className="w-4 h-4 mr-2" />
               Contacto
             </Badge>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-primary bg-clip-text text-transparent">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-sage-dark">
               Comienza tu proceso hoy
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
@@ -289,7 +311,7 @@ const Hero = () => {
                 variants={itemVariants}
                 whileHover={{ y: -5 }}
               >
-                <Card className="shadow-elegant hover:shadow-hover transition-all duration-300">
+                <Card className="h-32 shadow-elegant hover:shadow-hover transition-all duration-300 flex flex-col justify-center">
                   <CardContent className="p-6 text-center">
                     <motion.div
                       whileHover={{ scale: 1.1, rotate: 5 }}
