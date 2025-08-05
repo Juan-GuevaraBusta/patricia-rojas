@@ -20,8 +20,8 @@ const Hero = () => {
       title: "Terapia de Pareja",
       description: "Fortalecimiento de relaciones con Método Gottman",
       icon: Heart,
-      color: "text-terracota",
-      bgColor: "bg-terracota/10",
+      color: "text-steel-blue",
+      bgColor: "bg-steel-blue/10",
       link: "/couples-therapy"
     }
   ];
@@ -56,109 +56,103 @@ const Hero = () => {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Principal con Video de Fondo */}
+      {/* Hero Principal con Fondo Limpio */}
       <section id="inicio" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
-        {/* Video de Fondo */}
-        <div className="absolute inset-0 w-full h-full">
-          <video
-            autoPlay
-            muted
-            loop
-            playsInline
-            className="w-full h-full object-cover opacity-40"
-          >
-            {/* Tu video */}
-            <source src="/videos/video.mp4" type="video/mp4" />
-            {/* Fallback para navegadores que no soportan video */}
-            Tu navegador no soporta la reproducción de video.
-          </video>
-        </div>
+        {/* Fondo limpio con gradiente sutil */}
+        <div className="absolute inset-0 bg-gradient-to-br from-sage-light/20 via-white to-steel-blue/10" />
+        
+        {/* Elementos decorativos de fondo sutiles */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,hsl(var(--sage)/0.05),transparent_50%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_60%,hsl(var(--steel-blue)/0.05),transparent_50%)]" />
+        
 
-        {/* Overlay blanco para dar más opacidad blanca al video */}
-        <div className="absolute inset-0 bg-white/30" />
-        
-        {/* Elementos decorativos de fondo (mantienen la estética original) */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,hsl(var(--sage)/0.1),transparent_50%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_60%,hsl(var(--steel-blue)/0.1),transparent_50%)]" />
-        
-        {/* Floating Butterfly Elements */}
-        <motion.div 
-          className="absolute top-20 right-20 opacity-80"
-          animate={{ 
-            y: [-10, 10, -10],
-            rotate: [0, 5, -5, 0]
-          }}
-          transition={{ 
-            duration: 6, 
-            repeat: Infinity, 
-            ease: "easeInOut" 
-          }}
-        >
-          <svg width="40" height="40" viewBox="0 0 100 100" className="text-terracota">
-            <path d="M50 20 C30 10, 10 30, 30 50 C10 70, 30 90, 50 80 C70 90, 90 70, 70 50 C90 30, 70 10, 50 20 Z" fill="currentColor"/>
-            <circle cx="50" cy="50" r="3" fill="currentColor"/>
-          </svg>
-        </motion.div>
-        
-        <motion.div 
-          className="absolute bottom-32 left-16 opacity-80"
-          animate={{ 
-            y: [10, -10, 10],
-            rotate: [0, -3, 3, 0]
-          }}
-          transition={{ 
-            duration: 8, 
-            repeat: Infinity, 
-            ease: "easeInOut" 
-          }}
-        >
-          <svg width="30" height="30" viewBox="0 0 100 100" className="text-terracota">
-            <path d="M50 20 C30 10, 10 30, 30 50 C10 70, 30 90, 50 80 C70 90, 90 70, 70 50 C90 30, 70 10, 50 20 Z" fill="currentColor"/>
-            <circle cx="50" cy="50" r="2" fill="currentColor"/>
-          </svg>
-        </motion.div>
 
-        {/* Contenido Principal */}
+        {/* Contenido Principal - Layout de dos columnas */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="container mx-auto px-6 text-center relative z-10"
+          className="container mx-auto px-6 relative z-10"
         >
-          <motion.div
-            variants={itemVariants}
-            className="mb-8"
-          >
-            <h1 className="text-5xl md:text-7xl font-bold mb-6">
-              <span className="block text-steel-blue font-bold">
-                Soy Patricia Rojas
-              </span>
-            </h1>
-          </motion.div>
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center min-h-[80vh]">
+            {/* Columna Izquierda - Video */}
+            <motion.div
+              variants={itemVariants}
+              className="order-2 lg:order-1"
+            >
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl h-[400px] md:h-[500px]">
+                <video
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  className="w-full h-full object-cover"
+                >
+                  <source src="/videos/video.mp4" type="video/mp4" />
+                  Tu navegador no soporta la reproducción de video.
+                </video>
+                {/* Overlay con mensaje en la parte inferior izquierda */}
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent p-4 md:p-6">
+                  <p className="text-white text-base md:text-lg font-medium leading-relaxed">
+                    Te acompaño en tu proceso de crecimiento personal y bienestar emocional a sanar tus relaciones y reconectar contigo mismo.
+                  </p>
+                </div>
+              </div>
+            </motion.div>
 
-          <motion.div
-            variants={itemVariants}
-            className="mb-12"
-          >
-            <p className="text-xl md:text-2xl text-steel-blue mb-6 font-bold">
-              Psicóloga Master Especializada en Terapia Individual y de Parejas
-            </p>
-            <p className="text-lg text-steel-blue max-w-3xl mx-auto leading-relaxed font-semibold">
-              Te acompaño en tu proceso de crecimiento personal y bienestar emocional a sanar tus relaciones y reconectar contigo mismo.
-            </p>
-          </motion.div>
+            {/* Columna Derecha - Contenido */}
+            <motion.div
+              variants={itemVariants}
+              className="order-1 lg:order-2 text-center lg:text-left h-[400px] md:h-[500px] flex flex-col justify-center"
+            >
+              <motion.div
+                variants={itemVariants}
+                className="mb-6 md:mb-8"
+              >
+                <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-3 md:mb-4">
+                  <span className="block text-steel-blue font-bold">
+                    Soy Patricia Rojas
+                  </span>
+                </h1>
+                <h2 className="text-xl md:text-2xl lg:text-3xl font-light text-steel-blue mb-2">
+                  Psicóloga Master Especializada en Terapia Individual y de Parejas
+                </h2>
+              </motion.div>
 
-          <motion.div
-            variants={itemVariants}
-            className="flex justify-center mb-16"
-          >
-            <a href="https://wa.me/573118361642" target="_blank" rel="noopener noreferrer">
-              <Button size="lg" className="bg-terracota hover:bg-terracota/90 text-white shadow-hover hover:shadow-glow">
-                <Calendar className="w-5 h-5 mr-2" />
-                Agendar Primera Sesión
-              </Button>
-            </a>
-          </motion.div>
+              <motion.div
+                variants={itemVariants}
+                className="mb-8 md:mb-12"
+              >
+                <p className="text-base md:text-lg lg:text-xl text-steel-blue mb-6 md:mb-8 font-semibold leading-relaxed">
+                  Te acompaño en tu proceso de crecimiento personal y bienestar emocional a sanar tus relaciones y reconectar contigo mismo.
+                </p>
+              </motion.div>
+
+              <motion.div
+                variants={itemVariants}
+                className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center lg:justify-start"
+              >
+                <Button 
+                  size="lg" 
+                  className="bg-sage hover:bg-sage/90 text-white shadow-hover hover:shadow-glow px-6 md:px-8 py-2 md:py-3 text-base md:text-lg font-medium"
+                  asChild
+                >
+                  <Link to="/individual-therapy">
+                    Terapia Individual
+                  </Link>
+                </Button>
+                <Button 
+                  size="lg" 
+                  className="bg-sage hover:bg-sage/90 text-white shadow-hover hover:shadow-glow px-6 md:px-8 py-2 md:py-3 text-base md:text-lg font-medium"
+                  asChild
+                >
+                  <Link to="/couples-therapy">
+                    Terapia de Pareja
+                  </Link>
+                </Button>
+              </motion.div>
+            </motion.div>
+          </div>
         </motion.div>
       </section>
 
@@ -207,7 +201,7 @@ const Hero = () => {
                       {service.description}
                     </p>
                     <Button 
-                      className="bg-terracota hover:bg-terracota/90 text-white shadow-hover hover:shadow-glow"
+                      className="bg-sage hover:bg-sage/90 text-white shadow-hover hover:shadow-glow"
                       asChild
                     >
                       <Link to={service.link}>
@@ -250,7 +244,7 @@ const Hero = () => {
               >
                 <Card className="p-6 shadow-elegant hover:shadow-hover transition-all duration-300">
                   <CardContent className="p-0">
-                    <stat.icon size={32} className="text-terracota mx-auto mb-4" />
+                    <stat.icon size={32} className="text-steel-blue mx-auto mb-4" />
                     <div className="text-3xl font-bold text-foreground mb-2">
                       {stat.number}
                     </div>
@@ -299,7 +293,7 @@ const Hero = () => {
                   <CardContent className="p-6 text-center">
                     <motion.div
                       whileHover={{ scale: 1.1, rotate: 5 }}
-                      className="inline-flex p-3 rounded-full bg-terracota/10 text-terracota mb-4"
+                      className="inline-flex p-3 rounded-full bg-steel-blue/10 text-steel-blue mb-4"
                     >
                       <contact.icon size={24} />
                     </motion.div>
@@ -330,7 +324,7 @@ const Hero = () => {
           <motion.div variants={itemVariants} className="text-center">
             <div className="flex justify-center">
               <a href="https://wa.me/573118361642" target="_blank" rel="noopener noreferrer">
-                <Button size="lg" className="bg-terracota hover:bg-terracota/90 text-white shadow-hover hover:shadow-glow">
+                <Button size="lg" className="bg-sage hover:bg-sage/90 text-white shadow-hover hover:shadow-glow">
                   <Calendar className="w-5 h-5 mr-2" />
                   Agendar Primera Sesión
                 </Button>

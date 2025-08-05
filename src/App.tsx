@@ -7,7 +7,6 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Portfolio from "./pages/Portfolio";
 import About from "./components/portfolio/About";
 import Skills from "./components/portfolio/Skills";
-import Projects from "./components/portfolio/Projects";
 import Experience from "./components/portfolio/Experience";
 import Contact from "./components/portfolio/Contact";
 import IndividualTherapy from "./pages/IndividualTherapy";
@@ -52,7 +51,6 @@ const App = () => (
           <Route path="/" element={<Portfolio />} />
           <Route path="/sobre-mi" element={<PageLayout><About /></PageLayout>} />
           <Route path="/habilidades" element={<PageLayout><Skills /></PageLayout>} />
-          <Route path="/proyectos" element={<PageLayout><Projects /></PageLayout>} />
           <Route path="/experiencia" element={<PageLayout><Experience /></PageLayout>} />
           <Route path="/contacto" element={<PageLayout><Contact /></PageLayout>} />
           <Route path="/enfoques-terapeuticos" element={<PageLayout><TherapeuticApproaches /></PageLayout>} />
