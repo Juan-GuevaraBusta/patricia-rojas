@@ -131,16 +131,17 @@ const Footer = () => {
             className="lg:col-span-1 space-y-6"
           >
             <div className="flex items-center space-x-3">
-              <motion.div 
+              {/* Logo Patricia Rojas */}
+              <motion.img 
+                src="/images/logo-patricia.png"
+                alt="Patricia Rojas Psicóloga"
+                className="w-10 h-10 rounded-full object-cover"
                 whileHover={{ scale: 1.1, rotate: 5 }}
-                className="p-3 rounded-full bg-white/20 backdrop-blur-sm"
-              >
-                {/* Butterfly SVG Icon */}
-                <svg width="32" height="32" viewBox="0 0 100 100" className="text-white">
-                  <path d="M50 20 C30 10, 10 30, 30 50 C10 70, 30 90, 50 80 C70 90, 90 70, 70 50 C90 30, 70 10, 50 20 Z" fill="currentColor"/>
-                  <circle cx="50" cy="50" r="3" fill="currentColor"/>
-                </svg>
-              </motion.div>
+                onError={(e) => {
+                  // Fallback si la imagen no carga
+                  e.currentTarget.style.display = 'none';
+                }}
+              />
               <div>
                 <h3 className="text-2xl font-bold">Patricia Rojas</h3>
                 <p className="text-primary-foreground/80">Psicóloga Master - Especializada en Terapia Individual y de Parejas</p>

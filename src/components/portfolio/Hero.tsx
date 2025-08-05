@@ -105,10 +105,20 @@ const Hero = () => {
                 variants={itemVariants}
                 className="mb-6 md:mb-8"
               >
-                <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-3 md:mb-4">
+                <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-3 md:mb-4 relative">
                   <span className="block text-steel-blue font-bold">
                     Soy Patricia Rojas
                   </span>
+                  {/* Imagen pequeña al noreste */}
+                  <motion.img 
+                    src="/images/logo-patricia.png"
+                    alt="Patricia Rojas"
+                    className="absolute -top-3 -right-3 w-8 h-8 rounded-full object-cover"
+                    whileHover={{ scale: 1.2, rotate: 10 }}
+                    initial={{ scale: 0 }}
+                    animate={{ scale: 1 }}
+                    transition={{ delay: 0.5 }}
+                  />
                 </h1>
                 <h2 className="text-xl md:text-2xl lg:text-3xl font-light text-steel-blue mb-2">
                   Psicóloga Master Especializada en Terapia Individual y de Parejas

@@ -7,6 +7,7 @@ import { Link, useLocation } from 'react-router-dom';
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+
   const location = useLocation();
   
   // Detectar si estamos en la página de inicio
@@ -22,12 +23,24 @@ const Header = () => {
 
   const navItems = [
     { label: 'Inicio', href: '/' },
-    { label: 'Sobre Mí', href: '/sobre-mi' },
-    { label: 'Enfoque', href: '/habilidades' },
-    { label: 'Testimonios', href: '/experiencia' },
-    { label: 'Terapia Individual', href: '/individual-therapy' },
-    { label: 'Terapia de Pareja', href: '/couples-therapy' },
-    { label: 'Preguntas Frecuentes', href: '/contacto' },
+    { 
+      label: 'Sobre Mí', 
+      href: '/sobre-mi',
+      dropdown: [
+        { label: 'Sobre Mí', href: '/sobre-mi' },
+        { label: 'Enfoque', href: '/habilidades' },
+        { label: 'Testimonios', href: '/experiencia' }
+      ]
+    },
+    { 
+      label: 'Acompañamiento', 
+      href: '/individual-therapy',
+      dropdown: [
+        { label: 'Terapia Individual', href: '/individual-therapy' },
+        { label: 'Terapia de Pareja', href: '/couples-therapy' }
+      ]
+    },
+    { label: 'Contacto', href: '/contacto' },
   ];
 
   // Función para obtener las clases de color según la página y estado de scroll
@@ -78,16 +91,17 @@ const Header = () => {
             className="flex items-center space-x-2"
           >
             <Link to="/" className="flex items-center space-x-2">
-              {/* Butterfly SVG - color dinámico */}
-              <svg 
-                width="24" 
-                height="24" 
-                viewBox="0 0 100 100" 
-                className={isHomePage && !isScrolled ? 'text-steel-blue' : 'text-steel-blue'}
-              >
-                <path d="M50 20 C30 10, 10 30, 30 50 C10 70, 30 90, 50 80 C70 90, 90 70, 70 50 C90 30, 70 10, 50 20 Z" fill="currentColor"/>
-                <circle cx="50" cy="50" r="3" fill="currentColor"/>
-              </svg>
+              {/* Logo Patricia Rojas */}
+              <motion.img 
+                src="/images/logo-patricia.png"
+                alt="Patricia Rojas Psicóloga"
+                className="w-10 h-10 rounded-full object-cover"
+                whileHover={{ scale: 1.1, rotate: 5 }}
+                onError={(e) => {
+                  // Fallback si la imagen no carga
+                  e.currentTarget.style.display = 'none';
+                }}
+              />
               <span className={`text-2xl font-bold ${getLogoColorClasses()}`}>
                 Patricia Rojas
               </span>
@@ -102,18 +116,61 @@ const Header = () => {
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
-                whileHover={{ y: -2 }}
+                className="relative group"
               >
-                <Link
-                  to={item.href}
-                  className={`font-medium transition-colors duration-300 ${
-                    location.pathname === item.href
-                      ? (isHomePage && !isScrolled ? 'text-steel-blue font-semibold' : 'text-steel-blue')
-                      : getTextColorClasses()
-                  }`}
-                >
-                  {item.label}
-                </Link>
+                {item.dropdown ? (
+                  <div className="flex items-center space-x-1 cursor-pointer">
+                    <span
+                      className={`font-medium transition-colors duration-300 ${
+                        location.pathname === item.href
+                          ? (isHomePage && !isScrolled ? 'text-steel-blue font-semibold' : 'text-steel-blue')
+                          : getTextColorClasses()
+                      }`}
+                    >
+                      {item.label}
+                    </span>
+                    <svg 
+                      className="w-4 h-4 transition-transform duration-200 group-hover:rotate-180" 
+                      fill="none" 
+                      stroke="currentColor" 
+                      viewBox="0 0 24 24"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </div>
+                ) : (
+                  <Link
+                    to={item.href}
+                    className={`font-medium transition-colors duration-300 ${
+                      location.pathname === item.href
+                        ? (isHomePage && !isScrolled ? 'text-steel-blue font-semibold' : 'text-steel-blue')
+                        : getTextColorClasses()
+                    }`}
+                  >
+                    {item.label}
+                  </Link>
+                )}
+
+                {/* Dropdown Menu */}
+                {item.dropdown && (
+                  <div className="absolute top-full left-0 mt-0 w-48 bg-white rounded-lg shadow-lg border border-sage/20 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform group-hover:translate-y-0 translate-y-[-10px]">
+                    <div className="py-2">
+                                              {item.dropdown.map((dropdownItem, dropdownIndex) => (
+                          <Link
+                            key={dropdownItem.label}
+                            to={dropdownItem.href}
+                            className={`block px-4 py-2 text-sm transition-colors duration-200 ${
+                              location.pathname === dropdownItem.href
+                                ? 'text-sage bg-sage/10'
+                                : 'text-sage-dark hover:text-sage hover:bg-sage/5'
+                            }`}
+                          >
+                            {dropdownItem.label}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  )}
               </motion.div>
             ))}
           </div>
@@ -139,18 +196,38 @@ const Header = () => {
           >
             <div className="flex flex-col space-y-4 bg-background/95 backdrop-blur-md rounded-lg p-4 shadow-elegant">
               {navItems.map((item) => (
-                <Link
-                  key={item.label}
-                  to={item.href}
-                  className={`font-medium py-2 transition-colors duration-300 ${
-                    location.pathname === item.href
-                      ? 'text-steel-blue'
-                      : 'text-foreground hover:text-steel-blue'
-                  }`}
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {item.label}
-                </Link>
+                <div key={item.label}>
+                  {item.dropdown ? (
+                    <div className="space-y-2">
+                      {item.dropdown.map((dropdownItem) => (
+                        <Link
+                          key={dropdownItem.label}
+                          to={dropdownItem.href}
+                          className={`block py-2 text-sm transition-colors duration-300 ${
+                            location.pathname === dropdownItem.href
+                              ? 'text-sage'
+                              : 'text-muted-foreground hover:text-sage'
+                          }`}
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          {dropdownItem.label}
+                        </Link>
+                      ))}
+                    </div>
+                  ) : (
+                    <Link
+                      to={item.href}
+                      className={`font-medium py-2 transition-colors duration-300 ${
+                        location.pathname === item.href
+                          ? 'text-steel-blue'
+                          : 'text-foreground hover:text-steel-blue'
+                      }`}
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      {item.label}
+                    </Link>
+                  )}
+                </div>
               ))}
               <Button variant="default" className="bg-sage hover:bg-sage/90 text-white mt-4">
                 Descargar CV
