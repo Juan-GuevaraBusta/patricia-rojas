@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link, useLocation } from 'react-router-dom';
-import Butterfly from '@/components/ui/butterfly';
+import Logo from '@/components/ui/logo';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -55,15 +55,7 @@ const Header = () => {
     }
   };
 
-  const getLogoColorClasses = () => {
-    if (isHomePage && !isScrolled) {
-      // En home y sin scroll: texto azul steel-blue
-      return 'text-steel-blue font-bold';
-    } else {
-      // En otras páginas o con scroll: gradiente original
-      return 'bg-gradient-primary bg-clip-text text-transparent';
-    }
-  };
+
 
   const getMenuIconColorClasses = () => {
     if (isHomePage && !isScrolled) {
@@ -87,23 +79,9 @@ const Header = () => {
       <nav className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <motion.div
-            whileHover={{ scale: 1.05 }}
-            className="flex items-center space-x-2 relative"
-          >
-            <Link to="/" className="flex items-center space-x-2">
-              <span className={`text-2xl font-bold ${getLogoColorClasses()} font-marcellus whitespace-nowrap relative`}>
-                Patricia Rojas
-                {/* Mariposa sobre el punto de la j */}
-                <Butterfly 
-                  className="absolute -top-1" 
-                  size={20} 
-                  position="header"
-                  style={{ transform: 'translateX(114.8px) translateY(2.5px)' }}
-                />
-              </span>
-            </Link>
-          </motion.div>
+          <Link to="/" className="flex items-center space-x-2">
+            <Logo size="lg" />
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
