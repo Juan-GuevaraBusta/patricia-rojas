@@ -1,0 +1,15 @@
+<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+  <!-- Mariposa terracota simplificada para favicon -->
+  <g>
+    <!-- Ala superior izquierda -->
+    <path d="M16 16 L8 6 Q4 10 6 14 Q8 16 16 16 Z" fill="#8B4513" />
+    <!-- Ala superior derecha -->
+    <path d="M16 16 L24 6 Q28 10 26 14 Q24 16 16 16 Z" fill="#8B4513" />
+    <!-- Ala inferior izquierda -->
+    <path d="M16 16 L8 26 Q4 22 6 18 Q8 16 16 16 Z" fill="#8B4513" />
+    <!-- Ala inferior derecha -->
+    <path d="M16 16 L24 26 Q28 22 26 18 Q24 16 16 16 Z" fill="#8B4513" />
+    <!-- Centro -->
+    <circle cx="16" cy="16" r="2" fill="#8B4513" />
+  </g>
+</svg>
