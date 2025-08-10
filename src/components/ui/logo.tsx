@@ -11,7 +11,7 @@ const Logo = ({ className = '', size = 'md' }: LogoProps) => {
       case 'sm':
         return 'h-6';
       case 'lg':
-        return 'h-12';
+        return 'h-16';
       case 'md':
       default:
         return 'h-8';
