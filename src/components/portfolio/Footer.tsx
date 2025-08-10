@@ -3,6 +3,7 @@ import { Heart, ArrowUp, Phone, Mail, MapPin, Instagram, MessageCircle, Clock, S
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Link, useLocation } from 'react-router-dom';
+import Butterfly from '@/components/ui/butterfly';
 
 const Footer = () => {
   const location = useLocation();
@@ -132,19 +133,13 @@ const Footer = () => {
           >
             <div className="flex items-center space-x-3">
               {/* Logo Patricia Rojas */}
-              <motion.img 
-                src="/images/logo-patricia.png"
-                alt="Patricia Rojas Psicóloga"
-                className="w-10 h-10 rounded-full object-cover"
-                whileHover={{ scale: 1.1, rotate: 5 }}
-                onError={(e) => {
-                  // Fallback si la imagen no carga
-                  e.currentTarget.style.display = 'none';
-                }}
-              />
-              <div>
-                <h3 className="text-2xl font-bold">Patricia Rojas</h3>
-                <p className="text-primary-foreground/80">Psicóloga Master - Especializada en Terapia Individual y de Parejas</p>
+              <div className="flex items-center space-x-3">
+                <div className="text-2xl font-bold font-marcellus text-white">
+                  Patricia Rojas
+                </div>
+                <div>
+                  <p className="text-primary-foreground/80 font-raleway">Psicóloga Master - Especializada en Terapia Individual y de Parejas</p>
+                </div>
               </div>
             </div>
             
@@ -156,7 +151,7 @@ const Footer = () => {
 
             {/* Certifications */}
             <div className="space-y-2">
-              <h4 className="font-semibold text-white flex items-center">
+              <h4 className="font-semibold text-white flex items-center font-raleway">
                 <Award className="w-4 h-4 mr-2" />
                 Certificaciones
               </h4>
@@ -179,7 +174,7 @@ const Footer = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="space-y-6"
           >
-            <h4 className="text-lg font-semibold text-white">Enlaces Rápidos</h4>
+            <h4 className="text-lg font-semibold text-white font-raleway">Enlaces Rápidos</h4>
             <div className="space-y-3">
               {quickLinks.map((link) => (
                 <motion.div
@@ -204,7 +199,7 @@ const Footer = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="space-y-6"
           >
-            <h4 className="text-lg font-semibold text-white">Servicios</h4>
+            <h4 className="text-lg font-semibold text-white font-raleway">Servicios</h4>
             <div className="space-y-3">
               {services.map((service) => (
                 <motion.div

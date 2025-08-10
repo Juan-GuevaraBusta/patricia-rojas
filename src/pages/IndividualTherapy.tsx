@@ -170,7 +170,7 @@ const IndividualTherapy = () => {
             <span className="text-sage-dark font-medium">Terapia Individual</span>
           </div>
           
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-primary bg-clip-text text-transparent">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-primary bg-clip-text text-transparent font-marcellus">
             Sanar, comunicar, conectar
           </h1>
           
@@ -182,7 +182,7 @@ const IndividualTherapy = () => {
             <a href="https://wa.me/573118361642" target="_blank" rel="noopener noreferrer">
               <Button size="lg" className="bg-gradient-primary shadow-hover hover:shadow-glow">
                 <Calendar className="w-5 h-5 mr-2" />
-                Agendar Primera Sesión
+                                  Agenda tu cita
               </Button>
             </a>
           </div>
@@ -193,10 +193,10 @@ const IndividualTherapy = () => {
       <section className="py-16 px-6">
         <div className="container mx-auto">
           <motion.div variants={itemVariants} className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-sage-dark">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-sage-dark font-marcellus">
               Motivos de Consulta Frecuentes
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto font-raleway">
               Estos son algunos de los temas más comunes que trabajamos en terapia individual
             </p>
           </motion.div>
@@ -353,10 +353,10 @@ const IndividualTherapy = () => {
           className="container mx-auto"
         >
           <motion.div variants={itemVariants} className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-sage-dark">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-sage-dark font-marcellus">
               Mi Enfoque Terapéutico
             </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto font-raleway">
               Trabajo desde un enfoque integrativo, adaptándome a tus necesidades específicas
               con herramientas basadas en evidencia científica.
             </p>
@@ -396,10 +396,10 @@ const IndividualTherapy = () => {
       <section className="py-16 px-6">
         <div className="container mx-auto max-w-4xl text-center">
           <motion.div variants={itemVariants}>
-            <h2 className="text-3xl font-bold mb-6 text-sage-dark">
+            <h2 className="text-3xl font-bold mb-6 text-sage-dark font-marcellus">
               ¿Listo para comenzar tu proceso de crecimiento personal?
             </h2>
-            <p className="text-lg text-muted-foreground mb-8">
+            <p className="text-lg text-muted-foreground mb-8 font-raleway">
               Te acompaño en un espacio seguro y profesional hacia tu bienestar emocional.
             </p>
 
@@ -407,7 +407,7 @@ const IndividualTherapy = () => {
               <a href="https://wa.me/573118361642" target="_blank" rel="noopener noreferrer">
                 <Button size="lg" className="bg-gradient-primary shadow-hover hover:shadow-glow">
                   <Calendar className="w-5 h-5 mr-2" />
-                  Agendar Primera Sesión
+                  Agenda tu cita
                 </Button>
               </a>
             </div>

@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowDown, Calendar, Phone, Mail, User, Heart, Target, Award, MapPin, Clock } from 'lucide-react';
+import { ArrowDown, Calendar, Phone, Mail, User, Heart, Target, Award, MapPin, Clock, Users, Brain, Shield } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -9,16 +9,29 @@ import { containerVariants, itemVariants } from '@/utils/animations';
 const Hero = () => {
   const services = [
     {
-      title: "TERAPIA INDIVIDUAL",
-      description: "El objetivo es ayudar al paciente a lograr un mejor conocimiento de si mismo, ayudándolo a entender sus emociones y pensamientos.",
-      image: "/images/terapia-individual.jpg", // Ruta de la imagen
-      link: "/individual-therapy"
-    },
-    {
       title: "TERAPIA DE PAREJA",
-      description: "Si las discusiones van a más, si sentís la distancia emocional entre ambos o pensáis en separaros.",
+      description: "La terapia de pareja es un espacio para mejorar la comunicación, resolver conflictos y fortalecer el vínculo, no solo en momentos de crisis. También es ideal para novios y parejas que desean prepararse para el matrimonio o la convivencia, comenzando con claridad sobre las claves que les ayudarán a construir una relación estable, sana y feliz.",
+      frequentReasons: [
+        'Conflictos que no se resuelven',
+        'Distanciamiento o desconexión emocional',
+        'Problemas de comunicación',
+        'Crisis por Infidelidad',
+        'Fortalecimiento y mejoramiento de la relación'
+      ],
       image: "/images/terapia-pareja.jpg", // Ruta de la imagen
       link: "/couples-therapy"
+    },
+    {
+      title: "TERAPIA INDIVIDUAL",
+      description: "Te brindo un espacio para conocerte, comprender tus emociones y aprender a observar tus pensamientos sin quedarte atrapado en ellos, para que puedas vivir en coherencia con tus valores y construir una vida con sentido.",
+      frequentReasons: [
+        'Ansiedad',
+        'Depresión',
+        'Duelos por pérdida, ruptura, migración o cambio',
+        'Crecimiento personal'
+      ],
+      image: "/images/terapia-individual.jpg", // Ruta de la imagen
+      link: "/individual-therapy"
     }
   ];
 
@@ -50,10 +63,12 @@ const Hero = () => {
     }
   ];
 
+
+
   return (
     <div className="min-h-screen">
       {/* Hero Principal con Fondo Limpio */}
-      <section id="inicio" className="min-h-screen flex items-center justify-center relative overflow-hidden">
+      <section id="inicio" className="min-h-screen flex items-center justify-center relative overflow-hidden py-20" style={{ backgroundColor: '#f6f6f2' }}>
         {/* Fondo limpio con gradiente sutil */}
         <div className="absolute inset-0 bg-gradient-to-br from-sage-light/20 via-white to-steel-blue/10" />
         
@@ -87,12 +102,6 @@ const Hero = () => {
                   <source src="/videos/video.mp4" type="video/mp4" />
                   Tu navegador no soporta la reproducción de video.
                 </video>
-                {/* Overlay con mensaje en la parte inferior izquierda */}
-                <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6">
-                  <p className="text-steel-blue text-base md:text-lg font-semibold leading-relaxed">
-                    Te acompaño en tu proceso de crecimiento personal y bienestar emocional a sanar tus relaciones y reconectar contigo mismo.
-                  </p>
-                </div>
               </div>
             </motion.div>
 
@@ -103,57 +112,52 @@ const Hero = () => {
             >
               <motion.div
                 variants={itemVariants}
-                className="mb-6 md:mb-8"
+                className="space-y-6 mb-4 md:mb-6"
               >
-                <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-3 md:mb-4 relative">
-                  <span className="block text-steel-blue font-bold">
-                    Soy Patricia Rojas
+                <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold relative font-marcellus">
+                  <span className="block font-bold" style={{ color: '#3e554d' }}>
+                    Patricia Rojas
                   </span>
-                  {/* Imagen pequeña al noreste */}
-                  <motion.img 
-                    src="/images/logo-patricia.png"
-                    alt="Patricia Rojas"
-                    className="absolute -top-3 -right-3 w-8 h-8 rounded-full object-cover"
-                    whileHover={{ scale: 1.2, rotate: 10 }}
-                    initial={{ scale: 0 }}
-                    animate={{ scale: 1 }}
-                    transition={{ delay: 0.5 }}
-                  />
+
                 </h1>
-                <h2 className="text-xl md:text-2xl lg:text-3xl font-light text-steel-blue mb-2">
+                <h2 className="text-lg md:text-xl lg:text-2xl font-light font-raleway" style={{ color: '#7c939b' }}>
                   Psicóloga Master Especializada en Terapia Individual y de Parejas
                 </h2>
               </motion.div>
 
               <motion.div
                 variants={itemVariants}
-                className="mb-8 md:mb-12"
+                className="space-y-6 mb-8 md:mb-12"
               >
-                <p className="text-base md:text-lg lg:text-xl text-steel-blue mb-6 md:mb-8 font-semibold leading-relaxed">
-                  Te acompaño en tu proceso de crecimiento personal y bienestar emocional a sanar tus relaciones y reconectar contigo mismo.
+                <p className="text-base md:text-lg lg:text-xl font-semibold leading-relaxed font-raleway" style={{ color: '#3e554d' }}>
+                  Te ayudo a sanar relaciones y conectar contigo mismo.
                 </p>
               </motion.div>
 
               <motion.div
                 variants={itemVariants}
-                className="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center lg:justify-start"
+                className="flex flex-col gap-6 md:gap-8 justify-center items-center lg:items-center"
               >
                 <Button 
                   size="lg" 
-                  className="bg-sage hover:bg-sage/90 text-white shadow-hover hover:shadow-glow px-6 md:px-8 py-2 md:py-3 text-base md:text-lg font-medium"
+                  className="shadow-hover hover:shadow-glow px-4 md:px-6 py-2 md:py-3 text-base md:text-lg font-medium rounded-full max-w-xs mx-auto"
+                  style={{ backgroundColor: '#3e554d', color: 'white' }}
                   asChild
                 >
-                  <Link to="/individual-therapy">
-                    Terapia Individual
+                  <Link to="/couples-therapy" className="flex items-center gap-2">
+                    <span className="text-lg">👥</span>
+                    Terapia de Pareja
                   </Link>
                 </Button>
                 <Button 
                   size="lg" 
-                  className="bg-sage hover:bg-sage/90 text-white shadow-hover hover:shadow-glow px-6 md:px-8 py-2 md:py-3 text-base md:text-lg font-medium"
+                  className="shadow-hover hover:shadow-glow px-4 md:px-6 py-2 md:py-3 text-base md:text-lg font-medium rounded-full max-w-xs mx-auto"
+                  style={{ backgroundColor: '#8ca194', color: '#3e554d' }}
                   asChild
                 >
-                  <Link to="/couples-therapy">
-                    Terapia de Pareja
+                  <Link to="/individual-therapy" className="flex items-center gap-2">
+                    <span className="text-lg">👤</span>
+                    Terapia Individual
                   </Link>
                 </Button>
               </motion.div>
@@ -169,84 +173,105 @@ const Hero = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
-          className="container mx-auto px-6"
+          className="container mx-auto px-12 md:px-16"
         >
           <motion.div variants={itemVariants} className="text-center mb-16">
             <Badge variant="outline" className="mb-4 px-4 py-2">
               <Target className="w-4 h-4 mr-2" />
               Servicios
             </Badge>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-primary bg-clip-text text-transparent">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-gradient-primary bg-clip-text text-transparent font-marcellus">
               ¿Cómo puedo ayudarte?
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto font-raleway">
               Ofrezco espacios seguros y confidenciales para tu proceso de sanación y crecimiento
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          <div className="space-y-16 max-w-6xl mx-auto">
             {services.map((service, index) => (
               <motion.div
                 key={service.title}
                 variants={itemVariants}
                 whileHover={{ y: -5, scale: 1.02 }}
-                className="h-full"
+                className={`grid md:grid-cols-2 gap-8 items-center ${
+                  index % 2 === 1 ? 'md:grid-flow-col-dense' : ''
+                }`}
               >
-                <Card className="h-full shadow-elegant hover:shadow-hover transition-all duration-300 overflow-hidden flex flex-col">
-                  {/* Imagen superior - altura fija */}
-                  <div className="relative h-48 overflow-hidden flex-shrink-0">
-                    <img
-                      src={service.image}
-                      alt={service.title}
-                      className="w-full h-full object-cover"
-                      onError={(e) => {
-                        // Fallback si la imagen no carga - mostrar placeholder
-                        const target = e.currentTarget as HTMLImageElement;
-                        target.style.display = 'none';
-                        const placeholder = target.nextElementSibling as HTMLElement;
-                        if (placeholder) {
-                          placeholder.style.display = 'flex';
-                        }
-                      }}
-                    />
-                    {/* Placeholder si no hay imagen */}
-                    <div 
-                      className="w-full h-full bg-gradient-to-br from-sage-light to-steel-blue/20 flex items-center justify-center"
-                      style={{ display: 'none' }}
-                    >
-                      <div className="text-center text-sage-dark">
-                        <div className="text-4xl mb-2">📷</div>
-                        <p className="text-sm">Imagen no disponible</p>
+                {/* Imagen */}
+                <div className={`relative h-64 md:h-80 overflow-hidden rounded-lg shadow-elegant ${
+                  index % 2 === 1 ? 'md:col-start-2' : ''
+                }`}>
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="w-full h-full object-cover"
+                    onError={(e) => {
+                      // Fallback si la imagen no carga - mostrar placeholder
+                      const target = e.currentTarget as HTMLImageElement;
+                      target.style.display = 'none';
+                      const placeholder = target.nextElementSibling as HTMLElement;
+                      if (placeholder) {
+                        placeholder.style.display = 'flex';
+                      }
+                    }}
+                  />
+                  {/* Placeholder si no hay imagen */}
+                  <div 
+                    className="w-full h-full bg-gradient-to-br from-sage-light to-steel-blue/20 flex items-center justify-center"
+                    style={{ display: 'none' }}
+                  >
+                    <div className="text-center text-sage-dark">
+                      <div className="text-4xl mb-2">📷</div>
+                      <p className="text-sm">Imagen no disponible</p>
+                    </div>
+                  </div>
+                </div>
+                
+                {/* Contenido */}
+                <div className={`text-center md:text-left space-y-6 ${
+                  index % 2 === 1 ? 'md:col-start-1' : ''
+                }`}>
+                  <div>
+                    <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4 font-marcellus">
+                      {service.title}
+                    </h3>
+                    <p className="text-muted-foreground leading-relaxed text-base md:text-lg font-raleway mb-4">
+                      {service.description}
+                    </p>
+                    
+                    {/* Motivos de consulta más frecuentes */}
+                    <div className="space-y-2">
+                      <p className="text-sm font-semibold text-sage-dark">
+                        Motivos de consulta más frecuentes:
+                      </p>
+                      <div className="grid grid-cols-2 gap-x-4 gap-y-1">
+                        {service.frequentReasons.map((reason, reasonIndex) => (
+                          <div key={reasonIndex} className="flex items-center gap-2">
+                            <div className="w-1.5 h-1.5 bg-sage rounded-full flex-shrink-0"></div>
+                            <span className="text-muted-foreground text-sm">{reason}</span>
+                          </div>
+                        ))}
                       </div>
                     </div>
                   </div>
-                  
-                  {/* Contenido inferior - altura flexible pero mínima */}
-                  <CardContent className="p-6 text-center flex-1 flex flex-col justify-between">
-                    <div>
-                      <h3 className="text-xl font-bold text-foreground mb-4">
-                        {service.title}
-                      </h3>
-                      <p className="text-muted-foreground mb-6 leading-relaxed text-sm">
-                        {service.description}
-                      </p>
-                    </div>
-                    <Button 
-                      variant="outline"
-                      className="border-sage text-sage hover:bg-sage hover:text-white transition-all duration-300 self-center"
-                      asChild
-                    >
-                      <Link to={service.link}>
-                        Informate aquí →
-                      </Link>
-                    </Button>
-                  </CardContent>
-                </Card>
+                  <Button 
+                    variant="outline"
+                    className="border-sage text-sage hover:bg-sage hover:text-white transition-all duration-300"
+                    asChild
+                  >
+                    <Link to={service.link}>
+                      Infórmate aquí →
+                    </Link>
+                  </Button>
+                </div>
               </motion.div>
             ))}
           </div>
         </motion.div>
       </section>
+
+
 
       {/* Sección de Estadísticas */}
       <section className="py-20 bg-gradient-secondary">
@@ -258,7 +283,7 @@ const Hero = () => {
           className="container mx-auto px-6"
         >
           <motion.div variants={itemVariants} className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-sage-dark">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-sage-dark font-marcellus">
               Experiencia y Compromiso
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -274,13 +299,13 @@ const Hero = () => {
                 whileHover={{ scale: 1.05 }}
                 className="text-center"
               >
-                <Card className="h-32 shadow-elegant hover:shadow-hover transition-all duration-300 flex flex-col justify-center">
-                  <CardContent className="p-0">
+                <Card className="h-40 shadow-elegant hover:shadow-hover transition-all duration-300 flex flex-col justify-center">
+                  <CardContent className="p-4">
                     <stat.icon size={32} className="text-steel-blue mx-auto mb-4" />
                     <div className="text-3xl font-bold text-foreground mb-2">
                       {stat.number}
                     </div>
-                    <div className="text-sm text-muted-foreground">
+                    <div className="text-sm text-muted-foreground leading-tight">
                       {stat.label}
                     </div>
                   </CardContent>
@@ -358,7 +383,7 @@ const Hero = () => {
               <a href="https://wa.me/573118361642" target="_blank" rel="noopener noreferrer">
                 <Button size="lg" className="bg-sage hover:bg-sage/90 text-white shadow-hover hover:shadow-glow">
                   <Calendar className="w-5 h-5 mr-2" />
-                  Agendar Primera Sesión
+                  Agenda tu cita
                 </Button>
               </a>
             </div>

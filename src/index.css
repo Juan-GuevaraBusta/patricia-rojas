@@ -7,6 +7,19 @@ All colors MUST be HSL.
 */
 
 @layer base {
+  /* Tipografías personalizadas */
+  .font-marcellus {
+    font-family: 'Marcellus', serif;
+  }
+  
+  .font-raleway {
+    font-family: 'Raleway', sans-serif;
+  }
+  
+  .font-montserrat {
+    font-family: 'Montserrat', sans-serif;
+  }
+  
   :root {
     /* Portfolio Color Palette - Updated with new palette */
     --background: 60 8% 96%; /* #f6f6f2 - cream white */
@@ -44,7 +57,7 @@ All colors MUST be HSL.
     --steel-blue: 205 31% 53%; /* #5d8aa8 */
     --blue-gray: 195 18% 50%; /* #7C939B */
     --cream: 60 8% 96%; /* #f6f6f2 */
-    --terracota: 205 31% 53%; /* #5d8aa8 - steel blue (keeping variable name for compatibility) */
+    --terracota: 15 45% 45%; /* #8B4513 - terracotta color */
 
     /* Gradients - Updated to include terracotta */
     --gradient-primary: linear-gradient(135deg, hsl(var(--sage-dark)), hsl(var(--steel-blue)));
@@ -111,6 +124,7 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Montserrat', sans-serif;
   }
 }
 

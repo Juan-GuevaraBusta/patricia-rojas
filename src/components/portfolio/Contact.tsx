@@ -208,10 +208,10 @@ const Contact = () => {
             <Calendar className="w-4 h-4 mr-2" />
             Contacto
           </Badge>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-primary bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-primary bg-clip-text text-transparent font-marcellus">
             Comienza tu proceso de sanación
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto font-raleway">
             El primer paso hacia el bienestar emocional es decidir buscar ayuda. 
             Estoy aquí para acompañarte en este camino de crecimiento y sanación.
           </p>
@@ -219,7 +219,7 @@ const Contact = () => {
 
         {/* Información de Contacto */}
         <motion.div variants={itemVariants} className="mb-16">
-          <h3 className="text-2xl font-bold text-center mb-8">Información de Contacto</h3>
+          <h3 className="text-2xl font-bold text-center mb-8 font-marcellus">Información de Contacto</h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {contactInfo.map((info, index) => (
               <motion.div
@@ -259,7 +259,7 @@ const Contact = () => {
 
         {/* Redes Sociales */}
         <motion.div variants={itemVariants} className="mb-16">
-          <h3 className="text-2xl font-bold text-center mb-8">Sígueme en Redes Sociales</h3>
+          <h3 className="text-2xl font-bold text-center mb-8 font-marcellus">Sígueme en Redes Sociales</h3>
           <div className="flex justify-center space-x-6">
             {socialLinks.map((social, index) => (
               <motion.a
@@ -285,7 +285,7 @@ const Contact = () => {
 
         {/* Modalidades */}
         <motion.div variants={itemVariants} className="mb-16">
-          <h3 className="text-2xl font-bold text-center mb-8">Modalidades de Atención</h3>
+          <h3 className="text-2xl font-bold text-center mb-8 font-marcellus">Modalidades de Atención</h3>
           <div className="grid md:grid-cols-2 gap-6">
             {modalidades.map((modalidad, index) => (
               <motion.div
@@ -342,7 +342,7 @@ const Contact = () => {
 
         {/* FAQ Section */}
         <motion.div variants={itemVariants} className="mb-16">
-          <h3 className="text-2xl font-bold text-center mb-8">Preguntas Frecuentes</h3>
+          <h3 className="text-2xl font-bold text-center mb-8 font-marcellus">Preguntas Frecuentes</h3>
           <div className="max-w-4xl mx-auto">
             <Accordion type="single" collapsible className="space-y-4">
               {faqItems.map((item, index) => (
@@ -414,7 +414,7 @@ const Contact = () => {
                 <a href="https://wa.me/573118361642" target="_blank" rel="noopener noreferrer">
                   <Button size="lg" className="bg-gradient-primary shadow-hover hover:shadow-glow">
                     <MessageCircle className="w-5 h-5 mr-2" />
-                    Agendar Primera Sesión
+                    Agenda tu cita
                   </Button>
                 </a>
               </div>

@@ -121,7 +121,7 @@ Sí es posible, aunque requiere un proceso profundo que involucra tres elementos
             <span className="text-sage-dark font-medium">Terapia de Pareja</span>
           </div>
           
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-primary bg-clip-text text-transparent">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-primary bg-clip-text text-transparent font-marcellus">
             Fortalece tu Relación
           </h1>
           
@@ -134,7 +134,7 @@ Sí es posible, aunque requiere un proceso profundo que involucra tres elementos
             <a href="https://wa.me/573118361642" target="_blank" rel="noopener noreferrer">
               <Button size="lg" className="bg-gradient-primary shadow-hover hover:shadow-glow">
                 <Calendar className="w-5 h-5 mr-2" />
-                Agendar Primera Sesión
+                                  Agenda tu cita
               </Button>
             </a>
           </div>
@@ -149,10 +149,10 @@ Sí es posible, aunque requiere un proceso profundo que involucra tres elementos
       <section className="py-16 px-6">
         <div className="container mx-auto">
           <motion.div variants={itemVariants} className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-sage-dark">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-sage-dark font-marcellus">
               Motivos de Consulta Más Frecuentes
             </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto font-raleway">
               Estos son algunos de los temas más comunes que trabajamos en terapia de pareja
             </p>
           </motion.div>
@@ -189,7 +189,7 @@ Sí es posible, aunque requiere un proceso profundo que involucra tres elementos
           className="container mx-auto"
         >
           <motion.div variants={itemVariants} className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-sage-dark">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-sage-dark font-marcellus">
               Formato de las Sesiones
             </h2>
           </motion.div>
@@ -260,10 +260,10 @@ Sí es posible, aunque requiere un proceso profundo que involucra tres elementos
         <div className="container mx-auto">
           <motion.div variants={itemVariants} className="text-center mb-12">
             <Badge variant="secondary" className="mb-4">Método Científico</Badge>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-sage-dark">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-sage-dark font-marcellus">
               Basado en el Método Gottman
             </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto font-raleway">
               La terapia de pareja que ofrezco se basa en el Método Gottman, un enfoque respaldado por
               más de 40 años de investigación científica sobre lo que fortalece o debilita una relación.
             </p>
@@ -275,10 +275,10 @@ Sí es posible, aunque requiere un proceso profundo que involucra tres elementos
       <section className="py-16 px-6">
         <div className="container mx-auto max-w-4xl text-center">
           <motion.div variants={itemVariants}>
-            <h2 className="text-3xl font-bold mb-6 text-sage-dark">
+            <h2 className="text-3xl font-bold mb-6 text-sage-dark font-marcellus">
               ¿Listos para fortalecer su relación?
             </h2>
-            <p className="text-lg text-muted-foreground mb-8">
+            <p className="text-lg text-muted-foreground mb-8 font-raleway">
               Te acompaño en un proceso profesional hacia una relación más sólida y conectada.
             </p>
 
@@ -286,7 +286,7 @@ Sí es posible, aunque requiere un proceso profundo que involucra tres elementos
               <a href="https://wa.me/573118361642" target="_blank" rel="noopener noreferrer">
                 <Button size="lg" className="bg-gradient-primary shadow-hover hover:shadow-glow">
                   <Calendar className="w-5 h-5 mr-2" />
-                  Agendar Primera Sesión
+                  Agenda tu cita
                 </Button>
               </a>
             </div>

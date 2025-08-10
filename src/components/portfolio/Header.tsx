@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link, useLocation } from 'react-router-dom';
+import Butterfly from '@/components/ui/butterfly';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -85,25 +86,21 @@ const Header = () => {
     >
       <nav className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          {/* Logo with Butterfly */}
+          {/* Logo */}
           <motion.div
             whileHover={{ scale: 1.05 }}
-            className="flex items-center space-x-2"
+            className="flex items-center space-x-2 relative"
           >
             <Link to="/" className="flex items-center space-x-2">
-              {/* Logo Patricia Rojas */}
-              <motion.img 
-                src="/images/logo-patricia.png"
-                alt="Patricia Rojas Psicóloga"
-                className="w-10 h-10 rounded-full object-cover"
-                whileHover={{ scale: 1.1, rotate: 5 }}
-                onError={(e) => {
-                  // Fallback si la imagen no carga
-                  e.currentTarget.style.display = 'none';
-                }}
-              />
-              <span className={`text-2xl font-bold ${getLogoColorClasses()}`}>
+              <span className={`text-2xl font-bold ${getLogoColorClasses()} font-marcellus whitespace-nowrap relative`}>
                 Patricia Rojas
+                {/* Mariposa sobre el punto de la j */}
+                <Butterfly 
+                  className="absolute -top-1" 
+                  size={20} 
+                  position="header"
+                  style={{ transform: 'translateX(114.8px) translateY(2.5px)' }}
+                />
               </span>
             </Link>
           </motion.div>
