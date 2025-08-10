@@ -39,7 +39,7 @@ const Hero = () => {
     { number: '25+', label: 'Años de experiencia', icon: Award },
     { number: '15+', label: 'Años en psicoterapia', icon: Target },
     { number: '100%', label: 'Confidencialidad', icon: MapPin },
-    { number: 'Presencial y Virtual', label: 'Modalidades', icon: Clock },
+    { number: 'Modalidad', label: 'Presencial y Virtual', icon: Clock },
   ];
 
   const contactInfo = [
@@ -302,11 +302,17 @@ const Hero = () => {
                 <Card className="h-40 shadow-elegant hover:shadow-hover transition-all duration-300 flex flex-col justify-center">
                   <CardContent className="p-4">
                     <stat.icon size={32} className="text-steel-blue mx-auto mb-4" />
-                    <div className="text-3xl font-bold text-foreground mb-2">
+                    <div className="text-2xl md:text-3xl font-bold text-foreground mb-2 text-center">
                       {stat.number}
                     </div>
-                    <div className="text-sm text-muted-foreground leading-tight">
-                      {stat.label}
+                    <div className="text-xs md:text-sm text-muted-foreground leading-tight px-1 text-center">
+                      {stat.label === 'Presencial y Virtual' ? (
+                        <span>
+                          Presencial<br />y Virtual
+                        </span>
+                      ) : (
+                        stat.label
+                      )}
                     </div>
                   </CardContent>
                 </Card>

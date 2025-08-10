@@ -226,9 +226,6 @@ const Header = () => {
                   )}
                 </div>
               ))}
-              <Button variant="default" className="bg-sage hover:bg-sage/90 text-white mt-4">
-                Descargar CV
-              </Button>
             </div>
           </motion.div>
         )}
