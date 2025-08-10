@@ -136,11 +136,11 @@ const Hero = () => {
 
               <motion.div
                 variants={itemVariants}
-                className="flex flex-col gap-6 md:gap-8 justify-center items-center lg:items-center"
+                className="flex flex-col md:flex-row gap-6 md:gap-12 justify-center items-center lg:items-center"
               >
                 <Button 
                   size="lg" 
-                  className="shadow-hover hover:shadow-glow px-4 md:px-6 py-2 md:py-3 text-base md:text-lg font-medium rounded-full max-w-xs mx-auto bg-steel-blue hover:bg-steel-blue/90 text-white"
+                  className="shadow-hover hover:shadow-glow px-6 md:px-8 py-3 md:py-4 text-base md:text-lg font-medium rounded-full min-w-[200px] bg-steel-blue hover:bg-steel-blue/90 text-white"
                   asChild
                 >
                   <Link to="/couples-therapy" className="flex items-center gap-2">
@@ -150,7 +150,7 @@ const Hero = () => {
                 </Button>
                 <Button 
                   size="lg" 
-                  className="shadow-hover hover:shadow-glow px-4 md:px-6 py-2 md:py-3 text-base md:text-lg font-medium rounded-full max-w-xs mx-auto bg-steel-blue hover:bg-steel-blue/90 text-white"
+                  className="shadow-hover hover:shadow-glow px-6 md:px-8 py-3 md:py-4 text-base md:text-lg font-medium rounded-full min-w-[200px] bg-steel-blue hover:bg-steel-blue/90 text-white"
                   asChild
                 >
                   <Link to="/individual-therapy" className="flex items-center gap-2">
