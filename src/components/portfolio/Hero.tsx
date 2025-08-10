@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowDown, Calendar, Phone, Mail, User, Heart, Target, Award, MapPin, Clock, Users, Brain, Shield } from 'lucide-react';
+import { ArrowDown, Calendar, Phone, Mail, User, Heart, Target, Award, MapPin, Clock, Users, Brain, Shield, Users2, User2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -140,23 +140,21 @@ const Hero = () => {
               >
                 <Button 
                   size="lg" 
-                  className="shadow-hover hover:shadow-glow px-4 md:px-6 py-2 md:py-3 text-base md:text-lg font-medium rounded-full max-w-xs mx-auto"
-                  style={{ backgroundColor: '#3e554d', color: 'white' }}
+                  className="shadow-hover hover:shadow-glow px-4 md:px-6 py-2 md:py-3 text-base md:text-lg font-medium rounded-full max-w-xs mx-auto bg-steel-blue hover:bg-steel-blue/90 text-white"
                   asChild
                 >
                   <Link to="/couples-therapy" className="flex items-center gap-2">
-                    <span className="text-lg">👥</span>
+                    <Users2 className="w-5 h-5" stroke="#fb7185" />
                     Terapia de Pareja
                   </Link>
                 </Button>
                 <Button 
                   size="lg" 
-                  className="shadow-hover hover:shadow-glow px-4 md:px-6 py-2 md:py-3 text-base md:text-lg font-medium rounded-full max-w-xs mx-auto"
-                  style={{ backgroundColor: '#8ca194', color: '#3e554d' }}
+                  className="shadow-hover hover:shadow-glow px-4 md:px-6 py-2 md:py-3 text-base md:text-lg font-medium rounded-full max-w-xs mx-auto bg-steel-blue hover:bg-steel-blue/90 text-white"
                   asChild
                 >
                   <Link to="/individual-therapy" className="flex items-center gap-2">
-                    <span className="text-lg">👤</span>
+                    <User2 className="w-5 h-5" stroke="#fb7185" />
                     Terapia Individual
                   </Link>
                 </Button>

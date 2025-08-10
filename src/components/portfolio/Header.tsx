@@ -72,7 +72,7 @@ const Header = () => {
       transition={{ duration: 0.6 }}
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-background/80 backdrop-blur-md shadow-elegant border-b border-border'
+          ? 'bg-background shadow-elegant border-b border-border'
           : 'bg-transparent'
       }`}
     >
