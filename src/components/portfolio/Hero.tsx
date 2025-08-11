@@ -97,7 +97,7 @@ const Hero = () => {
                   muted
                   loop
                   playsInline
-                  className="w-full h-full object-cover opacity-25"
+                  className="w-full h-full object-cover opacity-75"
                 >
                   <source src="/videos/video.mp4" type="video/mp4" />
                   Tu navegador no soporta la reproducción de video.
