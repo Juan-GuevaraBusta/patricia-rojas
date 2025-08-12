@@ -154,7 +154,7 @@ const Hero = () => {
                   asChild
                 >
                   <Link to="/individual-therapy" className="flex items-center gap-2">
-                    <User2 className="w-5 h-5" stroke="#fb7185" />
+                    <User2 className="w-5 h-5 text-terracota" />
                     Terapia Individual
                   </Link>
                 </Button>
@@ -181,9 +181,6 @@ const Hero = () => {
             <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-gradient-primary bg-clip-text text-transparent font-marcellus">
               ¿Cómo puedo ayudarte?
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto font-raleway">
-              Ofrezco espacios seguros y confidenciales para tu proceso de sanación y crecimiento
-            </p>
           </motion.div>
 
           <div className="space-y-16 max-w-6xl mx-auto">
@@ -231,9 +228,11 @@ const Hero = () => {
                   index % 2 === 1 ? 'md:col-start-1' : ''
                 }`}>
                   <div>
-                    <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4 font-marcellus">
-                      {service.title}
-                    </h3>
+                    <Link to={service.link} className="block">
+                      <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4 font-marcellus hover:text-sage transition-colors duration-300 cursor-pointer">
+                        {service.title}
+                      </h3>
+                    </Link>
                     <p className="text-muted-foreground leading-relaxed text-base md:text-lg font-raleway mb-4">
                       {service.description}
                     </p>
@@ -253,15 +252,6 @@ const Hero = () => {
                       </div>
                     </div>
                   </div>
-                  <Button 
-                    variant="outline"
-                    className="border-sage text-sage hover:bg-sage hover:text-white transition-all duration-300"
-                    asChild
-                  >
-                    <Link to={service.link}>
-                      Infórmate aquí →
-                    </Link>
-                  </Button>
                 </div>
               </motion.div>
             ))}

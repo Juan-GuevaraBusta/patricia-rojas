@@ -111,37 +111,63 @@ Sí es posible, aunque requiere un proceso profundo que involucra tres elementos
       {/* Hero Section */}
       <section className="pt-32 pb-16 px-6">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="container mx-auto text-center"
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+          className="container mx-auto"
         >
-          <div className="inline-flex items-center gap-2 bg-sage/10 px-4 py-2 rounded-full mb-6">
-            <Heart className="w-5 h-5 text-sage-dark" />
-            <span className="text-sage-dark font-medium">Terapia de Pareja</span>
-          </div>
-          
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-primary bg-clip-text text-transparent font-marcellus">
-            Fortalece tu Relación
-          </h1>
-          
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8 leading-relaxed">
-            En la terapia de parejas los apoyo en la resolución de conflictos, mejorar la comunicación,
-            fortalecer conexión emocional y superar una infidelidad.
-          </p>
+          <div className="grid lg:grid-cols-2 items-center gap-12">
+            {/* Columna Izquierda - Imagen */}
+            <motion.div
+              variants={itemVariants}
+              className="order-2 lg:order-1"
+            >
+              <div className="relative h-64 md:h-80 overflow-hidden rounded-lg shadow-elegant">
+                <img
+                  src="/images/terapia-pareja.jpg"
+                  alt="Terapia de Pareja"
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    const target = e.currentTarget as HTMLImageElement;
+                    target.style.display = 'none';
+                    const placeholder = target.nextElementSibling as HTMLElement;
+                    if (placeholder) {
+                      placeholder.style.display = 'flex';
+                    }
+                  }}
+                />
+                {/* Placeholder si no hay imagen */}
+                <div 
+                  className="w-full h-full bg-gradient-to-br from-sage-light to-steel-blue/20 flex items-center justify-center"
+                  style={{ display: 'none' }}
+                >
+                  <div className="text-center text-sage-dark">
+                    <div className="text-4xl mb-2">💕</div>
+                    <p className="text-sm">Imagen no disponible</p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
 
-          <div className="flex justify-center mb-12">
-            <a href="https://wa.me/573118361642" target="_blank" rel="noopener noreferrer">
-              <Button size="lg" className="bg-gradient-primary shadow-hover hover:shadow-glow">
-                <Calendar className="w-5 h-5 mr-2" />
-                                  Agenda tu cita
-              </Button>
-            </a>
+            {/* Columna Derecha - Contenido */}
+            <motion.div
+              variants={itemVariants}
+              className="order-1 lg:order-2 text-center lg:text-left"
+            >
+              <div className="inline-flex items-center gap-2 bg-sage/10 px-4 py-2 rounded-full mb-6">
+                <Heart className="w-5 h-5" style={{ color: '#3e554d' }} />
+                <span className="font-medium" style={{ color: '#3e554d' }}>Terapia de Pareja</span>
+              </div>
+              
+              <h1 className="text-4xl md:text-6xl font-bold mb-6 font-marcellus" style={{ color: '#3e554d' }}>
+                Fortalece tu Relación
+              </h1>
+              
+              <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
+                La terapia de pareja es un espacio para mejorar la comunicación, resolver conflictos y fortalecer el vínculo, no solo en momentos de crisis. También es ideal para novios y parejas que desean prepararse para el matrimonio o la convivencia, comenzando con claridad sobre las claves que les ayudarán a construir una relación estable, sana y feliz.
+              </p>
+            </motion.div>
           </div>
-
-          <p className="text-sage-dark font-medium">
-            ¿Están enfrentando conflictos, distanciamiento o sienten que algo en la relación ya no fluye como antes?
-          </p>
         </motion.div>
       </section>
 
@@ -149,7 +175,7 @@ Sí es posible, aunque requiere un proceso profundo que involucra tres elementos
       <section className="py-16 px-6">
         <div className="container mx-auto">
           <motion.div variants={itemVariants} className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-sage-dark font-marcellus">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 font-marcellus" style={{ color: '#3e554d' }}>
               Motivos de Consulta Más Frecuentes
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto font-raleway">
@@ -189,7 +215,7 @@ Sí es posible, aunque requiere un proceso profundo que involucra tres elementos
           className="container mx-auto"
         >
           <motion.div variants={itemVariants} className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-sage-dark font-marcellus">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 font-marcellus" style={{ color: '#3e554d' }}>
               Formato de las Sesiones
             </h2>
           </motion.div>
@@ -260,7 +286,7 @@ Sí es posible, aunque requiere un proceso profundo que involucra tres elementos
         <div className="container mx-auto">
           <motion.div variants={itemVariants} className="text-center mb-12">
             <Badge variant="secondary" className="mb-4">Método Científico</Badge>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-sage-dark font-marcellus">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 font-marcellus" style={{ color: '#3e554d' }}>
               Basado en el Método Gottman
             </h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto font-raleway">
@@ -275,7 +301,7 @@ Sí es posible, aunque requiere un proceso profundo que involucra tres elementos
       <section className="py-16 px-6">
         <div className="container mx-auto max-w-4xl text-center">
           <motion.div variants={itemVariants}>
-            <h2 className="text-3xl font-bold mb-6 text-sage-dark font-marcellus">
+            <h2 className="text-3xl font-bold mb-6 font-marcellus" style={{ color: '#3e554d' }}>
               ¿Listos para fortalecer su relación?
             </h2>
             <p className="text-lg text-muted-foreground mb-8 font-raleway">
