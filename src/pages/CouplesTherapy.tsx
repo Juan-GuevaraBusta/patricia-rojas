@@ -124,7 +124,7 @@ Sí es posible, aunque requiere un proceso profundo que involucra tres elementos
             >
               <div className="relative h-64 md:h-80 overflow-hidden rounded-lg shadow-elegant">
                 <img
-                  src="/images/terapia-pareja.jpg"
+                  src="/images/couples-therapy-page.jpg"
                   alt="Terapia de Pareja"
                   className="w-full h-full object-cover"
                   onError={(e) => {

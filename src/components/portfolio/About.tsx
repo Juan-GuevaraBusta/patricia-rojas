@@ -1,18 +1,15 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { User, Heart, Target, Award, MapPin, Book, ArrowRight } from 'lucide-react';
+import { User, Heart, Target, Award, MapPin, Book } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
 import { containerVariants, itemVariants } from '@/utils/animations';
-import { useNavigate } from 'react-router-dom';
 
 const About = () => {
   const [ref, inView] = useInView({
     threshold: 0.1,
     triggerOnce: true,
   });
-  const navigate = useNavigate();
 
   const stats = [
     { icon: Award, number: '25+', label: 'Años de experiencia' },
@@ -27,10 +24,6 @@ const About = () => {
     'Terapias Psicológicas de Tercera Generación – Universidad Pontificia Bolivariana de Santander',
     'Terapia de Aceptación y Compromiso (ACT) – Universidad Pontificia Bolivariana de Santander',
   ];
-
-  const handleNavigateToApproaches = () => {
-    navigate('/habilidades');
-  };
 
   return (
     <section id="sobre-mi" className="py-20 bg-muted/20">
@@ -78,20 +71,21 @@ const About = () => {
               </h3>
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
-                  Soy <strong className="text-terracota">Patricia Rojas R.</strong>, psicóloga con una maestría en Consejería Clínica y Salud Mental 
-                  —<strong className="text-terracota">reconocida Cum Laude</strong>— y más de 25 años de experiencia profesional. 
+                  Soy <strong className="text-terracota">Patricia Rojas R.</strong>, psicóloga con una maestría en Consejería Clínica y Salud Mental, 
+                  con reconocimiento <strong className="text-terracota">Cum Laude</strong> y 25 años de experiencia profesional. 
                   Comencé mi carrera en el ámbito organizacional, liderando procesos de selección, 
                   formación y bienestar laboral.
                 </p>
                 <p>
-                  Desde hace más de 15 años, acompaño a jóvenes, 
-                  adultos y parejas en sus procesos psicoterapéuticos con el objetivo de alcanzar 
-                  bienestar emocional, sanar heridas del pasado y reconectar con un propósito vital.
+                  Desde hace más de 15 años, acompaño a jóvenes, adultos y parejas en sus procesos 
+                  psicoterapéuticos con el objetivo de alcanzar bienestar emocional, sanar heridas 
+                  del pasado y reconectar con un propósito vital.
                 </p>
                 <p>
-                  He tenido la oportunidad de vivir en <strong className="text-terracota">El Salvador y Guatemala</strong>, países donde realicé 
-                  mis estudios de posgrado. Estas vivencias personales y profesionales ampliaron mi 
-                  perspectiva y enriquecieron mi comprensión de la diversidad humana y sus realidades.
+                  Durante diez años tuve la oportunidad de vivir entre <strong className="text-terracota">El Salvador y Guatemala</strong>, 
+                  y en este último país realicé mis estudios de posgrado. Estas vivencias personales 
+                  y profesionales ampliaron mi perspectiva y enriquecieron mi comprensión de la 
+                  diversidad humana y sus realidades.
                 </p>
                 <p>
                   Como muchas personas que llegan a terapia, también he atravesado desafíos 
@@ -192,34 +186,7 @@ const About = () => {
           </Card>
         </motion.div>
 
-        {/* Navegación a Enfoques Terapéuticos */}
-        <motion.div variants={itemVariants} className="text-center mb-16">
-          <Card className="max-w-2xl mx-auto shadow-elegant bg-gradient-to-br from-terracota/5 to-terracota/10 border border-terracota/20">
-            <CardContent className="p-8">
-              <Book className="w-16 h-16 text-terracota mx-auto mb-6" />
-              <h3 className="text-2xl font-bold text-foreground mb-4">
-                ¿Quieres conocer mis enfoques terapéuticos?
-              </h3>
-              <p className="text-muted-foreground mb-6">
-                Descubre en detalle las metodologías y herramientas que utilizo en mi práctica: 
-                ACT, Método Gottman, Mindfulness y más.
-              </p>
-              <motion.div
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                <Button
-                  onClick={handleNavigateToApproaches}
-                  className="bg-terracota hover:bg-terracota/90 text-white px-8 py-3 rounded-lg font-medium shadow-hover hover:shadow-glow transition-all duration-300"
-                >
-                  <Book className="mr-2" size={20} />
-                  Ver Enfoques Terapéuticos
-                  <ArrowRight className="ml-2" size={20} />
-                </Button>
-              </motion.div>
-            </CardContent>
-          </Card>
-        </motion.div>
+
 
         {/* Call to Action */}
         <motion.div variants={itemVariants} className="text-center mt-16">
@@ -233,13 +200,15 @@ const About = () => {
                 nuevas formas de afrontar tu vida o tu relación. Ofrezco sesiones presenciales y 
                 virtuales, personalizadas y empáticas.
               </p>
-              <motion.button
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="bg-terracota hover:bg-terracota/90 text-white px-8 py-3 rounded-lg font-medium shadow-hover hover:shadow-glow transition-all duration-300"
-              >
-                Agenda tu primera sesión
-              </motion.button>
+              <a href="https://wa.me/573118361642" target="_blank" rel="noopener noreferrer">
+                <motion.button
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="bg-terracota hover:bg-terracota/90 text-white px-8 py-3 rounded-lg font-medium shadow-hover hover:shadow-glow transition-all duration-300"
+                >
+                  Agenda tu cita
+                </motion.button>
+              </a>
             </CardContent>
           </Card>
         </motion.div>

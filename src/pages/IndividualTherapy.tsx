@@ -173,7 +173,7 @@ const IndividualTherapy = () => {
             >
               <div className="relative h-64 md:h-80 overflow-hidden rounded-lg shadow-elegant">
                 <img
-                  src="/images/terapia-individual.jpg"
+                  src="/images/individual-therapy-page.jpg"
                   alt="Terapia Individual"
                   className="w-full h-full object-cover"
                   onError={(e) => {
