@@ -236,7 +236,7 @@ const IndividualTherapy = () => {
             <Accordion type="single" collapsible className="space-y-4">
               {consultationReasons.map((reason) => (
                 <AccordionItem key={reason.id} value={reason.id} className="border border-sage/20 rounded-lg px-6">
-                  <AccordionTrigger className="text-left text-sage-dark hover:text-sage font-semibold">
+                  <AccordionTrigger className="text-left text-sage-dark hover:text-sage font-semibold cursor-pointer">
                     <div className="flex items-center gap-3">
                       <div className="w-2 h-2 bg-terracota rounded-full flex-shrink-0" />
                       <span>
