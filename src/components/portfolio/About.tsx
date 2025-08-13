@@ -74,10 +74,7 @@ const About = () => {
                   Soy <strong className="text-terracota">Patricia Rojas R.</strong>, psicóloga con una maestría en Consejería Clínica y Salud Mental, 
                   con reconocimiento <strong className="text-terracota">Cum Laude</strong> y 25 años de experiencia profesional. 
                   Comencé mi carrera en el ámbito organizacional, liderando procesos de selección, 
-                  formación y bienestar laboral.
-                </p>
-                <p>
-                  Desde hace más de 15 años, acompaño a jóvenes, adultos y parejas en sus procesos 
+                  formación y bienestar laboral y desde hace más de 15 años, acompaño a jóvenes, adultos y parejas en sus procesos 
                   psicoterapéuticos con el objetivo de alcanzar bienestar emocional, sanar heridas 
                   del pasado y reconectar con un propósito vital.
                 </p>
@@ -86,14 +83,6 @@ const About = () => {
                   y en este último país realicé mis estudios de posgrado. Estas vivencias personales 
                   y profesionales ampliaron mi perspectiva y enriquecieron mi comprensión de la 
                   diversidad humana y sus realidades.
-                </p>
-                <p>
-                  Como muchas personas que llegan a terapia, también he atravesado desafíos 
-                  personales profundos. Algunos los he superado con éxito, otros han sido fuente de 
-                  aprendizaje y crecimiento. He conocido la frustración, la pérdida, pero también la 
-                  alegría y la gratitud. Estas experiencias han fortalecido mi empatía, sensibilidad 
-                  y la convicción de que <strong className="text-terracota">sanar es posible</strong> y que toda persona puede reconectarse 
-                  con lo que realmente importa.
                 </p>
               </div>
             </div>
