@@ -22,7 +22,7 @@ const Butterfly = ({ className = '', size = 16, position = 'header', style }: Bu
         width={size}
         height={size}
         viewBox="0 0 100 100"
-        className="text-terracota"
+        style={{ color: '#fb7185' }}
       >
         {/* Mariposa con alas sobrepuestas en el centro */}
         <g>

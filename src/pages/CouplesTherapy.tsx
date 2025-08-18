@@ -174,8 +174,8 @@ Sí es posible, aunque requiere un proceso profundo que involucra tres elementos
       {/* Motivos de Consulta Frecuentes */}
       <section className="py-16 px-6">
         <div className="container mx-auto">
-          <motion.div variants={itemVariants} className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 font-marcellus" style={{ color: '#3e554d' }}>
+          <motion.div variants={itemVariants} className="text-center mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold mb-3 font-marcellus" style={{ color: '#3e554d' }}>
               Motivos de Consulta Más Frecuentes
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto font-raleway">
@@ -183,18 +183,18 @@ Sí es posible, aunque requiere un proceso profundo que involucra tres elementos
             </p>
           </motion.div>
           
-          <div className="max-w-4xl mx-auto space-y-4">
-            <Accordion type="single" collapsible className="space-y-4">
+          <div className="max-w-4xl mx-auto space-y-2">
+            <Accordion type="single" collapsible className="space-y-2">
               {consultationReasons.map((reason) => (
-                <AccordionItem key={reason.id} value={reason.id} className="border border-sage/20 rounded-lg px-6">
-                  <AccordionTrigger className="text-left text-sage-dark hover:text-sage font-semibold cursor-pointer">
-                    <div className="flex items-center gap-3">
-                      <div className="w-2 h-2 bg-terracota rounded-full flex-shrink-0" />
+                <AccordionItem key={reason.id} value={reason.id} className="border-none p-0">
+                  <AccordionTrigger className="text-left text-muted-foreground hover:text-sage font-normal cursor-pointer text-sm p-0 h-auto">
+                    <div className="flex items-center gap-2">
+                      <div className="w-1.5 h-1.5 bg-sage rounded-full flex-shrink-0" />
                       <span>{reason.title}</span>
                     </div>
                   </AccordionTrigger>
-                  <AccordionContent className="space-y-4 pb-6">
-                    <div className="text-foreground leading-relaxed whitespace-pre-line font-medium">
+                  <AccordionContent className="space-y-4 pb-4 mt-2">
+                    <div className="text-foreground leading-relaxed whitespace-pre-line font-medium text-sm bg-card p-4 rounded-lg border border-sage/20">
                       {reason.content}
                     </div>
                   </AccordionContent>
@@ -205,81 +205,7 @@ Sí es posible, aunque requiere un proceso profundo que involucra tres elementos
         </div>
       </section>
 
-      {/* Formato de las Sesiones */}
-      <section className="py-16 px-6 bg-white/50">
-        <motion.div
-          ref={ref}
-          variants={containerVariants}
-          initial="hidden"
-          animate={inView ? "visible" : "hidden"}
-          className="container mx-auto"
-        >
-          <motion.div variants={itemVariants} className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 font-marcellus" style={{ color: '#3e554d' }}>
-              Formato de las Sesiones
-            </h2>
-          </motion.div>
 
-          <div className="max-w-4xl mx-auto">
-            <Card className="shadow-elegant">
-              <CardContent className="p-8 space-y-6">
-                <div className="flex items-center gap-3 mb-6">
-                  <Clock className="w-6 h-6 text-terracota" />
-                  <div>
-                    <h4 className="font-semibold text-sage-dark">Duración</h4>
-                    <p className="text-muted-foreground">Cada sesión tiene una duración de {sessionFormat.duration}.</p>
-                  </div>
-                </div>
-
-                <div className="space-y-4">
-                  <div className="bg-card p-6 rounded-lg shadow-hover border-l-4 border-terracota">
-                    <h5 className="font-semibold text-sage-dark mb-3 flex items-center gap-2">
-                      <Users className="w-5 h-5 text-terracota" />
-                      Sesiones Individuales
-                    </h5>
-                    <p className="text-muted-foreground leading-relaxed">
-                      {sessionFormat.individualSessions}
-                    </p>
-                  </div>
-
-                  <div className="bg-card p-6 rounded-lg shadow-hover border-l-4 border-sage">
-                    <h5 className="font-semibold text-sage-dark mb-3 flex items-center gap-2">
-                      <Heart className="w-5 h-5 text-sage" />
-                      Espacio Seguro
-                    </h5>
-                    <p className="text-muted-foreground leading-relaxed">
-                      {sessionFormat.safeSpace}
-                    </p>
-                  </div>
-
-                  <div className="bg-card p-6 rounded-lg shadow-hover border-l-4 border-steel-blue">
-                    <h5 className="font-semibold text-sage-dark mb-3 flex items-center gap-2">
-                      <MessageCircle className="w-5 h-5 text-steel-blue" />
-                      Metodología
-                    </h5>
-                    <p className="text-muted-foreground leading-relaxed mb-3">
-                      {sessionFormat.methodology}
-                    </p>
-                    <p className="text-muted-foreground leading-relaxed">
-                      {sessionFormat.integration}
-                    </p>
-                  </div>
-
-                  <div className="bg-gradient-secondary p-6 rounded-lg">
-                    <h5 className="font-semibold text-sage-dark mb-3 flex items-center gap-2">
-                      <MapPin className="w-5 h-5 text-sage-dark" />
-                      Modalidades
-                    </h5>
-                    <p className="text-sage-dark font-medium">
-                      Sesiones {sessionFormat.modalities}
-                    </p>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-        </motion.div>
-      </section>
 
       {/* Método Gottman */}
       <section className="py-16 px-6">
@@ -310,7 +236,7 @@ Sí es posible, aunque requiere un proceso profundo que involucra tres elementos
 
             <div className="flex justify-center">
               <a href="https://wa.me/573118361642" target="_blank" rel="noopener noreferrer">
-                <Button size="lg" className="bg-gradient-primary shadow-hover hover:shadow-glow">
+                <Button size="lg" className="bg-steel-blue hover:bg-steel-blue/90 text-white shadow-hover hover:shadow-glow">
                   <Calendar className="w-5 h-5 mr-2" />
                   Agenda tu cita
                 </Button>

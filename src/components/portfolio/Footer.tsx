@@ -3,7 +3,8 @@ import { Heart, ArrowUp, Phone, Mail, MapPin, Instagram, MessageCircle, Clock, S
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Link, useLocation } from 'react-router-dom';
-import Butterfly from '@/components/ui/butterfly';
+ 
+import Logo from '@/components/ui/logo';
 
 const Footer = () => {
   const location = useLocation();
@@ -76,9 +77,9 @@ const Footer = () => {
     },
     { 
       icon: Clock, 
-      label: 'Lun - Vie: 8AM - 6PM',
+      label: 'Horarios',
       href: '/contacto',
-      description: 'Sáb: 8AM - 12PM'
+      description: 'Lun - Vie: 8AM - 7PM\nSáb: 8AM - 12PM'
     },
   ];
 
@@ -131,15 +132,13 @@ const Footer = () => {
             transition={{ duration: 0.6 }}
             className="lg:col-span-1 space-y-6"
           >
-            <div className="flex items-center space-x-3">
+            <div className="flex flex-col space-y-3">
               {/* Logo Patricia Rojas */}
-              <div className="flex items-center space-x-3">
-                <div className="text-2xl font-bold font-marcellus text-white">
-                  Patricia Rojas
-                </div>
-                <div>
-                  <p className="text-primary-foreground/80 font-raleway">Psicóloga Master - Especializada en Terapia Individual y de Parejas</p>
-                </div>
+              <div className="flex items-center">
+                <Logo size="lg" className="filter brightness-0 invert" />
+              </div>
+              <div>
+                <p className="text-primary-foreground/80 font-raleway text-sm">Psicóloga Master - Especializada en Terapia Individual y de Parejas</p>
               </div>
             </div>
             
@@ -149,21 +148,18 @@ const Footer = () => {
               enfoques basados en evidencia científica.
             </p>
 
-            {/* Certifications */}
+            {/* Formación Complementaria */}
             <div className="space-y-2">
               <h4 className="font-semibold text-white flex items-center font-raleway">
                 <Award className="w-4 h-4 mr-2" />
-                Certificaciones
+                Formación Complementaria en Psicoterapia
               </h4>
-              {certifications.map((cert, index) => (
-                <Badge 
-                  key={index}
-                  variant="secondary" 
-                  className="block w-fit mb-1 text-xs bg-white/20 text-white border-white/30"
-                >
-                  {cert}
-                </Badge>
-              ))}
+              <ul className="space-y-1">
+                <li className="text-xs text-white/80">• Master en Consejería Clínica y Salud Mental</li>
+                <li className="text-xs text-white/80">• Nivel I y II Terapia de Pareja Método Gottman</li>
+                <li className="text-xs text-white/80">• Terapia de Aceptación y Compromiso (ACT)</li>
+                <li className="text-xs text-white/80">• Terapia Cognitivo Conductual</li>
+              </ul>
             </div>
           </motion.div>
 
@@ -242,7 +238,7 @@ const Footer = () => {
                       <contact.icon size={18} className="mt-1 flex-shrink-0" />
                       <div>
                         <p className="font-medium">{contact.label}</p>
-                        <p className="text-sm opacity-75">{contact.description}</p>
+                        <p className="text-sm opacity-75 whitespace-pre-line">{contact.description}</p>
                       </div>
                     </a>
                   ) : (
@@ -253,7 +249,7 @@ const Footer = () => {
                       <contact.icon size={18} className="mt-1 flex-shrink-0" />
                       <div>
                         <p className="font-medium">{contact.label}</p>
-                        <p className="text-sm opacity-75">{contact.description}</p>
+                        <p className="text-sm opacity-75 whitespace-pre-line">{contact.description}</p>
                       </div>
                     </Link>
                   )}
@@ -358,42 +354,7 @@ const Footer = () => {
         </motion.div>
       </div>
 
-      {/* Floating decoration elements with butterflies */}
-      <motion.div
-        animate={{ 
-          y: [-20, 20, -20],
-          opacity: [0.3, 0.6, 0.3],
-          rotate: [0, 5, -5, 0]
-        }}
-        transition={{ 
-          duration: 6, 
-          repeat: Infinity, 
-          ease: "easeInOut" 
-        }}
-        className="absolute top-10 right-10"
-      >
-        <svg width="24" height="24" viewBox="0 0 100 100" className="text-white/20">
-          <path d="M50 20 C30 10, 10 30, 30 50 C10 70, 30 90, 50 80 C70 90, 90 70, 70 50 C90 30, 70 10, 50 20 Z" fill="currentColor"/>
-        </svg>
-      </motion.div>
       
-      <motion.div
-        animate={{ 
-          y: [20, -20, 20],
-          opacity: [0.2, 0.5, 0.2],
-          rotate: [0, -3, 3, 0]
-        }}
-        transition={{ 
-          duration: 8, 
-          repeat: Infinity, 
-          ease: "easeInOut" 
-        }}
-        className="absolute bottom-20 left-20"
-      >
-        <svg width="18" height="18" viewBox="0 0 100 100" className="text-white/15">
-          <path d="M50 20 C30 10, 10 30, 30 50 C10 70, 30 90, 50 80 C70 90, 90 70, 70 50 C90 30, 70 10, 50 20 Z" fill="currentColor"/>
-        </svg>
-      </motion.div>
     </footer>
   );
 };

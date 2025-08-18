@@ -244,8 +244,8 @@ Sí es posible, aunque requiere un proceso profundo que involucra tres elementos
   const stats = [
     { number: '25+', label: 'Años de experiencia', icon: Award },
     { number: '15+', label: 'Años en psicoterapia', icon: Target },
-    { number: '100%', label: 'Confidencialidad', icon: MapPin },
-    { number: 'Modalidad', label: 'Presencial y Virtual', icon: Clock },
+    { number: '', label: 'Acompañamiento profesional y humano', icon: MapPin },
+    { number: '', label: 'Modalidad Online y Presencial', icon: Clock },
   ];
 
   const contactInfo = [
@@ -389,20 +389,24 @@ Sí es posible, aunque requiere un proceso profundo que involucra tres elementos
             </h2>
           </motion.div>
 
-          <div className="space-y-16 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {services.map((service, index) => (
               <motion.div
                 key={service.title}
                 variants={itemVariants}
-                whileHover={{ y: -5, scale: 1.02 }}
-                className={`grid md:grid-cols-2 gap-8 items-center ${
-                  index % 2 === 1 ? 'md:grid-flow-col-dense' : ''
-                }`}
+                className="flex flex-col space-y-6"
               >
+                {/* Título */}
+                <div className="text-center">
+                  <Link to={service.link} className="block">
+                    <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4 font-marcellus hover:text-sage transition-colors duration-300 cursor-pointer">
+                      {service.title}
+                    </h3>
+                  </Link>
+                </div>
+
                 {/* Imagen */}
-                <div className={`relative h-64 md:h-80 overflow-hidden rounded-lg shadow-elegant ${
-                  index % 2 === 1 ? 'md:col-start-2' : ''
-                }`}>
+                <div className="relative h-64 md:h-80 overflow-hidden rounded-lg shadow-elegant">
                   <img
                     src={service.image}
                     alt={service.title}
@@ -429,192 +433,28 @@ Sí es posible, aunque requiere un proceso profundo que involucra tres elementos
                   </div>
                 </div>
                 
-                {/* Contenido */}
-                <div className={`text-center md:text-left space-y-6 ${
-                  index % 2 === 1 ? 'md:col-start-1' : ''
-                }`}>
-                  <div>
-                    <Link to={service.link} className="block">
-                      <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4 font-marcellus hover:text-sage transition-colors duration-300 cursor-pointer">
-                        {service.title}
-                      </h3>
-                    </Link>
-                    <p className="text-muted-foreground leading-relaxed text-base md:text-lg font-raleway mb-4">
-                      {service.description}
-                    </p>
-                    
-                    {/* Motivos de consulta más frecuentes */}
-                    <div className="space-y-4">
-                      <p className="text-sm font-semibold text-sage-dark">
-                        Motivos de consulta más frecuentes:
-                      </p>
-                      
-                      {/* Lista de motivos clickeables */}
-                      <div className="space-y-2">
-                        <Accordion type="single" collapsible className="space-y-2">
-                          {service.title === "TERAPIA DE PAREJA" ? (
-                            couplesTherapyReasons.map((reason) => (
-                              <AccordionItem key={reason.id} value={reason.id} className="border-none p-0">
-                                <AccordionTrigger className="text-left text-muted-foreground hover:text-sage font-normal cursor-pointer text-sm p-0 h-auto">
-                                  <div className="flex items-center gap-2">
-                                    <div className="w-1.5 h-1.5 bg-sage rounded-full flex-shrink-0" />
-                                    <span>{reason.title}</span>
-                                  </div>
-                                </AccordionTrigger>
-                                <AccordionContent className="space-y-4 pb-4 mt-2">
-                                  <div className="text-foreground leading-relaxed whitespace-pre-line font-medium text-sm bg-card p-4 rounded-lg border border-sage/20">
-                                    {reason.content}
-                                  </div>
-                                </AccordionContent>
-                              </AccordionItem>
-                            ))
-                          ) : (
-                            individualTherapyReasons.map((reason) => (
-                              <AccordionItem key={reason.id} value={reason.id} className="border-none p-0">
-                                <AccordionTrigger className="text-left text-muted-foreground hover:text-sage font-normal cursor-pointer text-sm p-0 h-auto">
-                                  <div className="flex items-center gap-2">
-                                    <div className="w-1.5 h-1.5 bg-sage rounded-full flex-shrink-0" />
-                                    <span>
-                                      {reason.title}
-                                      {reason.subtitle && <span className="text-xs text-muted-foreground font-normal ml-2">{reason.subtitle}</span>}
-                                    </span>
-                                  </div>
-                                </AccordionTrigger>
-                                <AccordionContent className="space-y-4 pb-4 mt-2">
-                                  <div className="bg-card p-4 rounded-lg border border-sage/20">
-                                    <div>
-                                      <h4 className="text-sm font-semibold text-sage-dark mb-3">
-                                        {reason.content.title}
-                                      </h4>
-                                      <p className="text-muted-foreground leading-relaxed text-sm">
-                                        {reason.content.description}
-                                      </p>
-                                    </div>
-
-                                    {/* Manifestaciones del duelo */}
-                                    {reason.content.manifestations && (
-                                      <div>
-                                        <h5 className="text-xs font-semibold text-sage-dark mb-3">
-                                          {reason.content.manifestations.title}
-                                        </h5>
-                                        <p className="text-muted-foreground mb-4 text-sm">{reason.content.manifestations.description}</p>
-                                        <div className="grid grid-cols-2 gap-2">
-                                          {reason.content.manifestations.categories.map((category, idx) => (
-                                            <div key={idx} className="bg-card p-3 rounded-lg shadow-hover border-l-4 border-terracota">
-                                              <h6 className="font-semibold text-terracota mb-2 text-xs">{category.type}:</h6>
-                                              <div className="text-xs text-muted-foreground">
-                                                {category.symptoms.join(', ')}
-                                              </div>
-                                            </div>
-                                          ))}
-                                        </div>
-                                      </div>
-                                    )}
-
-                                    {/* Cuándo buscar ayuda */}
-                                    {reason.content.whenToSeekHelp && (
-                                      <div>
-                                        <h5 className="text-xs font-semibold text-sage-dark mb-3">
-                                          {reason.content.whenToSeekHelp.title}
-                                        </h5>
-                                        <ul className="space-y-2 mb-4">
-                                          {reason.content.whenToSeekHelp.list.map((item, idx) => (
-                                            <li key={idx} className="flex items-start gap-3">
-                                              <div className="w-2 h-2 bg-terracota rounded-full mt-2 flex-shrink-0"></div>
-                                              <span className="text-muted-foreground text-sm">{item}</span>
-                                            </li>
-                                          ))}
-                                        </ul>
-                                      </div>
-                                    )}
-
-                                    {/* Beneficios de la terapia */}
-                                    {reason.content.therapyBenefits && (
-                                      <div>
-                                        <h5 className="text-xs font-semibold text-sage-dark mb-3">
-                                          {reason.content.therapyBenefits.title}
-                                        </h5>
-                                        <p className="text-muted-foreground mb-4 text-sm">{reason.content.therapyBenefits.description}</p>
-                                        <ul className="space-y-2 mb-4">
-                                          {reason.content.therapyBenefits.list.map((benefit, idx) => (
-                                            <li key={idx} className="flex items-start gap-3">
-                                              <div className="w-2 h-2 bg-terracota rounded-full mt-2 flex-shrink-0"></div>
-                                              <span className="text-muted-foreground text-sm">{benefit}</span>
-                                            </li>
-                                          ))}
-                                        </ul>
-                                      </div>
-                                    )}
-
-                                    {/* Etapas del duelo */}
-                                    {reason.content.stages && (
-                                      <div>
-                                        <h5 className="text-xs font-semibold text-sage-dark mb-3">
-                                          {reason.content.stages.title}
-                                        </h5>
-                                        <p className="text-muted-foreground mb-4 text-sm">{reason.content.stages.description}</p>
-                                        <div className="bg-steel-blue/10 p-3 rounded-lg border border-steel-blue/20">
-                                          <p className="text-steel-blue text-xs font-medium">
-                                            <strong>Nota:</strong> {reason.content.stages.note}
-                                          </p>
-                                        </div>
-                                      </div>
-                                    )}
-
-                                    {/* Importancia del crecimiento personal */}
-                                    {reason.content.importance && (
-                                      <div>
-                                        <h5 className="text-xs font-semibold text-sage-dark mb-3">
-                                          {reason.content.importance.title}
-                                        </h5>
-                                        <p className="text-muted-foreground mb-4 text-sm">{reason.content.importance.description}</p>
-                                        <ul className="space-y-2">
-                                          {reason.content.importance.benefits.map((benefit, idx) => (
-                                            <li key={idx} className="flex items-start gap-3">
-                                              <div className="w-2 h-2 bg-terracota rounded-full mt-2 flex-shrink-0"></div>
-                                              <span className="text-muted-foreground text-sm">{benefit}</span>
-                                            </li>
-                                          ))}
-                                        </ul>
-                                      </div>
-                                    )}
-
-                                    {/* Síntomas */}
-                                    {reason.content.symptoms && (
-                                      <div>
-                                        <h5 className="text-xs font-semibold text-sage-dark mb-3">
-                                          {reason.content.symptoms.title}
-                                        </h5>
-                                        <ul className="space-y-2 mb-4">
-                                          {reason.content.symptoms.list.map((symptom, idx) => (
-                                            <li key={idx} className="flex items-start gap-3">
-                                              <div className="w-2 h-2 bg-terracota rounded-full mt-2 flex-shrink-0"></div>
-                                              <span className="text-muted-foreground text-sm">{symptom}</span>
-                                            </li>
-                                          ))}
-                                        </ul>
-                                        {reason.content.symptoms.note && (
-                                          <div className="bg-steel-blue/10 p-3 rounded-lg border border-steel-blue/20">
-                                            <p className="text-steel-blue text-xs font-medium">
-                                              {reason.content.symptoms.note}
-                                            </p>
-                                          </div>
-                                        )}
-                                      </div>
-                                    )}
-                                  </div>
-                                </AccordionContent>
-                              </AccordionItem>
-                            ))
-                          )}
-                        </Accordion>
-                      </div>
-                    </div>
-                  </div>
+                {/* Información */}
+                <div className="space-y-4">
+                  <p className="text-muted-foreground leading-relaxed text-base md:text-lg font-raleway text-center">
+                    {service.description}
+                  </p>
                 </div>
               </motion.div>
             ))}
           </div>
+
+          {/* Botón Agenda tu cita centrado */}
+          <motion.div variants={itemVariants} className="text-center mt-12">
+            <a href="https://wa.me/573118361642" target="_blank" rel="noopener noreferrer">
+              <motion.button
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className="bg-steel-blue hover:bg-steel-blue/90 text-white px-8 py-4 rounded-lg font-medium shadow-hover hover:shadow-glow transition-all duration-300 text-lg"
+              >
+                Agenda tu cita
+              </motion.button>
+            </a>
+          </motion.div>
         </motion.div>
       </section>
 
@@ -647,7 +487,7 @@ Sí es posible, aunque requiere un proceso profundo que involucra tres elementos
             >
               <div className="mb-6">
                 <div className="w-16 h-16 bg-sage/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-8 h-8 text-sage" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{ color: '#fb7185' }}>
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
                   </svg>
                 </div>
@@ -665,7 +505,7 @@ Sí es posible, aunque requiere un proceso profundo que involucra tres elementos
             >
               <div className="mb-6">
                 <div className="w-16 h-16 bg-sage/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-8 h-8 text-sage" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{ color: '#fb7185' }}>
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
@@ -681,7 +521,7 @@ Sí es posible, aunque requiere un proceso profundo que involucra tres elementos
           {/* Botón Conoce más */}
           <motion.div variants={itemVariants} className="text-center">
             <Link to="/sobre-mi">
-              <Button className="bg-sage hover:bg-sage/90 text-white px-8 py-3 rounded-lg font-medium">
+                                <Button className="bg-steel-blue hover:bg-steel-blue/90 text-white px-8 py-3 rounded-lg font-medium">
                 Conoce más
               </Button>
             </Link>
@@ -689,54 +529,7 @@ Sí es posible, aunque requiere un proceso profundo que involucra tres elementos
         </motion.div>
       </section>
 
-      {/* Sección de Estadísticas */}
-      <section className="py-20 bg-gradient-secondary">
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
-          className="container mx-auto px-6"
-        >
-          <motion.div variants={itemVariants} className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-sage-dark font-marcellus">
-              Experiencia y Compromiso
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Años de experiencia respaldados por formación continua y dedicación profesional
-            </p>
-          </motion.div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {stats.map((stat, index) => (
-              <motion.div
-                key={stat.label}
-                variants={itemVariants}
-                whileHover={{ scale: 1.05 }}
-                className="text-center"
-              >
-                <Card className="h-40 shadow-elegant hover:shadow-hover transition-all duration-300 flex flex-col justify-center">
-                  <CardContent className="p-4">
-                    <stat.icon size={32} className="text-steel-blue mx-auto mb-4" />
-                    <div className="text-2xl md:text-3xl font-bold text-foreground mb-2 text-center">
-                      {stat.number}
-                    </div>
-                    <div className="text-xs md:text-sm text-muted-foreground leading-tight px-1 text-center">
-                      {stat.label === 'Presencial y Virtual' ? (
-                        <span>
-                          Presencial<br />y Virtual
-                        </span>
-                      ) : (
-                        stat.label
-                      )}
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
-      </section>
 
       {/* Sección de Contacto */}
       <section className="py-20">
@@ -803,7 +596,7 @@ Sí es posible, aunque requiere un proceso profundo que involucra tres elementos
           <motion.div variants={itemVariants} className="text-center">
             <div className="flex justify-center">
               <a href="https://wa.me/573118361642" target="_blank" rel="noopener noreferrer">
-                <Button size="lg" className="bg-sage hover:bg-sage/90 text-white shadow-hover hover:shadow-glow">
+                <Button size="lg" className="bg-steel-blue hover:bg-steel-blue/90 text-white shadow-hover hover:shadow-glow">
                   <Calendar className="w-5 h-5 mr-2" />
                   Agenda tu cita
                 </Button>

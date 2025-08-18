@@ -78,13 +78,6 @@ const Experience = () => {
     }
   ];
 
-  const stats = [
-    { number: '25+', label: 'Años de Experiencia', icon: Calendar },
-    { number: '1000+', label: 'Pacientes Atendidos', icon: Users },
-    { number: '95%', label: 'Satisfacción', icon: Heart },
-    { number: '15+', label: 'Años en Terapia Clínica', icon: Award }
-  ];
-
   const experience = [
     {
       period: '2008 - Presente',
@@ -155,38 +148,6 @@ const Experience = () => {
             La confianza y transformación de quienes han pasado por mi consulta 
             es el mayor testimonio de la efectividad del proceso terapéutico.
           </p>
-        </motion.div>
-
-        {/* Stats */}
-        <motion.div variants={itemVariants} className="mb-20">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {stats.map((stat, index) => (
-              <motion.div
-                key={stat.label}
-                variants={itemVariants}
-                whileHover={{ scale: 1.05, y: -5 }}
-                className="text-center"
-              >
-                <Card className="p-6 shadow-elegant hover:shadow-hover transition-all duration-300">
-                  <CardContent className="p-0">
-                    <motion.div
-                      whileHover={{ rotate: 360 }}
-                      transition={{ duration: 0.6 }}
-                      className="inline-flex p-3 rounded-full bg-gradient-primary/10 text-accent mb-4"
-                    >
-                      <stat.icon size={24} />
-                    </motion.div>
-                    <div className="text-3xl font-bold text-foreground mb-2">
-                      {stat.number}
-                    </div>
-                    <div className="text-sm text-muted-foreground">
-                      {stat.label}
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
         </motion.div>
 
         {/* Testimonials Grid */}

@@ -14,8 +14,7 @@ const About = () => {
   const stats = [
     { icon: Award, number: '25+', label: 'Años de experiencia' },
     { icon: Target, number: '15+', label: 'Años en psicoterapia' },
-    { icon: Heart, number: '100%', label: 'Satisfacción del cliente' },
-    { icon: User, number: '24/7', label: 'Disponibilidad online' },
+    { icon: Heart, number: '', label: 'Acompañamiento profesional y humano' },
   ];
 
   const formacionComplementaria = [
@@ -83,7 +82,7 @@ const About = () => {
           <motion.div variants={itemVariants} className="space-y-6">
             <div className="bg-card p-6 rounded-lg shadow-elegant border">
               <h3 className="text-2xl font-bold text-foreground mb-4 flex items-center">
-                <Heart className="mr-3 text-terracota" size={24} />
+                <Heart className="mr-3" size={24} style={{ color: '#fb7185' }} />
                 Mi Historia
               </h3>
               <div className="space-y-4 text-muted-foreground leading-relaxed">
@@ -106,23 +105,42 @@ const About = () => {
 
             <div className="bg-card p-6 rounded-lg shadow-elegant border">
               <h4 className="text-lg font-semibold text-foreground mb-4 flex items-center">
-                <Target className="mr-2 text-terracota" size={20} />
-                Mi Propósito
+                <Book className="mr-2" size={20} style={{ color: '#fb7185' }} />
+                Formación Complementaria en Psicoterapia
               </h4>
-              <p className="text-muted-foreground leading-relaxed">
-                Mi propósito es ayudarte a transformar lo que estás viviendo hoy y a descubrir 
-                nuevas formas de afrontar tu vida o tu relación. Ofrezco <strong className="text-terracota">sesiones presenciales y 
-                virtuales</strong>, personalizadas y empáticas, donde podrás desarrollar herramientas para 
-                comunicarte con claridad, establecer límites saludables y tomar decisiones alineadas 
-                con tus verdaderas necesidades.
-              </p>
+              <ul className="text-muted-foreground leading-relaxed space-y-2">
+                <li className="flex items-start">
+                  <span className="text-terracota mr-2">•</span>
+                  <span>Master en consejería clínica y salud mental</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-terracota mr-2">•</span>
+                  <span>Manejo de la infidelidad en terapia de pareja</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-terracota mr-2">•</span>
+                  <span>Nivel I y II de Método Gottman para terapia de pareja</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-terracota mr-2">•</span>
+                  <span>Terapias de tercera generación</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-terracota mr-2">•</span>
+                  <span>Terapia de aceptación y compromiso (ACT)</span>
+                </li>
+                <li className="flex items-start">
+                  <span className="text-terracota mr-2">•</span>
+                  <span>Desarrollo de habilidades psicoterapéuticas (Gestalt, Terapia Cognitivo Conductual, Logoterapia)</span>
+                </li>
+              </ul>
             </div>
           </motion.div>
         </div>
 
         {/* Estadísticas */}
         <motion.div variants={itemVariants} className="mb-16">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
             {stats.map((stat, index) => (
               <motion.div
                 key={stat.label}
@@ -132,7 +150,7 @@ const About = () => {
               >
                 <Card className="p-6 shadow-elegant hover:shadow-hover transition-all duration-300">
                   <CardContent className="p-0">
-                    <stat.icon size={32} className="text-terracota mx-auto mb-4" />
+                    <stat.icon size={32} className="mx-auto mb-4" style={{ color: '#fb7185' }} />
                     <div className="text-3xl font-bold text-foreground mb-2">
                       {stat.number}
                     </div>
@@ -151,7 +169,7 @@ const About = () => {
           <Card className="shadow-elegant bg-gradient-to-br from-background to-muted/20">
             <CardHeader className="text-center">
               <CardTitle className="text-2xl flex items-center justify-center">
-                <Book className="mr-3 text-terracota" size={28} />
+                <Book className="mr-3" size={28} style={{ color: '#fb7185' }} />
                 Formación Complementaria
               </CardTitle>
               <p className="text-muted-foreground mt-4 max-w-3xl mx-auto">
@@ -179,7 +197,7 @@ const About = () => {
               
               <div className="mt-8 p-6 bg-terracota/10 rounded-lg border border-terracota/20">
                 <div className="flex items-center justify-center mb-4">
-                  <Award className="text-terracota mr-2" size={24} />
+                  <Award className="mr-2" size={24} style={{ color: '#fb7185' }} />
                   <span className="text-terracota font-semibold">Especialización Reconocida</span>
                 </div>
                 <p className="text-center text-muted-foreground">
@@ -194,30 +212,7 @@ const About = () => {
 
 
 
-        {/* Call to Action */}
-        <motion.div variants={itemVariants} className="text-center mt-16">
-          <Card className="max-w-2xl mx-auto shadow-elegant bg-gradient-to-br from-sage-light to-steel-blue/20 border border-sage/30">
-            <CardContent className="p-8">
-              <h3 className="text-2xl font-bold text-sage-dark mb-4 font-marcellus">
-                ¿Sientes que es momento de iniciar un cambio?
-              </h3>
-              <p className="text-sage-dark/80 mb-6 leading-relaxed font-medium">
-                Mi propósito es ayudarte a transformar lo que estás viviendo hoy y a descubrir 
-                nuevas formas de afrontar tu vida o tu relación. Ofrezco sesiones presenciales y 
-                virtuales, personalizadas y empáticas.
-              </p>
-              <a href="https://wa.me/573118361642" target="_blank" rel="noopener noreferrer">
-                <motion.button
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  className="bg-sage hover:bg-sage/90 text-white px-8 py-3 rounded-lg font-semibold shadow-hover hover:shadow-glow transition-all duration-300"
-                >
-                  Agenda tu cita
-                </motion.button>
-              </a>
-            </CardContent>
-          </Card>
-        </motion.div>
+
       </motion.div>
     </section>
   );

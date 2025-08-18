@@ -74,7 +74,7 @@ const Contact = () => {
       icon: MessageCircle, 
       href: 'https://wa.me/573118361642', 
       label: 'WhatsApp',
-      color: 'text-sage',
+      color: 'text-[#fb7185]',
       username: '+57 311 836 1642'
     },
   ];
@@ -321,13 +321,13 @@ const Contact = () => {
                     <div className="text-center pt-4">
                       {modalidad.link.startsWith('/') ? (
                         <a href={modalidad.link}>
-                          <Button className="bg-terracota hover:bg-terracota/90 text-white">
+                          <Button className="bg-steel-blue hover:bg-steel-blue/90 text-white">
                             Más información
                           </Button>
                         </a>
                       ) : (
                         <a href={modalidad.link} target="_blank" rel="noopener noreferrer">
-                          <Button className="bg-terracota hover:bg-terracota/90 text-white">
+                          <Button className="bg-steel-blue hover:bg-steel-blue/90 text-white">
                             Agendar por WhatsApp
                           </Button>
                         </a>
@@ -412,7 +412,7 @@ const Contact = () => {
               </div>
               <div className="flex justify-center">
                 <a href="https://wa.me/573118361642" target="_blank" rel="noopener noreferrer">
-                  <Button size="lg" className="bg-gradient-primary shadow-hover hover:shadow-glow">
+                  <Button size="lg" className="bg-steel-blue hover:bg-steel-blue/90 text-white shadow-hover hover:shadow-glow">
                     <MessageCircle className="w-5 h-5 mr-2" />
                     Agenda tu cita
                   </Button>

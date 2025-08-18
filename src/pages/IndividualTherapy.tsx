@@ -143,14 +143,14 @@ const IndividualTherapy = () => {
       title: 'Espacio Seguro y Libre de Juicios',
       description: 'Creo un ambiente confidencial y empático donde puedes expresarte con total libertad y autenticidad.',
       icon: Shield,
-      color: 'text-terracota',
+      color: 'text-[#fb7185]',
       bgGradient: 'from-terracota/20 to-terracota/5',
     },
     {
       title: 'Herramientas Prácticas para la Vida Diaria',
       description: 'Te proporciono estrategias concretas que puedes aplicar en tu día a día para gestionar emociones y situaciones difíciles.',
       icon: Lightbulb,
-      color: 'text-sage',
+      color: 'text-[#fb7185]',
       bgGradient: 'from-sage/20 to-sage/5',
     }
   ];
@@ -223,8 +223,8 @@ const IndividualTherapy = () => {
       {/* Motivos de Consulta Frecuentes */}
       <section className="py-16 px-6">
         <div className="container mx-auto">
-          <motion.div variants={itemVariants} className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 font-marcellus" style={{ color: '#3e554d' }}>
+          <motion.div variants={itemVariants} className="text-center mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold mb-3 font-marcellus" style={{ color: '#3e554d' }}>
               Motivos de Consulta Frecuentes
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto font-raleway">
@@ -232,140 +232,142 @@ const IndividualTherapy = () => {
             </p>
           </motion.div>
           
-          <div className="max-w-4xl mx-auto space-y-4">
-            <Accordion type="single" collapsible className="space-y-4">
+          <div className="max-w-4xl mx-auto space-y-2">
+            <Accordion type="single" collapsible className="space-y-2">
               {consultationReasons.map((reason) => (
-                <AccordionItem key={reason.id} value={reason.id} className="border border-sage/20 rounded-lg px-6">
-                  <AccordionTrigger className="text-left text-sage-dark hover:text-sage font-semibold cursor-pointer">
-                    <div className="flex items-center gap-3">
-                      <div className="w-2 h-2 bg-terracota rounded-full flex-shrink-0" />
+                <AccordionItem key={reason.id} value={reason.id} className="border-none p-0">
+                  <AccordionTrigger className="text-left text-muted-foreground hover:text-sage font-normal cursor-pointer text-sm p-0 h-auto">
+                    <div className="flex items-center gap-2">
+                      <div className="w-1.5 h-1.5 bg-sage rounded-full flex-shrink-0" />
                       <span>
                         {reason.title}
-                        {reason.subtitle && <span className="text-sm text-muted-foreground font-normal ml-2">{reason.subtitle}</span>}
+                        {reason.subtitle && <span className="text-xs text-muted-foreground font-normal ml-2">{reason.subtitle}</span>}
                       </span>
                     </div>
                   </AccordionTrigger>
-                  <AccordionContent className="space-y-4 pb-6">
-                    <div>
-                      <h4 className="text-lg font-semibold text-sage-dark mb-3">
-                        {reason.content.title}
-                      </h4>
-                      <p className="text-muted-foreground leading-relaxed">
-                        {reason.content.description}
-                      </p>
-                    </div>
-
-                    {/* Manifestaciones del duelo */}
-                    {reason.content.manifestations && (
+                  <AccordionContent className="space-y-4 pb-4 mt-2">
+                    <div className="bg-card p-4 rounded-lg border border-sage/20">
                       <div>
-                        <h5 className="text-md font-semibold text-sage-dark mb-3">
-                          {reason.content.manifestations.title}
-                        </h5>
-                        <p className="text-muted-foreground mb-4">{reason.content.manifestations.description}</p>
-                        <div className="grid md:grid-cols-2 gap-4">
-                          {reason.content.manifestations.categories.map((category, idx) => (
-                            <div key={idx} className="bg-card p-4 rounded-lg shadow-hover border-l-4 border-terracota">
-                              <h6 className="font-semibold text-terracota mb-2">{category.type}:</h6>
-                              <div className="text-sm text-muted-foreground">
-                                {category.symptoms.join(', ')}
+                        <h4 className="text-sm font-semibold text-sage-dark mb-3">
+                          {reason.content.title}
+                        </h4>
+                        <p className="text-muted-foreground leading-relaxed text-sm">
+                          {reason.content.description}
+                        </p>
+                      </div>
+
+                      {/* Manifestaciones del duelo */}
+                      {reason.content.manifestations && (
+                        <div>
+                          <h5 className="text-xs font-semibold text-sage-dark mb-3">
+                            {reason.content.manifestations.title}
+                          </h5>
+                          <p className="text-muted-foreground mb-4 text-sm">{reason.content.manifestations.description}</p>
+                          <div className="grid grid-cols-2 gap-2">
+                            {reason.content.manifestations.categories.map((category, idx) => (
+                              <div key={idx} className="bg-card p-3 rounded-lg shadow-hover border-l-4 border-terracota">
+                                <h6 className="font-semibold text-terracota mb-2 text-xs">{category.type}:</h6>
+                                <div className="text-xs text-muted-foreground">
+                                  {category.symptoms.join(', ')}
+                                </div>
                               </div>
-                            </div>
-                          ))}
+                            ))}
+                          </div>
                         </div>
-                      </div>
-                    )}
+                      )}
 
-                    {/* Cuándo buscar ayuda */}
-                    {reason.content.whenToSeekHelp && (
-                      <div>
-                        <h5 className="text-md font-semibold text-sage-dark mb-3">
-                          {reason.content.whenToSeekHelp.title}
-                        </h5>
-                        <ul className="space-y-2 mb-4">
-                          {reason.content.whenToSeekHelp.list.map((item, idx) => (
-                            <li key={idx} className="flex items-start gap-3">
-                              <div className="w-2 h-2 bg-terracota rounded-full mt-2 flex-shrink-0"></div>
-                              <span className="text-muted-foreground">{item}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    )}
-
-                    {/* Beneficios de la terapia */}
-                    {reason.content.therapyBenefits && (
-                      <div>
-                        <h5 className="text-md font-semibold text-sage-dark mb-3">
-                          {reason.content.therapyBenefits.title}
-                        </h5>
-                        <p className="text-muted-foreground mb-4">{reason.content.therapyBenefits.description}</p>
-                        <ul className="space-y-2 mb-4">
-                          {reason.content.therapyBenefits.list.map((benefit, idx) => (
-                            <li key={idx} className="flex items-start gap-3">
-                              <div className="w-2 h-2 bg-terracota rounded-full mt-2 flex-shrink-0"></div>
-                              <span className="text-muted-foreground">{benefit}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    )}
-
-                    {/* Etapas del duelo */}
-                    {reason.content.stages && (
-                      <div>
-                        <h5 className="text-md font-semibold text-sage-dark mb-3">
-                          {reason.content.stages.title}
-                        </h5>
-                        <p className="text-muted-foreground mb-4">{reason.content.stages.description}</p>
-                        <div className="bg-steel-blue/10 p-4 rounded-lg border border-steel-blue/20">
-                          <p className="text-steel-blue text-sm font-medium">
-                            <strong>Nota:</strong> {reason.content.stages.note}
-                          </p>
+                      {/* Cuándo buscar ayuda */}
+                      {reason.content.whenToSeekHelp && (
+                        <div>
+                          <h5 className="text-xs font-semibold text-sage-dark mb-3">
+                            {reason.content.whenToSeekHelp.title}
+                          </h5>
+                          <ul className="space-y-2 mb-4">
+                            {reason.content.whenToSeekHelp.list.map((item, idx) => (
+                              <li key={idx} className="flex items-start gap-3">
+                                <div className="w-2 h-2 bg-terracota rounded-full mt-2 flex-shrink-0"></div>
+                                <span className="text-muted-foreground text-sm">{item}</span>
+                              </li>
+                            ))}
+                          </ul>
                         </div>
-                      </div>
-                    )}
+                      )}
 
-                    {/* Importancia del crecimiento personal */}
-                    {reason.content.importance && (
-                      <div>
-                        <h5 className="text-md font-semibold text-sage-dark mb-3">
-                          {reason.content.importance.title}
-                        </h5>
-                        <p className="text-muted-foreground mb-4">{reason.content.importance.description}</p>
-                        <ul className="space-y-2 mb-4">
-                          {reason.content.importance.benefits.map((benefit, idx) => (
-                            <li key={idx} className="flex items-start gap-3">
-                              <div className="w-2 h-2 bg-terracota rounded-full mt-2 flex-shrink-0"></div>
-                              <span className="text-muted-foreground">{benefit}</span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    )}
+                      {/* Beneficios de la terapia */}
+                      {reason.content.therapyBenefits && (
+                        <div>
+                          <h5 className="text-xs font-semibold text-sage-dark mb-3">
+                            {reason.content.therapyBenefits.title}
+                          </h5>
+                          <p className="text-muted-foreground mb-4 text-sm">{reason.content.therapyBenefits.description}</p>
+                          <ul className="space-y-2 mb-4">
+                            {reason.content.therapyBenefits.list.map((benefit, idx) => (
+                              <li key={idx} className="flex items-start gap-3">
+                                <div className="w-2 h-2 bg-terracota rounded-full mt-2 flex-shrink-0"></div>
+                                <span className="text-muted-foreground text-sm">{benefit}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
 
-                    {/* Síntomas regulares (para ansiedad, depresión, crecimiento) */}
-                    {reason.content.symptoms && (
-                      <div>
-                        <h5 className="text-md font-semibold text-sage-dark mb-3">
-                          {reason.content.symptoms.title}
-                        </h5>
-                        <ul className="space-y-2 mb-4">
-                          {reason.content.symptoms.list.map((symptom, idx) => (
-                            <li key={idx} className="flex items-start gap-3">
-                              <div className="w-2 h-2 bg-terracota rounded-full mt-2 flex-shrink-0"></div>
-                              <span className="text-muted-foreground">{symptom}</span>
-                            </li>
-                          ))}
-                        </ul>
-                        {reason.content.symptoms.note && (
-                          <div className="bg-steel-blue/10 p-4 rounded-lg border border-steel-blue/20">
-                            <p className="text-steel-blue text-sm font-medium">
-                              <strong>Nota:</strong> {reason.content.symptoms.note}
+                      {/* Etapas del duelo */}
+                      {reason.content.stages && (
+                        <div>
+                          <h5 className="text-xs font-semibold text-sage-dark mb-3">
+                            {reason.content.stages.title}
+                          </h5>
+                          <p className="text-muted-foreground mb-4 text-sm">{reason.content.stages.description}</p>
+                          <div className="bg-steel-blue/10 p-3 rounded-lg border border-steel-blue/20">
+                            <p className="text-steel-blue text-xs font-medium">
+                              <strong>Nota:</strong> {reason.content.stages.note}
                             </p>
                           </div>
-                        )}
-                      </div>
-                    )}
+                        </div>
+                      )}
+
+                      {/* Importancia del crecimiento personal */}
+                      {reason.content.importance && (
+                        <div>
+                          <h5 className="text-xs font-semibold text-sage-dark mb-3">
+                            {reason.content.importance.title}
+                          </h5>
+                          <p className="text-muted-foreground mb-4 text-sm">{reason.content.importance.description}</p>
+                          <ul className="space-y-2">
+                            {reason.content.importance.benefits.map((benefit, idx) => (
+                              <li key={idx} className="flex items-start gap-3">
+                                <div className="w-2 h-2 bg-terracota rounded-full mt-2 flex-shrink-0"></div>
+                                <span className="text-muted-foreground text-sm">{benefit}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      )}
+
+                      {/* Síntomas regulares (para ansiedad, depresión, crecimiento) */}
+                      {reason.content.symptoms && (
+                        <div>
+                          <h5 className="text-xs font-semibold text-sage-dark mb-3">
+                            {reason.content.symptoms.title}
+                          </h5>
+                          <ul className="space-y-2 mb-4">
+                            {reason.content.symptoms.list.map((symptom, idx) => (
+                              <li key={idx} className="flex items-start gap-3">
+                                <div className="w-2 h-2 bg-terracota rounded-full mt-2 flex-shrink-0"></div>
+                                <span className="text-muted-foreground text-sm">{symptom}</span>
+                              </li>
+                            ))}
+                          </ul>
+                          {reason.content.symptoms.note && (
+                            <div className="bg-steel-blue/10 p-3 rounded-lg border border-steel-blue/20">
+                              <p className="text-steel-blue text-xs font-medium">
+                                {reason.content.symptoms.note}
+                              </p>
+                            </div>
+                          )}
+                        </div>
+                      )}
+                    </div>
                   </AccordionContent>
                 </AccordionItem>
               ))}
@@ -374,54 +376,7 @@ const IndividualTherapy = () => {
         </div>
       </section>
 
-      {/* Mi Enfoque */}
-      <section className="py-16 px-6 bg-white/50">
-        <motion.div
-          ref={ref}
-          variants={containerVariants}
-          initial="hidden"
-          animate={inView ? "visible" : "hidden"}
-          className="container mx-auto"
-        >
-          <motion.div variants={itemVariants} className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 font-marcellus" style={{ color: '#3e554d' }}>
-              Mi Enfoque Terapéutico
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto font-raleway">
-              Trabajo desde un enfoque integrativo, adaptándome a tus necesidades específicas
-              con herramientas basadas en evidencia científica.
-            </p>
-          </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {specialties.map((specialty, index) => (
-              <motion.div
-                key={specialty.title}
-                variants={itemVariants}
-                whileHover={{ y: -5, scale: 1.02 }}
-              >
-                <Card className={`h-full overflow-hidden shadow-elegant hover:shadow-hover transition-all duration-500 bg-gradient-to-br ${specialty.bgGradient}`}>
-                  <CardHeader className="pb-4">
-                    <motion.div
-                      whileHover={{ rotate: 10, scale: 1.1 }}
-                      className={`inline-flex p-4 rounded-2xl bg-background/80 ${specialty.color} mb-4 shadow-sm`}
-                    >
-                      <specialty.icon size={32} />
-                    </motion.div>
-                    
-                    <h3 className="text-xl font-bold text-foreground mb-3">
-                      {specialty.title}
-                    </h3>
-                    <p className="text-muted-foreground leading-relaxed">
-                      {specialty.description}
-                    </p>
-                  </CardHeader>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
-      </section>
 
       {/* CTA Final */}
       <section className="py-16 px-6">
@@ -436,7 +391,7 @@ const IndividualTherapy = () => {
 
             <div className="flex justify-center">
               <a href="https://wa.me/573118361642" target="_blank" rel="noopener noreferrer">
-                <Button size="lg" className="bg-gradient-primary shadow-hover hover:shadow-glow">
+                <Button size="lg" className="bg-steel-blue hover:bg-steel-blue/90 text-white shadow-hover hover:shadow-glow">
                   <Calendar className="w-5 h-5 mr-2" />
                   Agenda tu cita
                 </Button>
