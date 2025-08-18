@@ -139,7 +139,7 @@ const Experience = () => {
         <motion.div variants={itemVariants} className="text-center mb-16">
           <Badge variant="outline" className="mb-4 px-4 py-2">
             <Star className="w-4 h-4 mr-2" />
-            Testimonios y Experiencia
+            Testimonios
           </Badge>
           <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-primary bg-clip-text text-transparent">
             Lo que dicen mis pacientes
