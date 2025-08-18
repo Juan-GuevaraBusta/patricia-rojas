@@ -25,20 +25,20 @@ const Header = () => {
   const navItems = [
     { label: 'Inicio', href: '/' },
     { 
+      label: 'Acompañamiento', 
+      href: '/individual-therapy',
+      dropdown: [
+        { label: 'Terapia Individual', href: '/individual-therapy' },
+        { label: 'Terapia de Pareja', href: '/couples-therapy' }
+      ]
+    },
+    { 
       label: 'Sobre Mí', 
       href: '/sobre-mi',
       dropdown: [
         { label: 'Sobre Mí', href: '/sobre-mi' },
         { label: 'Enfoque', href: '/habilidades' },
         { label: 'Testimonios', href: '/experiencia' }
-      ]
-    },
-    { 
-      label: 'Acompañamiento', 
-      href: '/individual-therapy',
-      dropdown: [
-        { label: 'Terapia Individual', href: '/individual-therapy' },
-        { label: 'Terapia de Pareja', href: '/couples-therapy' }
       ]
     },
     { label: 'Contacto', href: '/contacto' },
@@ -79,9 +79,9 @@ const Header = () => {
       <nav className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="flex flex-col items-center space-y-0">
+          <Link to="/" className="relative">
             <Logo size="md" />
-            <span className="text-sm font-medium font-marcellus -mt-2" style={{ color: '#3e554d' }}>
+            <span className="absolute text-sm font-medium font-marcellus mt-5" style={{ color: '#3e554d', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}>
               Psicóloga
             </span>
           </Link>

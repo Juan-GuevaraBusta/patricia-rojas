@@ -48,9 +48,26 @@ const About = () => {
           <motion.div variants={itemVariants}>
             <Card className="overflow-hidden shadow-elegant">
               <CardContent className="p-0">
-                <div className="aspect-square bg-gradient-secondary relative">
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    {/* Butterfly placeholder for profile image */}
+                <div className="aspect-[4/5] bg-gradient-secondary relative">
+                  <img 
+                    src="/images/patricia-rojas-profile.jpeg" 
+                    alt="Patricia Rojas - Psicóloga Master"
+                    className="w-full h-full object-cover object-center rounded-lg"
+                    onError={(e) => {
+                      // Fallback si la imagen no carga
+                      const target = e.currentTarget as HTMLImageElement;
+                      target.style.display = 'none';
+                      const placeholder = target.nextElementSibling as HTMLElement;
+                      if (placeholder) {
+                        placeholder.style.display = 'flex';
+                      }
+                    }}
+                  />
+                  {/* Placeholder si no hay imagen */}
+                  <div 
+                    className="absolute inset-0 flex items-center justify-center"
+                    style={{ display: 'none' }}
+                  >
                     <div className="w-40 h-40 rounded-full bg-terracota/20 flex items-center justify-center">
                       <svg width="80" height="80" viewBox="0 0 100 100" className="text-terracota">
                         <path d="M50 20 C30 10, 10 30, 30 50 C10 70, 30 90, 50 80 C70 90, 90 70, 70 50 C90 30, 70 10, 50 20 Z" fill="currentColor"/>
@@ -179,12 +196,12 @@ const About = () => {
 
         {/* Call to Action */}
         <motion.div variants={itemVariants} className="text-center mt-16">
-          <Card className="max-w-2xl mx-auto shadow-elegant bg-gradient-secondary">
+          <Card className="max-w-2xl mx-auto shadow-elegant bg-gradient-to-br from-sage-light to-steel-blue/20 border border-sage/30">
             <CardContent className="p-8">
-              <h3 className="text-2xl font-bold text-foreground mb-4">
+              <h3 className="text-2xl font-bold text-sage-dark mb-4 font-marcellus">
                 ¿Sientes que es momento de iniciar un cambio?
               </h3>
-              <p className="text-muted-foreground mb-6">
+              <p className="text-sage-dark/80 mb-6 leading-relaxed font-medium">
                 Mi propósito es ayudarte a transformar lo que estás viviendo hoy y a descubrir 
                 nuevas formas de afrontar tu vida o tu relación. Ofrezco sesiones presenciales y 
                 virtuales, personalizadas y empáticas.
@@ -193,7 +210,7 @@ const About = () => {
                 <motion.button
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="bg-terracota hover:bg-terracota/90 text-white px-8 py-3 rounded-lg font-medium shadow-hover hover:shadow-glow transition-all duration-300"
+                  className="bg-sage hover:bg-sage/90 text-white px-8 py-3 rounded-lg font-semibold shadow-hover hover:shadow-glow transition-all duration-300"
                 >
                   Agenda tu cita
                 </motion.button>

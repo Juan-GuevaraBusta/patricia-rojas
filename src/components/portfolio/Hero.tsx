@@ -360,7 +360,7 @@ Sí es posible, aunque requiere un proceso profundo que involucra tres elementos
                   asChild
                 >
                   <Link to="/individual-therapy" className="flex items-center gap-2">
-                    <User2 className="w-5 h-5 text-terracota" />
+                    <User2 className="w-5 h-5" stroke="#fb7185" />
                     Terapia Individual
                   </Link>
                 </Button>
@@ -619,6 +619,75 @@ Sí es posible, aunque requiere un proceso profundo que involucra tres elementos
       </section>
 
 
+
+      {/* Sección de Modalidades */}
+      <section className="py-20 bg-muted/10">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          className="container mx-auto px-6"
+        >
+          <motion.div variants={itemVariants} className="text-center mb-16">
+            <Badge variant="outline" className="mb-4 px-4 py-2">
+              <MapPin className="w-4 h-4 mr-2" />
+              Modalidades
+            </Badge>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-sage-dark font-marcellus">
+              ¿Cómo prefieres tu terapia?
+            </h2>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-8">
+            {/* Modalidad Virtual */}
+            <motion.div
+              variants={itemVariants}
+              className="bg-card p-8 rounded-lg shadow-elegant border border-sage/20 text-center"
+            >
+              <div className="mb-6">
+                <div className="w-16 h-16 bg-sage/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-8 h-8 text-sage" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-bold text-sage-dark mb-2 font-marcellus">ONLINE</h3>
+              </div>
+              <p className="text-muted-foreground leading-relaxed text-base font-raleway">
+                La terapia On line permite que tomes tus sesiones si no vives en la ciudad, cuando estés de viaje o no dispongas del tiempo para trasladarte. Se lleva a cabo a través de cualquiera de las plataformas existentes para videoconferencia.
+              </p>
+            </motion.div>
+
+            {/* Modalidad Presencial */}
+            <motion.div
+              variants={itemVariants}
+              className="bg-card p-8 rounded-lg shadow-elegant border border-sage/20 text-center"
+            >
+              <div className="mb-6">
+                <div className="w-16 h-16 bg-sage/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-8 h-8 text-sage" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                </div>
+                <h3 className="text-2xl font-bold text-sage-dark mb-2 font-marcellus">PRESENCIAL</h3>
+              </div>
+              <p className="text-muted-foreground leading-relaxed text-base font-raleway">
+                La terapia presencial se lleva a cabo en las oficinas de Yoffice ubicadas en la Torre B de las Torres Pasoancho del Centro Comercial Unicentro Cali, piso 6.
+              </p>
+            </motion.div>
+          </div>
+
+          {/* Botón Conoce más */}
+          <motion.div variants={itemVariants} className="text-center">
+            <Link to="/sobre-mi">
+              <Button className="bg-sage hover:bg-sage/90 text-white px-8 py-3 rounded-lg font-medium">
+                Conoce más
+              </Button>
+            </Link>
+          </motion.div>
+        </motion.div>
+      </section>
 
       {/* Sección de Estadísticas */}
       <section className="py-20 bg-gradient-secondary">
