@@ -1,27 +1,23 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { User, Heart, Target, Award, MapPin, Book } from 'lucide-react';
+import { User, Heart, Target, Award, MapPin, Book, Calendar } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Button } from '@/components/ui/button';
 import { containerVariants, itemVariants } from '@/utils/animations';
+import { useNavigate } from 'react-router-dom';
 
 const About = () => {
   const [ref, inView] = useInView({
     threshold: 0.1,
     triggerOnce: true,
   });
+  const navigate = useNavigate();
 
   const stats = [
     { icon: Award, number: '25+', label: 'Años de experiencia' },
     { icon: Target, number: '15+', label: 'Años en psicoterapia' },
     { icon: Heart, number: '', label: 'Acompañamiento profesional y humano' },
-  ];
-
-  const formacionComplementaria = [
-    'Manejo de Infidelidad – Instituto Gottman',
-    'Terapia de Pareja, Niveles 1 y 2 – Instituto Gottman',
-    'Terapias Psicológicas de Tercera Generación – Universidad Pontificia Bolivariana de Santander',
-    'Terapia de Aceptación y Compromiso (ACT) – Universidad Pontificia Bolivariana de Santander',
   ];
 
   return (
@@ -148,8 +144,8 @@ const About = () => {
                 whileHover={{ scale: 1.05 }}
                 className="text-center"
               >
-                <Card className="p-6 shadow-elegant hover:shadow-hover transition-all duration-300">
-                  <CardContent className="p-0">
+                <Card className="p-6 shadow-elegant hover:shadow-hover transition-all duration-300 h-full">
+                  <CardContent className="p-0 flex flex-col justify-center h-full">
                     <stat.icon size={32} className="mx-auto mb-4" style={{ color: '#fb7185' }} />
                     <div className="text-3xl font-bold text-foreground mb-2">
                       {stat.number}
@@ -164,54 +160,16 @@ const About = () => {
           </div>
         </motion.div>
 
-        {/* Formación Complementaria */}
-        <motion.div variants={itemVariants} className="mb-16">
-          <Card className="shadow-elegant bg-gradient-to-br from-background to-muted/20">
-            <CardHeader className="text-center">
-              <CardTitle className="text-2xl flex items-center justify-center">
-                <Book className="mr-3" size={28} style={{ color: '#fb7185' }} />
-                Formación Complementaria
-              </CardTitle>
-              <p className="text-muted-foreground mt-4 max-w-3xl mx-auto">
-                A lo largo de mi trayectoria, me he comprometido con la actualización constante y la 
-                profundización de herramientas clínicas que enriquezcan mi práctica. Entre mis 
-                principales formaciones especializadas destaco:
-              </p>
-            </CardHeader>
-            <CardContent>
-              <div className="grid md:grid-cols-2 gap-6">
-                {formacionComplementaria.map((formacion, index) => (
-                  <motion.div 
-                    key={index} 
-                    variants={itemVariants}
-                    whileHover={{ scale: 1.02 }}
-                    className="bg-card p-4 rounded-lg shadow-hover border-l-4 border-terracota"
-                  >
-                    <div className="flex items-start">
-                      <div className="w-3 h-3 bg-terracota rounded-full mt-1 mr-3 flex-shrink-0"></div>
-                      <span className="text-muted-foreground font-medium">{formacion}</span>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-              
-              <div className="mt-8 p-6 bg-terracota/10 rounded-lg border border-terracota/20">
-                <div className="flex items-center justify-center mb-4">
-                  <Award className="mr-2" size={24} style={{ color: '#fb7185' }} />
-                  <span className="text-terracota font-semibold">Especialización Reconocida</span>
-                </div>
-                <p className="text-center text-muted-foreground">
-                  Todas mis formaciones están respaldadas por instituciones de prestigio internacional 
-                  como el <strong className="text-terracota">Instituto Gottman</strong> y la <strong className="text-terracota">Universidad Pontificia Bolivariana</strong>,
-                  garantizando la más alta calidad en mi práctica clínica.
-                </p>
-              </div>
-            </CardContent>
-          </Card>
+        {/* Agenda tu cita */}
+        <motion.div variants={itemVariants} className="text-center">
+          <Button
+            onClick={() => navigate('/contacto')}
+            className="bg-steel-blue hover:bg-steel-blue/90 text-white px-8 py-3 rounded-lg font-medium shadow-hover hover:shadow-glow transition-all duration-300"
+          >
+            <Calendar className="mr-2" size={20} style={{ color: '#fb7185' }} />
+            Agenda tu cita
+          </Button>
         </motion.div>
-
-
-
 
       </motion.div>
     </section>

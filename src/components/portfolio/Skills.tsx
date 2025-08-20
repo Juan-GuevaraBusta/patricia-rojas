@@ -307,10 +307,10 @@ const Skills = () => {
             >
               <Button
                 onClick={() => window.open('https://wa.me/573118361642', '_blank')}
-                className="bg-primary-foreground text-primary px-8 py-3 rounded-lg font-medium shadow-hover hover:shadow-glow transition-all duration-300"
+                className="bg-steel-blue hover:bg-steel-blue/90 text-white px-8 py-3 rounded-lg font-medium shadow-hover hover:shadow-glow transition-all duration-300"
               >
-                <Calendar className="mr-2" size={20} />
-                Agenda tu primera sesión
+                <Calendar className="mr-2" size={20} style={{ color: '#fb7185' }} />
+                Agenda tu cita
               </Button>
             </motion.div>
           </motion.div>

@@ -392,7 +392,7 @@ const IndividualTherapy = () => {
             <div className="flex justify-center">
               <a href="https://wa.me/573118361642" target="_blank" rel="noopener noreferrer">
                 <Button size="lg" className="bg-steel-blue hover:bg-steel-blue/90 text-white shadow-hover hover:shadow-glow">
-                  <Calendar className="w-5 h-5 mr-2" />
+                  <Calendar className="w-5 h-5 mr-2" style={{ color: '#fb7185' }} />
                   Agenda tu cita
                 </Button>
               </a>

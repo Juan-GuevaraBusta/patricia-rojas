@@ -451,6 +451,7 @@ Sí es posible, aunque requiere un proceso profundo que involucra tres elementos
                 whileTap={{ scale: 0.98 }}
                 className="bg-steel-blue hover:bg-steel-blue/90 text-white px-8 py-4 rounded-lg font-medium shadow-hover hover:shadow-glow transition-all duration-300 text-lg"
               >
+                <Calendar className="w-5 h-5 mr-2 inline" style={{ color: '#fb7185' }} />
                 Agenda tu cita
               </motion.button>
             </a>
@@ -597,7 +598,7 @@ Sí es posible, aunque requiere un proceso profundo que involucra tres elementos
             <div className="flex justify-center">
               <a href="https://wa.me/573118361642" target="_blank" rel="noopener noreferrer">
                 <Button size="lg" className="bg-steel-blue hover:bg-steel-blue/90 text-white shadow-hover hover:shadow-glow">
-                  <Calendar className="w-5 h-5 mr-2" />
+                  <Calendar className="w-5 h-5 mr-2" style={{ color: '#fb7185' }} />
                   Agenda tu cita
                 </Button>
               </a>
