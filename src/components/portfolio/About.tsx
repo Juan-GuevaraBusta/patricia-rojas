@@ -83,8 +83,6 @@ const About = () => {
               </h3>
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
-                  Soy <strong className="text-terracota">Patricia Rojas R.</strong>, psicóloga con una maestría en Consejería Clínica y Salud Mental, 
-                  con reconocimiento <strong className="text-terracota">Cum Laude</strong> y 25 años de experiencia profesional. 
                   Comencé mi carrera en el ámbito organizacional, liderando procesos de selección, 
                   formación y bienestar laboral y desde hace más de 15 años, acompaño a jóvenes, adultos y parejas en sus procesos 
                   psicoterapéuticos con el objetivo de alcanzar bienestar emocional, sanar heridas 
