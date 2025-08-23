@@ -293,7 +293,7 @@ const Contact = () => {
                 variants={itemVariants}
                 whileHover={{ y: -5, scale: 1.02 }}
               >
-                <Card className="h-full shadow-elegant hover:shadow-hover transition-all duration-300">
+                <Card className="h-full shadow-elegant hover:shadow-hover transition-all duration-300 flex flex-col">
                   <CardHeader className="text-center">
                     <motion.div
                       whileHover={{ rotate: 10, scale: 1.1 }}
@@ -308,9 +308,9 @@ const Contact = () => {
                       <span className="font-semibold text-accent">{modalidad.price}</span>
                     </div>
                   </CardHeader>
-                  <CardContent className="space-y-4">
+                  <CardContent className="space-y-4 flex-1 flex flex-col">
                     <p className="text-muted-foreground text-center">{modalidad.description}</p>
-                    <div className="space-y-2">
+                    <div className="space-y-2 flex-1">
                       {modalidad.features.map((feature, idx) => (
                         <div key={idx} className="flex items-center space-x-2">
                           <CheckCircle className="w-4 h-4 text-accent" />
@@ -318,7 +318,7 @@ const Contact = () => {
                         </div>
                       ))}
                     </div>
-                    <div className="text-center pt-4">
+                    <div className="text-center pt-4 mt-auto">
                       {modalidad.link.startsWith('/') ? (
                         <a href={modalidad.link}>
                           <Button className="bg-steel-blue hover:bg-steel-blue/90 text-white">
