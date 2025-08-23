@@ -373,15 +373,7 @@ Sí es posible, aunque requiere un proceso profundo que involucra tres elementos
           viewport={{ once: true, amount: 0.3 }}
           className="container mx-auto px-12 md:px-16"
         >
-          <motion.div variants={itemVariants} className="text-center mb-16">
-            <Badge className="mb-4 px-4 py-2 bg-steel-blue text-white border-steel-blue">
-              <Target className="w-4 h-4 mr-2" style={{ color: '#fb7185' }} />
-              Servicios
-            </Badge>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 font-marcellus" style={{ color: '#3e554d' }}>
-              ¿Cómo puedo ayudarte?
-            </h2>
-          </motion.div>
+
 
           <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {services.map((service, index) => (
@@ -390,17 +382,25 @@ Sí es posible, aunque requiere un proceso profundo que involucra tres elementos
                 variants={itemVariants}
                 className="flex flex-col space-y-6"
               >
+                {/* Duración */}
+                <div className="text-center">
+                  <div className="inline-flex items-center gap-3 bg-white text-[#5d8aa8] px-6 py-3 rounded-lg text-sm font-medium shadow-sm border border-gray-200">
+                    <Clock className="w-4 h-4" style={{ color: '#fb7185' }} />
+                    <span><strong>Duración:</strong> 50 minutos</span>
+                  </div>
+                </div>
+
                 {/* Título */}
                 <div className="text-center">
                   <Link to={service.link} className="block">
-                    <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4 font-marcellus hover:text-sage transition-colors duration-300 cursor-pointer">
+                    <h3 className="text-xl md:text-2xl font-bold text-foreground mb-4 font-marcellus hover:text-sage transition-colors duration-300 cursor-pointer">
                       {service.title}
                     </h3>
                   </Link>
                 </div>
 
                 {/* Imagen */}
-                <div className="relative h-64 md:h-80 overflow-hidden rounded-lg shadow-elegant">
+                <div className="relative h-48 md:h-64 overflow-hidden rounded-lg shadow-elegant">
                   <img
                     src={service.image}
                     alt={service.title}
@@ -429,7 +429,7 @@ Sí es posible, aunque requiere un proceso profundo que involucra tres elementos
                 
                 {/* Información */}
                 <div className="space-y-4">
-                  <p className="text-muted-foreground leading-relaxed text-base md:text-lg font-raleway text-center">
+                  <p className="text-muted-foreground leading-relaxed text-sm md:text-base font-raleway text-center">
                     {service.description}
                   </p>
                 </div>
@@ -443,9 +443,9 @@ Sí es posible, aunque requiere un proceso profundo que involucra tres elementos
               <motion.button
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="bg-steel-blue hover:bg-steel-blue/90 text-white px-8 py-4 rounded-lg font-medium shadow-hover hover:shadow-glow transition-all duration-300 text-lg"
+                className="bg-steel-blue hover:bg-steel-blue/90 text-white px-6 py-3 rounded-lg font-medium shadow-hover hover:shadow-glow transition-all duration-300 text-base"
               >
-                <Calendar className="w-5 h-5 mr-2 inline" style={{ color: '#fb7185' }} />
+                <Calendar className="w-4 h-4 mr-2 inline" style={{ color: '#fb7185' }} />
                 Agenda tu cita
               </motion.button>
             </a>

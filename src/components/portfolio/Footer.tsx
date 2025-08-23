@@ -295,20 +295,7 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Emergency Notice */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-          className="mt-8 p-4 bg-white/10 backdrop-blur-sm rounded-lg border border-white/20"
-        >
-          <p className="text-center text-sm text-primary-foreground/90">
-            <Shield className="inline w-4 h-4 mr-2" />
-            En caso de emergencia psicológica o crisis, contacta inmediatamente el 
-            <strong className="text-white"> 123 </strong> 
-            (Línea Nacional de Emergencias) o acude al servicio de urgencias más cercano.
-          </p>
-        </motion.div>
+
 
         {/* Professional Disclaimer */}
         <motion.div

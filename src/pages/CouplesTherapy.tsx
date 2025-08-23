@@ -161,6 +161,14 @@ Sí es posible, aunque requiere un proceso profundo que involucra tres elementos
               <p className="text-base text-muted-foreground mb-4 leading-relaxed">
                 La terapia de pareja es un espacio para mejorar la comunicación, resolver conflictos y fortalecer el vínculo, no solo en momentos de crisis. También es ideal para novios y parejas que desean prepararse para el matrimonio o la convivencia, comenzando con claridad sobre las claves que les ayudarán a construir una relación estable, sana y feliz.
               </p>
+              
+              {/* Duración */}
+              <div className="text-center lg:text-left">
+                <div className="inline-flex items-center gap-3 bg-white text-[#5d8aa8] px-6 py-3 rounded-lg text-sm font-medium shadow-sm border border-gray-200">
+                  <Clock className="w-4 h-4" style={{ color: '#fb7185' }} />
+                  <span><strong>Duración:</strong> 50 minutos</span>
+                </div>
+              </div>
             </motion.div>
           </div>
 
