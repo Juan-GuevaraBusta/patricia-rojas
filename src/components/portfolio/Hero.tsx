@@ -513,13 +513,14 @@ Sí es posible, aunque requiere un proceso profundo que involucra tres elementos
             </motion.div>
           </div>
 
-          {/* Botón Conoce más */}
+          {/* Botón Agenda tu cita */}
           <motion.div variants={itemVariants} className="text-center">
-            <Link to="/sobre-mi">
-                                <Button className="bg-steel-blue hover:bg-steel-blue/90 text-white px-8 py-3 rounded-lg font-medium">
-                Conoce más
+            <a href="https://wa.me/573118361642" target="_blank" rel="noopener noreferrer">
+              <Button className="bg-steel-blue hover:bg-steel-blue/90 text-white px-8 py-3 rounded-lg font-medium">
+                <Calendar className="w-4 h-4 mr-2" style={{ color: '#fb7185' }} />
+                Agenda tu cita
               </Button>
-            </Link>
+            </a>
           </motion.div>
         </motion.div>
       </section>

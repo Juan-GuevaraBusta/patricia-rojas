@@ -171,7 +171,7 @@ const IndividualTherapy = () => {
               variants={itemVariants}
               className="order-2 lg:order-1"
             >
-              <div className="relative h-64 md:h-80 overflow-hidden rounded-lg shadow-elegant">
+              <div className="relative h-56 md:h-72 overflow-hidden rounded-lg shadow-elegant">
                 <img
                   src="/images/individual-therapy-page.jpg"
                   alt="Terapia Individual"
@@ -203,23 +203,18 @@ const IndividualTherapy = () => {
               variants={itemVariants}
               className="order-1 lg:order-2 text-center lg:text-left"
             >
-              <div className="inline-flex items-center gap-2 bg-steel-blue text-white px-4 py-2 rounded-full mb-6">
-                <User className="w-5 h-5" style={{ color: '#fb7185' }} />
-                <span className="font-medium">Terapia Individual</span>
-              </div>
-              
-              <h1 className="text-4xl md:text-6xl font-bold mb-6 font-marcellus" style={{ color: '#3e554d' }}>
+              <h1 className="text-3xl md:text-5xl font-bold mb-6 font-marcellus" style={{ color: '#3e554d' }}>
                 Sanar, comunicar, conectar
               </h1>
               
-              <p className="text-xl text-muted-foreground mb-4 leading-relaxed">
+              <p className="text-lg text-muted-foreground mb-4 leading-relaxed">
                 Te brindo un espacio para conocerte, comprender tus emociones y aprender a observar tus pensamientos sin quedarte atrapado en ellos, para que puedas vivir en coherencia con tus valores y construir una vida con sentido.
               </p>
             </motion.div>
           </div>
 
           {/* Motivos de Consulta Frecuentes */}
-          <motion.div variants={itemVariants}>
+          <motion.div variants={itemVariants} className="mt-8">
             <h2 className="text-2xl md:text-3xl font-bold mb-4 font-marcellus text-left" style={{ color: '#3e554d' }}>
               Motivos de Consulta Frecuentes
             </h2>
@@ -368,34 +363,23 @@ const IndividualTherapy = () => {
                 ))}
               </Accordion>
             </div>
-          </motion.div>
-        </motion.div>
-      </section>
-
-
-
-      {/* CTA Final */}
-      <section className="py-16 px-6 bg-white">
-        <div className="container mx-auto max-w-4xl text-center">
-          <motion.div variants={itemVariants}>
-            <h2 className="text-3xl font-bold mb-6 font-marcellus" style={{ color: '#3e554d' }}>
-              ¿Listo para comenzar tu proceso?
-            </h2>
-            <p className="text-lg text-muted-foreground mb-8 font-raleway">
-              Te acompaño en un espacio seguro y profesional hacia tu bienestar emocional.
-            </p>
-
-            <div className="flex justify-center">
+            
+            {/* Botón Agenda tu cita */}
+            <div className="text-center mt-8">
               <a href="https://wa.me/573118361642" target="_blank" rel="noopener noreferrer">
-                <Button size="lg" className="bg-steel-blue hover:bg-steel-blue/90 text-white shadow-hover hover:shadow-glow">
+                <Button className="bg-steel-blue hover:bg-steel-blue/90 text-white px-8 py-3 rounded-lg font-medium shadow-hover hover:shadow-glow">
                   <Calendar className="w-5 h-5 mr-2" style={{ color: '#fb7185' }} />
                   Agenda tu cita
                 </Button>
               </a>
             </div>
           </motion.div>
-        </div>
+        </motion.div>
       </section>
+
+
+
+
 
       {/* Footer Simple */}
       <footer className="py-8 px-6 bg-sage-dark text-white">

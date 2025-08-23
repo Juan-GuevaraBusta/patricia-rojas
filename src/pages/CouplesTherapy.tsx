@@ -122,7 +122,7 @@ Sí es posible, aunque requiere un proceso profundo que involucra tres elementos
               variants={itemVariants}
               className="order-2 lg:order-1"
             >
-              <div className="relative h-64 md:h-80 overflow-hidden rounded-lg shadow-elegant">
+              <div className="relative h-56 md:h-72 overflow-hidden rounded-lg shadow-elegant">
                 <img
                   src="/images/couples-therapy-page.jpg"
                   alt="Terapia de Pareja"
@@ -154,16 +154,11 @@ Sí es posible, aunque requiere un proceso profundo que involucra tres elementos
               variants={itemVariants}
               className="order-1 lg:order-2 text-center lg:text-left"
             >
-              <div className="inline-flex items-center gap-2 bg-steel-blue text-white px-4 py-2 rounded-full mb-6">
-                <Heart className="w-5 h-5" style={{ color: '#fb7185' }} />
-                <span className="font-medium">Terapia de Pareja</span>
-              </div>
-              
               <h1 className="text-3xl md:text-5xl font-bold mb-6 font-marcellus" style={{ color: '#3e554d' }}>
                 Fortalece tu Relación
               </h1>
               
-              <p className="text-lg text-muted-foreground mb-4 leading-relaxed">
+              <p className="text-base text-muted-foreground mb-4 leading-relaxed">
                 La terapia de pareja es un espacio para mejorar la comunicación, resolver conflictos y fortalecer el vínculo, no solo en momentos de crisis. También es ideal para novios y parejas que desean prepararse para el matrimonio o la convivencia, comenzando con claridad sobre las claves que les ayudarán a construir una relación estable, sana y feliz.
               </p>
             </motion.div>
@@ -197,48 +192,23 @@ Sí es posible, aunque requiere un proceso profundo que involucra tres elementos
                 ))}
               </Accordion>
             </div>
-          </motion.div>
-        </motion.div>
-      </section>
-
-      {/* Método Gottman */}
-      <section className="py-16 px-6 bg-white">
-        <div className="container mx-auto">
-          <motion.div variants={itemVariants} className="text-center mb-12">
-            <Badge className="mb-4 bg-steel-blue text-white border-steel-blue">Método Científico</Badge>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 font-marcellus" style={{ color: '#3e554d' }}>
-              Basado en el Método Gottman
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto font-raleway">
-              La terapia de pareja que ofrezco se basa en el Método Gottman, un enfoque respaldado por
-              más de 40 años de investigación científica sobre lo que fortalece o debilita una relación.
-            </p>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* CTA Final */}
-      <section className="py-16 px-6 bg-white">
-        <div className="container mx-auto max-w-4xl text-center">
-          <motion.div variants={itemVariants}>
-            <h2 className="text-3xl font-bold mb-6 font-marcellus" style={{ color: '#3e554d' }}>
-              ¿Listos para fortalecer su relación?
-            </h2>
-            <p className="text-lg text-muted-foreground mb-8 font-raleway">
-              Te acompaño en un proceso profesional hacia una relación más sólida y conectada.
-            </p>
-
-            <div className="flex justify-center">
+            
+            {/* Botón Agenda tu cita */}
+            <div className="text-center mt-8">
               <a href="https://wa.me/573118361642" target="_blank" rel="noopener noreferrer">
-                <Button size="lg" className="bg-steel-blue hover:bg-steel-blue/90 text-white shadow-hover hover:shadow-glow">
+                <Button className="bg-steel-blue hover:bg-steel-blue/90 text-white px-8 py-3 rounded-lg font-medium shadow-hover hover:shadow-glow">
                   <Calendar className="w-5 h-5 mr-2" style={{ color: '#fb7185' }} />
                   Agenda tu cita
                 </Button>
               </a>
             </div>
           </motion.div>
-        </div>
+        </motion.div>
       </section>
+
+
+
+
 
       {/* Footer Simple */}
       <footer className="py-8 px-6 bg-sage-dark text-white">
