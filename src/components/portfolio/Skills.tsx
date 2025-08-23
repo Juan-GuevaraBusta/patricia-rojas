@@ -28,7 +28,7 @@ const Skills = () => {
   return (
     <>
       {/* Mi Enfoque Terapéutico y Herramientas - Sección Unificada */}
-      <section className="py-20 bg-muted/20">
+      <section className="py-20 bg-muted/10">
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -115,7 +115,7 @@ const Skills = () => {
       </section>
 
       {/* Formato de Sesiones */}
-      <section className="py-20 bg-muted/20">
+      <section className="py-20 bg-muted/10">
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -192,7 +192,7 @@ const Skills = () => {
       </section>
 
       {/* Enfoque Terapéutico Individual */}
-      <section className="py-20">
+      <section className="py-20 bg-muted/10">
         <motion.div
           variants={containerVariants}
           initial="hidden"

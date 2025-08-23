@@ -127,7 +127,7 @@ const Experience = () => {
   ];
 
   return (
-    <section id="testimonios" className="py-20">
+    <section id="testimonios" className="py-20 bg-muted/10">
       <motion.div
         ref={ref}
         variants={containerVariants}

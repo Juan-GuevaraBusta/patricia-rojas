@@ -57,7 +57,7 @@ const IndividualTherapy = () => {
       title: 'Duelos por pérdida, ruptura, migración o cambio',
       content: {
         title: '¿Qué es el duelo?',
-        description: 'El duelo es un proceso natural ante cualquier pérdida significativa: muerte de un ser querido, ruptura, migración, enfermedad, pérdida laboral o cambios vitales importantes. Cada persona lo vive de manera única y a su propio ritmo. Cada persona lo vive a su manera. Para algunos, es transitorio; para otros, puede ser un proceso profundo que necesita acompañamiento profesional.',
+        description: 'El duelo es un proceso natural ante cualquier pérdida significativa: muerte de un ser querido, ruptura, migración, enfermedad, pérdida laboral o cambios vitales importantes. Cada persona lo vive de manera única y a su propio ritmo. Para algunos, es transitorio; para otros, puede ser un proceso profundo que necesita acompañamiento profesional.',
         manifestations: {
           title: '¿Cómo se manifiesta?',
           description: 'El duelo puede presentarse de distintas formas:',
@@ -143,8 +143,8 @@ const IndividualTherapy = () => {
       title: 'Espacio Seguro y Libre de Juicios',
       description: 'Creo un ambiente confidencial y empático donde puedes expresarte con total libertad y autenticidad.',
       icon: Shield,
-      color: 'text-[#fb7185]',
-      bgGradient: 'from-terracota/20 to-terracota/5',
+      color: 'text-[#3e554d]',
+      bgGradient: 'from-[#3e554d]/20 to-[#3e554d]/5',
     },
     {
       title: 'Herramientas Prácticas para la Vida Diaria',
@@ -158,7 +158,7 @@ const IndividualTherapy = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-sage-light/20 to-cream">
       {/* Hero Section */}
-      <section className="pt-32 pb-16 px-6">
+      <section className="pt-32 pb-16 px-6 bg-muted/10">
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -221,7 +221,7 @@ const IndividualTherapy = () => {
       </section>
 
       {/* Motivos de Consulta Frecuentes */}
-      <section className="py-16 px-6">
+      <section className="py-16 px-6 bg-muted/10">
         <div className="container mx-auto">
           <motion.div variants={itemVariants} className="text-center mb-6">
             <h2 className="text-3xl md:text-4xl font-bold mb-3 font-marcellus" style={{ color: '#3e554d' }}>
@@ -265,8 +265,8 @@ const IndividualTherapy = () => {
                           <p className="text-muted-foreground mb-4 text-sm">{reason.content.manifestations.description}</p>
                           <div className="grid grid-cols-2 gap-2">
                             {reason.content.manifestations.categories.map((category, idx) => (
-                              <div key={idx} className="bg-card p-3 rounded-lg shadow-hover border-l-4 border-terracota">
-                                <h6 className="font-semibold text-terracota mb-2 text-xs">{category.type}:</h6>
+                              <div key={idx} className="bg-card p-3 rounded-lg shadow-hover border-l-4" style={{ borderLeftColor: '#3e554d' }}>
+                                <h6 className="font-semibold mb-2 text-xs" style={{ color: '#3e554d' }}>{category.type}:</h6>
                                 <div className="text-xs text-muted-foreground">
                                   {category.symptoms.join(', ')}
                                 </div>
@@ -285,7 +285,7 @@ const IndividualTherapy = () => {
                           <ul className="space-y-2 mb-4">
                             {reason.content.whenToSeekHelp.list.map((item, idx) => (
                               <li key={idx} className="flex items-start gap-3">
-                                <div className="w-2 h-2 bg-terracota rounded-full mt-2 flex-shrink-0"></div>
+                                <div className="w-2 h-2 rounded-full mt-2 flex-shrink-0" style={{ backgroundColor: '#3e554d' }}></div>
                                 <span className="text-muted-foreground text-sm">{item}</span>
                               </li>
                             ))}
@@ -303,7 +303,7 @@ const IndividualTherapy = () => {
                           <ul className="space-y-2 mb-4">
                             {reason.content.therapyBenefits.list.map((benefit, idx) => (
                               <li key={idx} className="flex items-start gap-3">
-                                <div className="w-2 h-2 bg-terracota rounded-full mt-2 flex-shrink-0"></div>
+                                <div className="w-2 h-2 rounded-full mt-2 flex-shrink-0" style={{ backgroundColor: '#3e554d' }}></div>
                                 <span className="text-muted-foreground text-sm">{benefit}</span>
                               </li>
                             ))}
@@ -336,7 +336,7 @@ const IndividualTherapy = () => {
                           <ul className="space-y-2">
                             {reason.content.importance.benefits.map((benefit, idx) => (
                               <li key={idx} className="flex items-start gap-3">
-                                <div className="w-2 h-2 bg-terracota rounded-full mt-2 flex-shrink-0"></div>
+                                <div className="w-2 h-2 rounded-full mt-2 flex-shrink-0" style={{ backgroundColor: '#3e554d' }}></div>
                                 <span className="text-muted-foreground text-sm">{benefit}</span>
                               </li>
                             ))}
@@ -353,7 +353,7 @@ const IndividualTherapy = () => {
                           <ul className="space-y-2 mb-4">
                             {reason.content.symptoms.list.map((symptom, idx) => (
                               <li key={idx} className="flex items-start gap-3">
-                                <div className="w-2 h-2 bg-terracota rounded-full mt-2 flex-shrink-0"></div>
+                                <div className="w-2 h-2 rounded-full mt-2 flex-shrink-0" style={{ backgroundColor: '#3e554d' }}></div>
                                 <span className="text-muted-foreground text-sm">{symptom}</span>
                               </li>
                             ))}
@@ -379,11 +379,11 @@ const IndividualTherapy = () => {
 
 
       {/* CTA Final */}
-      <section className="py-16 px-6">
+      <section className="py-16 px-6 bg-muted/10">
         <div className="container mx-auto max-w-4xl text-center">
           <motion.div variants={itemVariants}>
             <h2 className="text-3xl font-bold mb-6 font-marcellus" style={{ color: '#3e554d' }}>
-              ¿Listo para comenzar tu proceso de crecimiento personal?
+              ¿Listo para comenzar tu proceso?
             </h2>
             <p className="text-lg text-muted-foreground mb-8 font-raleway">
               Te acompaño en un espacio seguro y profesional hacia tu bienestar emocional.

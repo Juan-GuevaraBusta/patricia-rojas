@@ -109,7 +109,7 @@ Sí es posible, aunque requiere un proceso profundo que involucra tres elementos
   return (
     <div className="min-h-screen bg-gradient-to-br from-sage-light/20 to-cream">
       {/* Hero Section */}
-      <section className="pt-32 pb-16 px-6">
+      <section className="pt-32 pb-16 px-6 bg-muted/10">
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -172,7 +172,7 @@ Sí es posible, aunque requiere un proceso profundo que involucra tres elementos
       </section>
 
       {/* Motivos de Consulta Frecuentes */}
-      <section className="py-16 px-6">
+      <section className="py-16 px-6 bg-muted/10">
         <div className="container mx-auto">
           <motion.div variants={itemVariants} className="text-center mb-6">
             <h2 className="text-3xl md:text-4xl font-bold mb-3 font-marcellus" style={{ color: '#3e554d' }}>
@@ -208,7 +208,7 @@ Sí es posible, aunque requiere un proceso profundo que involucra tres elementos
 
 
       {/* Método Gottman */}
-      <section className="py-16 px-6">
+      <section className="py-16 px-6 bg-muted/10">
         <div className="container mx-auto">
           <motion.div variants={itemVariants} className="text-center mb-12">
             <Badge variant="secondary" className="mb-4">Método Científico</Badge>
@@ -224,7 +224,7 @@ Sí es posible, aunque requiere un proceso profundo que involucra tres elementos
       </section>
 
       {/* CTA Final */}
-      <section className="py-16 px-6">
+      <section className="py-16 px-6 bg-muted/10">
         <div className="container mx-auto max-w-4xl text-center">
           <motion.div variants={itemVariants}>
             <h2 className="text-3xl font-bold mb-6 font-marcellus" style={{ color: '#3e554d' }}>

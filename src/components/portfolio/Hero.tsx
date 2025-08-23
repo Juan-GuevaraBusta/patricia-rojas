@@ -533,7 +533,7 @@ Sí es posible, aunque requiere un proceso profundo que involucra tres elementos
 
 
       {/* Sección de Contacto */}
-      <section className="py-20">
+      <section className="py-20 bg-muted/10">
         <motion.div
           variants={containerVariants}
           initial="hidden"

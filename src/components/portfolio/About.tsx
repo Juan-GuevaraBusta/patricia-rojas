@@ -21,7 +21,7 @@ const About = () => {
   ];
 
   return (
-    <section id="sobre-mi" className="py-20 bg-muted/20">
+    <section id="sobre-mi" className="py-20 bg-muted/10">
       <motion.div
         ref={ref}
         variants={containerVariants}
