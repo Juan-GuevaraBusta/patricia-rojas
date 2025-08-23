@@ -274,13 +274,7 @@ Sí es posible, aunque requiere un proceso profundo que involucra tres elementos
   return (
     <div className="min-h-screen">
       {/* Hero Principal con Fondo Limpio */}
-      <section id="inicio" className="min-h-screen flex items-center justify-center relative overflow-hidden py-20" style={{ backgroundColor: '#f6f6f2' }}>
-        {/* Fondo limpio con gradiente sutil */}
-        <div className="absolute inset-0 bg-gradient-to-br from-sage-light/20 via-white to-steel-blue/10" />
-        
-        {/* Elementos decorativos de fondo sutiles */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,hsl(var(--sage)/0.05),transparent_50%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_60%,hsl(var(--steel-blue)/0.05),transparent_50%)]" />
+      <section id="inicio" className="min-h-screen flex items-center justify-center relative overflow-hidden py-20 bg-white">
         
 
 
@@ -326,7 +320,7 @@ Sí es posible, aunque requiere un proceso profundo que involucra tres elementos
                   </span>
 
                 </h1>
-                <h2 className="text-lg md:text-xl lg:text-2xl font-light font-raleway" style={{ color: '#7c939b' }}>
+                <h2 className="text-lg md:text-xl lg:text-2xl font-light font-raleway" style={{ color: '#5d8aa8' }}>
                   Psicóloga Master Especializada en Terapia Individual y de Parejas
                 </h2>
               </motion.div>
@@ -371,7 +365,7 @@ Sí es posible, aunque requiere un proceso profundo que involucra tres elementos
       </section>
 
       {/* Sección de Servicios */}
-      <section className="py-20 bg-muted/10">
+      <section className="py-20 bg-white">
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -380,11 +374,11 @@ Sí es posible, aunque requiere un proceso profundo que involucra tres elementos
           className="container mx-auto px-12 md:px-16"
         >
           <motion.div variants={itemVariants} className="text-center mb-16">
-            <Badge variant="outline" className="mb-4 px-4 py-2">
-              <Target className="w-4 h-4 mr-2" />
+            <Badge className="mb-4 px-4 py-2 bg-steel-blue text-white border-steel-blue">
+              <Target className="w-4 h-4 mr-2" style={{ color: '#fb7185' }} />
               Servicios
             </Badge>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 bg-gradient-primary bg-clip-text text-transparent font-marcellus">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 font-marcellus" style={{ color: '#3e554d' }}>
               ¿Cómo puedo ayudarte?
             </h2>
           </motion.div>
@@ -462,7 +456,7 @@ Sí es posible, aunque requiere un proceso profundo que involucra tres elementos
 
 
       {/* Sección de Modalidades */}
-      <section className="py-20 bg-muted/10">
+      <section className="py-20 bg-white">
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -471,11 +465,11 @@ Sí es posible, aunque requiere un proceso profundo que involucra tres elementos
           className="container mx-auto px-6"
         >
           <motion.div variants={itemVariants} className="text-center mb-16">
-            <Badge variant="outline" className="mb-4 px-4 py-2">
-              <MapPin className="w-4 h-4 mr-2" />
+            <Badge className="mb-4 px-4 py-2 bg-steel-blue text-white border-steel-blue">
+              <MapPin className="w-4 h-4 mr-2" style={{ color: '#fb7185' }} />
               Modalidades
             </Badge>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-sage-dark font-marcellus">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 font-marcellus" style={{ color: '#3e554d' }}>
               ¿Cómo prefieres tu terapia?
             </h2>
           </motion.div>
@@ -533,7 +527,7 @@ Sí es posible, aunque requiere un proceso profundo que involucra tres elementos
 
 
       {/* Sección de Contacto */}
-      <section className="py-20 bg-muted/10">
+      <section className="py-20 bg-white">
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -542,11 +536,11 @@ Sí es posible, aunque requiere un proceso profundo que involucra tres elementos
           className="container mx-auto px-6"
         >
           <motion.div variants={itemVariants} className="text-center mb-16">
-            <Badge variant="outline" className="mb-4 px-4 py-2">
-              <Calendar className="w-4 h-4 mr-2" />
+            <Badge className="mb-4 px-4 py-2 bg-steel-blue text-white border-steel-blue">
+              <Calendar className="w-4 h-4 mr-2" style={{ color: '#fb7185' }} />
               Contacto
             </Badge>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-sage-dark">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 font-marcellus" style={{ color: '#3e554d' }}>
               Comienza tu proceso hoy
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
@@ -562,13 +556,13 @@ Sí es posible, aunque requiere un proceso profundo que involucra tres elementos
                 variants={itemVariants}
                 whileHover={{ y: -5 }}
               >
-                <Card className="h-32 shadow-elegant hover:shadow-hover transition-all duration-300 flex flex-col justify-center">
+                <Card className="h-40 shadow-elegant hover:shadow-hover transition-all duration-300">
                   <CardContent className="p-6 text-center">
                     <motion.div
                       whileHover={{ scale: 1.1, rotate: 5 }}
-                      className="inline-flex p-3 rounded-full bg-steel-blue/10 text-steel-blue mb-4"
+                      className="inline-flex p-3 rounded-full bg-steel-blue/10 mb-4 mx-auto"
                     >
-                      <contact.icon size={24} />
+                      <contact.icon size={24} style={{ color: '#fb7185' }} />
                     </motion.div>
                     <h4 className="font-semibold text-foreground mb-2">
                       {contact.title}
@@ -576,20 +570,21 @@ Sí es posible, aunque requiere un proceso profundo que involucra tres elementos
                     <p className="text-sm text-muted-foreground">
                       {contact.value}
                     </p>
-                    {contact.link.startsWith('http') || contact.link.startsWith('mailto:') ? (
-                      <a 
-                        href={contact.link} 
-                        target={contact.link.startsWith('http') ? '_blank' : '_self'}
-                        rel={contact.link.startsWith('http') ? 'noopener noreferrer' : ''}
-                        className="inline-block mt-3"
-                      >
-                        <Button variant="outline" size="sm">
-                          Contactar
-                        </Button>
-                      </a>
-                    ) : null}
                   </CardContent>
                 </Card>
+                {contact.link.startsWith('http') || contact.link.startsWith('mailto:') ? (
+                  <div className="text-center mt-3">
+                    <a 
+                      href={contact.link} 
+                      target={contact.link.startsWith('http') ? '_blank' : '_self'}
+                      rel={contact.link.startsWith('http') ? 'noopener noreferrer' : ''}
+                    >
+                      <Button variant="outline" size="sm">
+                        Contactar
+                      </Button>
+                    </a>
+                  </div>
+                ) : null}
               </motion.div>
             ))}
           </div>

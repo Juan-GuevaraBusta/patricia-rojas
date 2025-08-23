@@ -21,7 +21,7 @@ const About = () => {
   ];
 
   return (
-    <section id="sobre-mi" className="py-20 bg-muted/10">
+    <section id="sobre-mi" className="py-20 bg-white">
       <motion.div
         ref={ref}
         variants={containerVariants}
@@ -30,13 +30,9 @@ const About = () => {
         className="container mx-auto px-6"
       >
         <motion.div variants={itemVariants} className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-primary bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 font-marcellus" style={{ color: '#3e554d' }}>
             Conoce más sobre mí
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Soy Patricia Rojas R., psicóloga con una maestría en Consejería Clínica y Salud Mental 
-            —reconocida Cum Laude— y más de 25 años de experiencia profesional.
-          </p>
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
@@ -82,6 +78,10 @@ const About = () => {
                 Mi Historia
               </h3>
               <div className="space-y-4 text-muted-foreground leading-relaxed">
+                <p>
+                  Soy <strong className="text-terracota">Patricia Rojas R.</strong>, psicóloga con una maestría en Consejería Clínica y Salud Mental, 
+                  con reconocimiento <strong className="text-terracota">Cum Laude</strong> y 25 años de experiencia profesional.
+                </p>
                 <p>
                   Comencé mi carrera en el ámbito organizacional, liderando procesos de selección, 
                   formación y bienestar laboral y desde hace más de 15 años, acompaño a jóvenes, adultos y parejas en sus procesos 

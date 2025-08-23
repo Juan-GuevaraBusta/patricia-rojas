@@ -107,16 +107,16 @@ Sí es posible, aunque requiere un proceso profundo que involucra tres elementos
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-sage-light/20 to-cream">
-      {/* Hero Section */}
-      <section className="pt-32 pb-16 px-6 bg-muted/10">
+    <div className="min-h-screen bg-white">
+      {/* Hero Section with Motivos de Consulta */}
+      <section className="pt-8 pb-16 px-6 bg-white">
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate="visible"
           className="container mx-auto"
         >
-          <div className="grid lg:grid-cols-2 items-center gap-12">
+          <div className="grid lg:grid-cols-2 items-start gap-4">
             {/* Columna Izquierda - Imagen */}
             <motion.div
               variants={itemVariants}
@@ -154,64 +154,58 @@ Sí es posible, aunque requiere un proceso profundo que involucra tres elementos
               variants={itemVariants}
               className="order-1 lg:order-2 text-center lg:text-left"
             >
-              <div className="inline-flex items-center gap-2 bg-sage/10 px-4 py-2 rounded-full mb-6">
-                <Heart className="w-5 h-5" style={{ color: '#3e554d' }} />
-                <span className="font-medium" style={{ color: '#3e554d' }}>Terapia de Pareja</span>
+              <div className="inline-flex items-center gap-2 bg-steel-blue text-white px-4 py-2 rounded-full mb-6">
+                <Heart className="w-5 h-5" style={{ color: '#fb7185' }} />
+                <span className="font-medium">Terapia de Pareja</span>
               </div>
               
-              <h1 className="text-4xl md:text-6xl font-bold mb-6 font-marcellus" style={{ color: '#3e554d' }}>
+              <h1 className="text-3xl md:text-5xl font-bold mb-6 font-marcellus" style={{ color: '#3e554d' }}>
                 Fortalece tu Relación
               </h1>
               
-              <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
+              <p className="text-lg text-muted-foreground mb-4 leading-relaxed">
                 La terapia de pareja es un espacio para mejorar la comunicación, resolver conflictos y fortalecer el vínculo, no solo en momentos de crisis. También es ideal para novios y parejas que desean prepararse para el matrimonio o la convivencia, comenzando con claridad sobre las claves que les ayudarán a construir una relación estable, sana y feliz.
               </p>
             </motion.div>
           </div>
+
+          {/* Motivos de Consulta Frecuentes */}
+          <motion.div variants={itemVariants} className="pt-2">
+            <h2 className="text-2xl md:text-3xl font-bold mb-4 font-marcellus text-left" style={{ color: '#3e554d' }}>
+              Motivos de Consulta Más Frecuentes
+            </h2>
+            <p className="text-base text-muted-foreground mb-4 font-raleway text-left">
+              Estos son algunos de los temas más comunes que trabajamos en terapia de pareja
+            </p>
+            
+            <div className="space-y-2">
+              <Accordion type="single" collapsible className="space-y-2">
+                {consultationReasons.map((reason) => (
+                  <AccordionItem key={reason.id} value={reason.id} className="border-none p-0">
+                    <AccordionTrigger className="text-left text-muted-foreground hover:text-sage font-normal cursor-pointer text-sm p-0 h-auto">
+                      <div className="flex items-center gap-2">
+                        <div className="w-1.5 h-1.5" style={{ backgroundColor: '#3e554d' }} />
+                        <span>{reason.title}</span>
+                      </div>
+                    </AccordionTrigger>
+                    <AccordionContent className="space-y-4 pb-4 mt-2">
+                      <div className="text-foreground leading-relaxed whitespace-pre-line font-medium text-sm bg-card p-4 rounded-lg border border-sage/20">
+                        {reason.content}
+                      </div>
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+            </div>
+          </motion.div>
         </motion.div>
       </section>
 
-      {/* Motivos de Consulta Frecuentes */}
-      <section className="py-16 px-6 bg-muted/10">
-        <div className="container mx-auto">
-          <motion.div variants={itemVariants} className="text-center mb-6">
-            <h2 className="text-3xl md:text-4xl font-bold mb-3 font-marcellus" style={{ color: '#3e554d' }}>
-              Motivos de Consulta Más Frecuentes
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto font-raleway">
-              Estos son algunos de los temas más comunes que trabajamos en terapia de pareja
-            </p>
-          </motion.div>
-          
-          <div className="max-w-4xl mx-auto space-y-2">
-            <Accordion type="single" collapsible className="space-y-2">
-              {consultationReasons.map((reason) => (
-                <AccordionItem key={reason.id} value={reason.id} className="border-none p-0">
-                  <AccordionTrigger className="text-left text-muted-foreground hover:text-sage font-normal cursor-pointer text-sm p-0 h-auto">
-                    <div className="flex items-center gap-2">
-                      <div className="w-1.5 h-1.5 bg-sage rounded-full flex-shrink-0" />
-                      <span>{reason.title}</span>
-                    </div>
-                  </AccordionTrigger>
-                  <AccordionContent className="space-y-4 pb-4 mt-2">
-                    <div className="text-foreground leading-relaxed whitespace-pre-line font-medium text-sm bg-card p-4 rounded-lg border border-sage/20">
-                      {reason.content}
-                    </div>
-                  </AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
-          </div>
-        </div>
-      </section>
-
-
-
       {/* Método Gottman */}
-      <section className="py-16 px-6 bg-muted/10">
+      <section className="py-16 px-6 bg-white">
         <div className="container mx-auto">
           <motion.div variants={itemVariants} className="text-center mb-12">
-            <Badge variant="secondary" className="mb-4">Método Científico</Badge>
+            <Badge className="mb-4 bg-steel-blue text-white border-steel-blue">Método Científico</Badge>
             <h2 className="text-3xl md:text-4xl font-bold mb-6 font-marcellus" style={{ color: '#3e554d' }}>
               Basado en el Método Gottman
             </h2>
@@ -224,7 +218,7 @@ Sí es posible, aunque requiere un proceso profundo que involucra tres elementos
       </section>
 
       {/* CTA Final */}
-      <section className="py-16 px-6 bg-muted/10">
+      <section className="py-16 px-6 bg-white">
         <div className="container mx-auto max-w-4xl text-center">
           <motion.div variants={itemVariants}>
             <h2 className="text-3xl font-bold mb-6 font-marcellus" style={{ color: '#3e554d' }}>

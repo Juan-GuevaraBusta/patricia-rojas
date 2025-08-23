@@ -24,9 +24,9 @@ const TherapeuticApproaches = () => {
   );
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background to-muted/20">
+    <div className="min-h-screen bg-white">
       {/* Hero Section - Mi Enfoque Terapéutico */}
-      <section className="pt-20 pb-16 bg-muted/10">
+      <section className="pt-20 pb-16 bg-white">
         <motion.div
           ref={ref}
           variants={containerVariants}
@@ -82,7 +82,7 @@ const TherapeuticApproaches = () => {
       </section>
 
       {/* Resto del contenido */}
-      <section className="py-16 bg-muted/10">
+      <section className="py-16 bg-white">
         <motion.div
           variants={containerVariants}
           initial="hidden"

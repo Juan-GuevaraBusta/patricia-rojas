@@ -38,7 +38,7 @@ All colors MUST be HSL.
     --secondary-foreground: 158 21% 24%; /* #3e554d */
 
     --muted: 145 23% 78%; /* #C5D0C3 - light sage */
-    --muted-foreground: 195 18% 50%; /* #7C939B */
+    --muted-foreground: 210 25% 55%; /* #5D8AA8 */
 
     --accent: 205 31% 53%; /* #5d8aa8 - steel blue */
     --accent-foreground: 60 8% 96%; /* #f6f6f2 */
@@ -55,7 +55,7 @@ All colors MUST be HSL.
     --sage: 145 20% 60%; /* #8ca194 */
     --sage-dark: 158 21% 24%; /* #3e554d */
     --steel-blue: 205 31% 53%; /* #5d8aa8 */
-    --blue-gray: 195 18% 50%; /* #7C939B */
+    --blue-gray: 210 25% 55%; /* #5D8AA8 */
     --cream: 60 8% 96%; /* #f6f6f2 */
     --terracota: 15 45% 45%; /* #8B4513 - terracotta color */
 

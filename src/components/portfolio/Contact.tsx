@@ -194,7 +194,7 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contacto" className="py-20 bg-muted/10">
+    <section id="contacto" className="py-20 bg-white">
       <motion.div
         ref={ref}
         variants={containerVariants}
@@ -204,11 +204,11 @@ const Contact = () => {
       >
         {/* Header */}
         <motion.div variants={itemVariants} className="text-center mb-16">
-          <Badge variant="outline" className="mb-4 px-4 py-2">
-            <Calendar className="w-4 h-4 mr-2" />
+          <Badge className="mb-4 px-4 py-2 bg-steel-blue text-white border-steel-blue">
+            <Calendar className="w-4 h-4 mr-2" style={{ color: '#fb7185' }} />
             Contacto
           </Badge>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-primary bg-clip-text text-transparent font-marcellus">
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 font-marcellus" style={{ color: '#3e554d' }}>
             Comienza tu proceso de sanación
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto font-raleway">

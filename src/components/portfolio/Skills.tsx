@@ -28,7 +28,7 @@ const Skills = () => {
   return (
     <>
       {/* Mi Enfoque Terapéutico y Herramientas - Sección Unificada */}
-      <section className="py-20 bg-muted/10">
+      <section className="py-20 bg-white">
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -91,7 +91,7 @@ const Skills = () => {
                       "Técnicas específicas de la Terapia Gestalt, Logoterapia y Terapia Cognitivo Conductual TCC"
                     ].map((item, index) => (
                       <div key={index} className="flex items-start gap-3">
-                        <div className="w-2 h-2 bg-terracota rounded-full mt-2 flex-shrink-0"></div>
+                        <div className="w-2 h-2 rounded-full mt-2 flex-shrink-0" style={{ backgroundColor: '#3e554d' }}></div>
                         <span className="text-muted-foreground text-sm">{item}</span>
                       </div>
                     ))}
@@ -114,174 +114,9 @@ const Skills = () => {
         </motion.div>
       </section>
 
-      {/* Formato de Sesiones */}
-      <section className="py-20 bg-muted/10">
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
-          className="container mx-auto px-6"
-        >
-          <motion.div variants={itemVariants} className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 font-marcellus" style={{ color: '#3e554d' }}>
-              Formato de las Sesiones
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto font-raleway">
-              Cada sesión está diseñada para brindarte el máximo beneficio terapéutico en un ambiente seguro y profesional
-            </p>
-          </motion.div>
 
-          <Card className="shadow-elegant">
-            <CardContent className="p-8 space-y-6">
-              <div className="flex items-center gap-3 mb-6">
-                <Clock className="w-6 h-6" style={{ color: '#fb7185' }} />
-                <div>
-                  <h4 className="font-semibold text-sage-dark">Duración</h4>
-                  <p className="text-muted-foreground">Cada sesión tiene una duración de 50 minutos.</p>
-                </div>
-              </div>
 
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="bg-card p-6 rounded-lg shadow-hover">
-                  <h5 className="font-semibold text-sage-dark mb-3 flex items-center gap-2">
-                    <Users className="w-5 h-5" style={{ color: '#fb7185' }} />
-                    Sesiones Individuales
-                  </h5>
-                  <p className="text-muted-foreground leading-relaxed">
-                    Durante el proceso terapéutico se incluirán sesiones individuales para explorar la historia personal de cada miembro de la pareja y comprender cómo estas experiencias influyen en la dinámica relacional actual.
-                  </p>
-                </div>
 
-                <div className="bg-card p-6 rounded-lg shadow-hover">
-                  <h5 className="font-semibold text-sage-dark mb-3 flex items-center gap-2">
-                    <Heart className="w-5 h-5" style={{ color: '#fb7185' }} />
-                    Espacio Seguro
-                  </h5>
-                  <p className="text-muted-foreground leading-relaxed">
-                    En cada encuentro se proporciona un espacio seguro donde ambos pueden expresar libremente sus necesidades, relatos y emociones.
-                  </p>
-                </div>
-
-                <div className="bg-card p-6 rounded-lg shadow-hover">
-                  <h5 className="font-semibold text-sage-dark mb-3 flex items-center gap-2">
-                    <MessageCircle className="w-5 h-5" style={{ color: '#fb7185' }} />
-                    Metodología
-                  </h5>
-                  <p className="text-muted-foreground leading-relaxed mb-3">
-                    Las sesiones combinan la escucha empática con psicoeducación especializada y ejercicios prácticos de comunicación que pueden implementar en su vida cotidiana.
-                  </p>
-                  <p className="text-muted-foreground leading-relaxed">
-                    La metodología integra teoría y práctica, permitiendo que las parejas no solo comprendan los conceptos, sino que desarrollen habilidades concretas para fortalecer su relación.
-                  </p>
-                </div>
-
-                <div className="bg-card p-6 rounded-lg shadow-hover">
-                  <h5 className="font-semibold text-sage-dark mb-3 flex items-center gap-2">
-                    <MapPin className="w-5 h-5" style={{ color: '#fb7185' }} />
-                    Modalidades
-                  </h5>
-                  <p className="text-muted-foreground font-medium">
-                    Sesiones presencial y virtual
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        </motion.div>
-      </section>
-
-      {/* Enfoque Terapéutico Individual */}
-      <section className="py-20 bg-muted/10">
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
-          className="container mx-auto px-6"
-        >
-          <motion.div variants={itemVariants} className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 font-marcellus" style={{ color: '#3e554d' }}>
-              Enfoque Terapéutico Individual
-            </h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto font-raleway">
-              Trabajo desde un enfoque integrativo, adaptándome a tus necesidades específicas
-              con herramientas basadas en evidencia científica.
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            <motion.div
-              variants={itemVariants}
-              whileHover={{ y: -5, scale: 1.02 }}
-            >
-              <Card className="h-full overflow-hidden shadow-elegant hover:shadow-hover transition-all duration-500 bg-gradient-to-br from-steel-blue/20 to-steel-blue/5">
-                <CardHeader className="pb-4">
-                  <motion.div
-                    whileHover={{ rotate: 10, scale: 1.1 }}
-                    className="inline-flex p-4 rounded-2xl bg-background/80 mb-4 shadow-sm"
-                  >
-                    <Brain size={32} style={{ color: '#fb7185' }} />
-                  </motion.div>
-                  
-                  <h3 className="text-xl font-bold text-foreground mb-3">
-                    Enfoque Integrativo Personalizado
-                  </h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    Adapto mi enfoque terapéutico a tus necesidades específicas, utilizando herramientas de ACT, mindfulness y terapias de tercera generación.
-                  </p>
-                </CardHeader>
-              </Card>
-            </motion.div>
-
-            <motion.div
-              variants={itemVariants}
-              whileHover={{ y: -5, scale: 1.02 }}
-            >
-              <Card className="h-full overflow-hidden shadow-elegant hover:shadow-hover transition-all duration-500 bg-gradient-to-br from-terracota/20 to-terracota/5">
-                <CardHeader className="pb-4">
-                  <motion.div
-                    whileHover={{ rotate: 10, scale: 1.1 }}
-                    className="inline-flex p-4 rounded-2xl bg-background/80 text-[#fb7185] mb-4 shadow-sm"
-                  >
-                    <Shield size={32} />
-                  </motion.div>
-                  
-                  <h3 className="text-xl font-bold text-foreground mb-3">
-                    Espacio Seguro y Libre de Juicios
-                  </h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    Creo un ambiente confidencial y empático donde puedes expresarte con total libertad y autenticidad.
-                  </p>
-                </CardHeader>
-              </Card>
-            </motion.div>
-
-            <motion.div
-              variants={itemVariants}
-              whileHover={{ y: -5, scale: 1.02 }}
-            >
-              <Card className="h-full overflow-hidden shadow-elegant hover:shadow-hover transition-all duration-500 bg-gradient-to-br from-sage/20 to-sage/5">
-                <CardHeader className="pb-4">
-                  <motion.div
-                    whileHover={{ rotate: 10, scale: 1.1 }}
-                    className="inline-flex p-4 rounded-2xl bg-background/80 text-[#fb7185] mb-4 shadow-sm"
-                  >
-                    <Lightbulb size={32} />
-                  </motion.div>
-                  
-                  <h3 className="text-xl font-bold text-foreground mb-3">
-                    Herramientas Prácticas para la Vida Diaria
-                  </h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    Te proporciono estrategias concretas que puedes aplicar en tu día a día para gestionar emociones y situaciones difíciles.
-                  </p>
-                </CardHeader>
-              </Card>
-            </motion.div>
-          </div>
-        </motion.div>
-      </section>
 
       {/* Call to Action - Agenda tu cita */}
       <section className="py-20 bg-gradient-primary">
@@ -293,7 +128,7 @@ const Skills = () => {
           className="container mx-auto px-6"
         >
           <motion.div variants={itemVariants} className="text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 font-marcellus text-primary-foreground">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 font-marcellus" style={{ color: '#3e554d' }}>
               ¿Listo para comenzar tu proceso de transformación?
             </h2>
             <p className="text-lg text-primary-foreground/90 mb-8 max-w-3xl mx-auto font-raleway">

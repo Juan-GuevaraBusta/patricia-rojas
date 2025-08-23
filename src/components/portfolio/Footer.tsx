@@ -47,14 +47,7 @@ const Footer = () => {
     { label: 'Contacto', href: '/contacto' },
   ];
 
-  const services = [
-    { label: 'Terapia de Parejas', href: '/couples-therapy' },
-    { label: 'Terapia Individual', href: '/individual-therapy' },
-    { label: 'Terapia para Jóvenes', href: '/individual-therapy' },
-    { label: 'Procesos de Duelo', href: '/individual-therapy' },
-    { label: 'Manejo de Ansiedad', href: '/individual-therapy' },
-    { label: 'Crecimiento Personal', href: '/individual-therapy' },
-  ];
+
 
   const contactInfo = [
     { 
@@ -124,13 +117,13 @@ const Footer = () => {
       
       <div className="container mx-auto px-6 py-12 relative z-10">
         {/* Main Footer Content */}
-        <div className="grid lg:grid-cols-4 md:grid-cols-2 gap-8 mb-8">
+        <div className="grid lg:grid-cols-12 md:grid-cols-2 gap-8 mb-8">
           {/* Brand & Description */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="lg:col-span-1 space-y-6"
+            className="lg:col-span-5 space-y-6"
           >
             <div className="flex flex-col space-y-3">
               {/* Logo Patricia Rojas */}
@@ -138,11 +131,11 @@ const Footer = () => {
                 <Logo size="lg" className="filter brightness-0 invert" />
               </div>
               <div>
-                <p className="text-primary-foreground/80 font-raleway text-sm">Psicóloga Master - Especializada en Terapia Individual y de Parejas</p>
+                <p className="text-primary-foreground/80 font-raleway text-base">Psicóloga Master - Especializada en Terapia Individual y de Parejas</p>
               </div>
             </div>
             
-            <p className="text-primary-foreground/80 leading-relaxed">
+            <p className="text-primary-foreground/80 leading-relaxed text-sm">
               Te acompaño a sanar tus relaciones y reconectar contigo mismo. 
               Especializada en terapia de parejas y terapia individual con 
               enfoques basados en evidencia científica.
@@ -150,15 +143,15 @@ const Footer = () => {
 
             {/* Formación Complementaria */}
             <div className="space-y-2">
-              <h4 className="font-semibold text-white flex items-center font-raleway">
+              <h4 className="font-semibold text-white flex items-center font-raleway text-base">
                 <Award className="w-4 h-4 mr-2" />
                 Formación Complementaria en Psicoterapia
               </h4>
               <ul className="space-y-1">
-                <li className="text-xs text-white/80">• Master en Consejería Clínica y Salud Mental</li>
-                <li className="text-xs text-white/80">• Nivel I y II Terapia de Pareja Método Gottman</li>
-                <li className="text-xs text-white/80">• Terapia de Aceptación y Compromiso (ACT)</li>
-                <li className="text-xs text-white/80">• Terapia Cognitivo Conductual</li>
+                <li className="text-sm text-white/80">• Master en Consejería Clínica y Salud Mental</li>
+                <li className="text-sm text-white/80">• Nivel I y II Terapia de Pareja Método Gottman</li>
+                <li className="text-sm text-white/80">• Terapia de Aceptación y Compromiso (ACT)</li>
+                <li className="text-sm text-white/80">• Terapia Cognitivo Conductual</li>
               </ul>
             </div>
           </motion.div>
@@ -168,7 +161,7 @@ const Footer = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="space-y-6"
+            className="lg:col-span-3 space-y-6"
           >
             <h4 className="text-lg font-semibold text-white font-raleway">Enlaces Rápidos</h4>
             <div className="space-y-3">
@@ -188,37 +181,14 @@ const Footer = () => {
             </div>
           </motion.div>
 
-          {/* Services */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="space-y-6"
-          >
-            <h4 className="text-lg font-semibold text-white font-raleway">Servicios</h4>
-            <div className="space-y-3">
-              {services.map((service) => (
-                <motion.div
-                  key={service.label}
-                  whileHover={{ x: 5 }}
-                >
-                  <Link
-                    to={service.href}
-                    className="block text-primary-foreground/80 hover:text-white transition-colors duration-300"
-                  >
-                    {service.label}
-                  </Link>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
+
 
           {/* Contact Information */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="space-y-6"
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="lg:col-span-4 space-y-6"
           >
             <h4 className="text-lg font-semibold text-white">Contacto</h4>
             <div className="space-y-4">
