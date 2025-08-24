@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowDown, Calendar, Phone, Mail, User, Heart, Target, Award, MapPin, Clock, Users, Brain, Shield, Users2, User2 } from 'lucide-react';
+import { ArrowDown, Calendar, Phone, Mail, User, Heart, Target, Award, MapPin, Clock, Users, Brain, Shield, Users2, User2, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -10,7 +10,7 @@ import { containerVariants, itemVariants } from '@/utils/animations';
 const Hero = () => {
   const services = [
     {
-      title: "TERAPIA DE PAREJA",
+      title: "Terapia de pareja",
       description: "La terapia de pareja es un espacio para mejorar la comunicación, resolver conflictos y fortalecer el vínculo, no solo en momentos de crisis. También es ideal para novios y parejas que desean prepararse para el matrimonio o la convivencia, comenzando con claridad sobre las claves que les ayudarán a construir una relación estable, sana y feliz.",
       frequentReasons: [
         'Conflictos que no se resuelven',
@@ -23,7 +23,7 @@ const Hero = () => {
       link: "/couples-therapy"
     },
     {
-      title: "TERAPIA INDIVIDUAL",
+      title: "Terapia individual",
       description: "Te brindo un espacio para conocerte, comprender tus emociones y aprender a observar tus pensamientos sin quedarte atrapado en ellos, para que puedas vivir en coherencia con tus valores y construir una vida con sentido.",
       frequentReasons: [
         'Ansiedad',
@@ -382,19 +382,7 @@ Sí es posible, aunque requiere un proceso profundo que involucra tres elementos
                 variants={itemVariants}
                 className="flex flex-col space-y-6"
               >
-                {/* Duración */}
-                <div className="text-center">
-                  <div className="inline-flex flex-col gap-2 bg-white text-[#5d8aa8] px-6 py-3 rounded-lg text-sm font-medium shadow-sm border border-gray-200">
-                    <div className="flex items-center gap-3">
-                      <Clock className="w-4 h-4" style={{ color: '#fb7185' }} />
-                      <span><strong>Modalidades:</strong> Virtual / Presencial</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <Clock className="w-4 h-4" style={{ color: '#fb7185' }} />
-                      <span><strong>Duración de cada sesión:</strong> 50 minutos</span>
-                    </div>
-                  </div>
-                </div>
+
 
                 {/* Título */}
                 <div className="text-center">
@@ -438,6 +426,16 @@ Sí es posible, aunque requiere un proceso profundo que involucra tres elementos
                   <p className="text-muted-foreground leading-relaxed text-sm md:text-base font-raleway text-center">
                     {service.description}
                   </p>
+                  
+                  {/* Botón Más información */}
+                  <div className={`text-center ${service.title === "Terapia individual" ? "pt-4" : ""}`}>
+                    <Link to={service.link}>
+                      <Button className="bg-steel-blue hover:bg-steel-blue/90 text-white px-6 py-2 rounded-lg font-medium shadow-hover hover:shadow-glow">
+                        <ArrowRight className="w-4 h-4 mr-2" style={{ color: '#fb7185' }} />
+                        Más información
+                      </Button>
+                    </Link>
+                  </div>
                 </div>
               </motion.div>
             ))}
@@ -462,7 +460,7 @@ Sí es posible, aunque requiere un proceso profundo que involucra tres elementos
 
 
       {/* Sección de Modalidades */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-[#4a6741]/10">
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -484,37 +482,37 @@ Sí es posible, aunque requiere un proceso profundo que involucra tres elementos
             {/* Modalidad Virtual */}
             <motion.div
               variants={itemVariants}
-              className="bg-card p-8 rounded-lg shadow-elegant border border-sage/20 text-center"
+              className="bg-white p-8 rounded-lg shadow-elegant border border-[#4a6741]/20 text-center"
             >
               <div className="mb-6">
-                <div className="w-16 h-16 bg-sage/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 bg-[#4a6741]/20 rounded-full flex items-center justify-center mx-auto mb-4">
                   <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{ color: '#fb7185' }}>
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
                   </svg>
                 </div>
-                <h3 className="text-2xl font-bold text-sage-dark mb-2 font-marcellus">ONLINE</h3>
+                <h3 className="text-2xl font-bold mb-2 font-marcellus" style={{ color: '#3e554d' }}>ONLINE</h3>
               </div>
-              <p className="text-muted-foreground leading-relaxed text-base font-raleway">
-                La terapia On line permite que tomes tus sesiones si no vives en la ciudad, cuando estés de viaje o no dispongas del tiempo para trasladarte. Se lleva a cabo a través de cualquiera de las plataformas existentes para videoconferencia.
+              <p className="leading-relaxed text-base font-raleway" style={{ color: '#3e554d' }}>
+                Accede a tus sesiones desde cualquier lugar: si vives fuera de la ciudad, estás de viaje o prefieres no desplazarte. Nos conectamos a través de plataformas seguras de videoconferencia.
               </p>
             </motion.div>
 
             {/* Modalidad Presencial */}
             <motion.div
               variants={itemVariants}
-              className="bg-card p-8 rounded-lg shadow-elegant border border-sage/20 text-center"
+              className="bg-white p-8 rounded-lg shadow-elegant border border-[#4a6741]/20 text-center"
             >
               <div className="mb-6">
-                <div className="w-16 h-16 bg-sage/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 bg-[#4a6741]/20 rounded-full flex items-center justify-center mx-auto mb-4">
                   <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{ color: '#fb7185' }}>
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
                 </div>
-                <h3 className="text-2xl font-bold text-sage-dark mb-2 font-marcellus">PRESENCIAL</h3>
+                <h3 className="text-2xl font-bold mb-2 font-marcellus" style={{ color: '#3e554d' }}>PRESENCIAL</h3>
               </div>
-              <p className="text-muted-foreground leading-relaxed text-base font-raleway">
-                La terapia presencial se lleva a cabo en las oficinas de Yoffice ubicadas en la Torre B de las Torres Pasoancho del Centro Comercial Unicentro Cali, piso 6.
+              <p className="leading-relaxed text-base font-raleway" style={{ color: '#3e554d' }}>
+                Puedes asistir de manera presencial en un espacio cómodo y privado, ubicado en Yoffice, Torre B de las Torres Pasoancho, Centro Comercial Unicentro Cali, piso 6.
               </p>
             </motion.div>
           </div>

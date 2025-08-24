@@ -216,7 +216,7 @@ const IndividualTherapy = () => {
                 <div className="inline-flex flex-col gap-2 bg-white text-[#5d8aa8] px-6 py-3 rounded-lg text-sm font-medium shadow-sm border border-gray-200">
                   <div className="flex items-center gap-3">
                     <Clock className="w-4 h-4" style={{ color: '#fb7185' }} />
-                    <span><strong>Modalidades:</strong> Virtual / Presencial</span>
+                    <span><strong>Modalidades:</strong> Virtual impresentable uso</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <Clock className="w-4 h-4" style={{ color: '#fb7185' }} />

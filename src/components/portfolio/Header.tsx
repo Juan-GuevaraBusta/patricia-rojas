@@ -80,8 +80,8 @@ const Header = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="relative">
-            <Logo size="md" />
-            <span className="absolute text-sm font-medium font-marcellus mt-5" style={{ color: '#3e554d', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}>
+            <Logo size="lg" />
+            <span className="absolute text-base font-medium font-marcellus mt-5" style={{ color: '#3e554d', top: '50%', left: '50%', transform: 'translate(-50%, -50%)' }}>
               Psicóloga
             </span>
           </Link>

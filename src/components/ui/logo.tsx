@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 
 interface LogoProps {
   className?: string;
-  size?: 'sm' | 'md' | 'lg';
+  size?: 'sm' | 'md' | 'lg' | 'xl';
 }
 
 const Logo = ({ className = '', size = 'md' }: LogoProps) => {
@@ -11,6 +11,8 @@ const Logo = ({ className = '', size = 'md' }: LogoProps) => {
       case 'sm':
         return 'h-6';
       case 'lg':
+        return 'h-10';
+      case 'xl':
         return 'h-16';
       case 'md':
       default:
