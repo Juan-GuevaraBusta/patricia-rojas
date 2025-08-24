@@ -423,7 +423,7 @@ Sí es posible, aunque requiere un proceso profundo que involucra tres elementos
                 
                 {/* Información */}
                 <div className="space-y-4">
-                  <p className="text-muted-foreground leading-relaxed text-sm md:text-base font-raleway text-center">
+                  <p className="leading-relaxed text-sm md:text-base font-raleway text-center" style={{ color: '#3e554d' }}>
                     {service.description}
                   </p>
                   
