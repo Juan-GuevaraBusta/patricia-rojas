@@ -320,7 +320,7 @@ Sí es posible, aunque requiere un proceso profundo que involucra tres elementos
                   </span>
 
                 </h1>
-                <h2 className="text-lg md:text-xl lg:text-2xl font-light font-raleway" style={{ color: '#5d8aa8' }}>
+                <h2 className="text-lg md:text-xl lg:text-2xl font-light font-raleway" style={{ color: '#3e554d' }}>
                   Psicóloga Master Especializada en Terapia Individual y de Parejas
                 </h2>
               </motion.div>
@@ -428,7 +428,7 @@ Sí es posible, aunque requiere un proceso profundo que involucra tres elementos
                   </p>
                   
                   {/* Botón Más información */}
-                  <div className={`text-center ${service.title === "Terapia individual" ? "pt-4" : ""}`}>
+                  <div className={`text-center ${service.title === "Terapia individual" ? "pt-7" : ""}`}>
                     <Link to={service.link}>
                       <Button className="bg-steel-blue hover:bg-steel-blue/90 text-white px-6 py-2 rounded-lg font-medium shadow-hover hover:shadow-glow">
                         <ArrowRight className="w-4 h-4 mr-2" style={{ color: '#fb7185' }} />
