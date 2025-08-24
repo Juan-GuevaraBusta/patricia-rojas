@@ -207,22 +207,28 @@ const IndividualTherapy = () => {
                 Sanar, comunicar, conectar
               </h1>
               
-              <p className="text-lg text-muted-foreground mb-4 leading-relaxed">
+              <p className="text-lg text-muted-foreground mb-3 leading-relaxed">
                 Te brindo un espacio para conocerte, comprender tus emociones y aprender a observar tus pensamientos sin quedarte atrapado en ellos, para que puedas vivir en coherencia con tus valores y construir una vida con sentido.
               </p>
               
               {/* Duración */}
               <div className="text-center lg:text-left">
-                <div className="inline-flex items-center gap-3 bg-white text-[#5d8aa8] px-6 py-3 rounded-lg text-sm font-medium shadow-sm border border-gray-200">
-                  <Clock className="w-4 h-4" style={{ color: '#fb7185' }} />
-                  <span><strong>Duración:</strong> 50 minutos</span>
+                <div className="inline-flex flex-col gap-2 bg-white text-[#5d8aa8] px-6 py-3 rounded-lg text-sm font-medium shadow-sm border border-gray-200">
+                  <div className="flex items-center gap-3">
+                    <Clock className="w-4 h-4" style={{ color: '#fb7185' }} />
+                    <span><strong>Modalidades:</strong> Virtual / Presencial</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <Clock className="w-4 h-4" style={{ color: '#fb7185' }} />
+                    <span><strong>Duración de cada sesión:</strong> 50 minutos</span>
+                  </div>
                 </div>
               </div>
             </motion.div>
           </div>
 
           {/* Motivos de Consulta Frecuentes */}
-          <motion.div variants={itemVariants} className="mt-4">
+          <motion.div variants={itemVariants} className="mt-2">
             <h2 className="text-2xl md:text-3xl font-bold mb-4 font-marcellus text-left" style={{ color: '#3e554d' }}>
               Motivos de Consulta Frecuentes
             </h2>
