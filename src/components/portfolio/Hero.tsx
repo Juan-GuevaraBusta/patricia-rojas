@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowDown, Calendar, Phone, Mail, User, Heart, Target, Award, MapPin, Clock, Users, Brain, Shield, Users2, User2, ArrowRight } from 'lucide-react';
+import { ArrowDown, Calendar, Phone, Mail, User, Heart, Target, Award, MapPin, Clock, Users, Brain, Shield, Users2, User2, ArrowRight, Instagram, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -9,6 +9,18 @@ import { containerVariants, itemVariants } from '@/utils/animations';
 
 const Hero = () => {
   const services = [
+    {
+      title: "Terapia individual",
+      description: "Te brindo un espacio para conocerte, comprender tus emociones y aprender a observar tus pensamientos sin quedarte atrapado en ellos, para que puedas vivir en coherencia con tus valores y construir una vida con sentido.",
+      frequentReasons: [
+        'Ansiedad',
+        'Depresión',
+        'Duelos por pérdida, ruptura, migración o cambio',
+        'Crecimiento personal'
+      ],
+      image: "/images/individual-therapy-page.jpg", // Ruta de la imagen
+      link: "/individual-therapy"
+    },
     {
       title: "Terapia de pareja",
       description: "La terapia de pareja es un espacio para mejorar la comunicación, resolver conflictos y fortalecer el vínculo, no solo en momentos de crisis. También es ideal para novios y parejas que desean prepararse para el matrimonio o la convivencia, comenzando con claridad sobre las claves que les ayudarán a construir una relación estable, sana y feliz.",
@@ -21,18 +33,6 @@ const Hero = () => {
       ],
       image: "/images/couples-therapy-page.jpg", // Ruta de la imagen
       link: "/couples-therapy"
-    },
-    {
-      title: "Terapia individual",
-      description: "Te brindo un espacio para conocerte, comprender tus emociones y aprender a observar tus pensamientos sin quedarte atrapado en ellos, para que puedas vivir en coherencia con tus valores y construir una vida con sentido.",
-      frequentReasons: [
-        'Ansiedad',
-        'Depresión',
-        'Duelos por pérdida, ruptura, migración o cambio',
-        'Crecimiento personal'
-      ],
-      image: "/images/individual-therapy-page.jpg", // Ruta de la imagen
-      link: "/individual-therapy"
     }
   ];
 
@@ -269,6 +269,34 @@ Sí es posible, aunque requiere un proceso profundo que involucra tres elementos
     }
   ];
 
+  const socialLinks = [
+    { 
+      icon: Instagram, 
+      href: 'https://instagram.com/patriciarojaspsicologa', 
+      label: 'Instagram',
+      color: 'text-magenta',
+      username: '@patriciarojaspsicologa'
+    },
+    { 
+      icon: () => (
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-4.59v13.59a2.83 2.83 0 0 1-5.66 0 2.83 2.83 0 0 1 2.83-2.83c.28 0 .56.04.83.1V9.76a6.54 6.54 0 0 0-1.83-.25 6.59 6.59 0 0 0-6.59 6.59 6.59 6.59 0 0 0 13.18 0V9.69a8.48 8.48 0 0 0 5.77 2.26V8.35a4.79 4.79 0 0 1-0.17-1.66z"/>
+        </svg>
+      ), 
+      href: 'https://tiktok.com/@patriciarojaspsicologa', 
+      label: 'TikTok',
+      color: 'text-steel-blue',
+      username: '@patriciarojaspsicologa'
+    },
+    { 
+      icon: MessageCircle, 
+      href: 'https://wa.me/573118361642', 
+      label: 'WhatsApp',
+      color: 'text-[#fb7185]',
+      username: '+57 311 836 1642'
+    },
+  ];
+
 
 
   return (
@@ -330,7 +358,7 @@ Sí es posible, aunque requiere un proceso profundo que involucra tres elementos
                 className="space-y-6 mb-8 md:mb-12"
               >
                 <p className="text-base md:text-lg lg:text-xl font-semibold leading-relaxed font-raleway" style={{ color: '#3e554d' }}>
-                  Te ayudo a sanar relaciones y conectar contigo mismo.
+                  Te ayudo a fortalecer tus relaciones y conectar contigo mismo.
                 </p>
               </motion.div>
 
@@ -343,9 +371,9 @@ Sí es posible, aunque requiere un proceso profundo que involucra tres elementos
                   className="shadow-hover hover:shadow-glow px-6 md:px-8 py-3 md:py-4 text-base md:text-lg font-medium rounded-full min-w-[200px] bg-steel-blue hover:bg-steel-blue/90 text-white"
                   asChild
                 >
-                  <Link to="/couples-therapy" className="flex items-center gap-2">
-                    <Users2 className="w-5 h-5" stroke="#fb7185" />
-                    Terapia de Pareja
+                  <Link to="/individual-therapy" className="flex items-center gap-2">
+                    <User2 className="w-5 h-5" stroke="#fb7185" />
+                    Terapia Individual
                   </Link>
                 </Button>
                 <Button 
@@ -353,9 +381,9 @@ Sí es posible, aunque requiere un proceso profundo que involucra tres elementos
                   className="shadow-hover hover:shadow-glow px-6 md:px-8 py-3 md:py-4 text-base md:text-lg font-medium rounded-full min-w-[200px] bg-steel-blue hover:bg-steel-blue/90 text-white"
                   asChild
                 >
-                  <Link to="/individual-therapy" className="flex items-center gap-2">
-                    <User2 className="w-5 h-5" stroke="#fb7185" />
-                    Terapia Individual
+                  <Link to="/couples-therapy" className="flex items-center gap-2">
+                    <Users2 className="w-5 h-5" stroke="#fb7185" />
+                    Terapia de Pareja
                   </Link>
                 </Button>
               </motion.div>
@@ -428,7 +456,7 @@ Sí es posible, aunque requiere un proceso profundo que involucra tres elementos
                   </p>
                   
                   {/* Botón Más información */}
-                  <div className={`text-center ${service.title === "Terapia individual" ? "pt-7" : ""}`}>
+                  <div className={`text-center ${service.title === "Terapia de pareja" ? "pt-7" : ""}`}>
                     <Link to={service.link}>
                       <Button className="bg-steel-blue hover:bg-steel-blue/90 text-white px-6 py-2 rounded-lg font-medium shadow-hover hover:shadow-glow">
                         <ArrowRight className="w-4 h-4 mr-2" style={{ color: '#fb7185' }} />
@@ -532,7 +560,7 @@ Sí es posible, aunque requiere un proceso profundo que involucra tres elementos
 
 
       {/* Sección de Contacto */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-[#4a6741]/10">
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -548,7 +576,7 @@ Sí es posible, aunque requiere un proceso profundo que involucra tres elementos
             <h2 className="text-4xl md:text-5xl font-bold mb-6 font-marcellus" style={{ color: '#3e554d' }}>
               Comienza tu proceso hoy
             </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-xl max-w-3xl mx-auto" style={{ color: '#3e554d' }}>
               El primer paso hacia el bienestar emocional es decidir buscar ayuda. 
               Estoy aquí para acompañarte en este camino.
             </p>
@@ -604,6 +632,65 @@ Sí es posible, aunque requiere un proceso profundo que involucra tres elementos
               </a>
             </div>
           </motion.div>
+        </motion.div>
+      </section>
+
+      {/* Sección de Redes Sociales */}
+      <section className="py-20 bg-[#4a6741]/10">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          className="container mx-auto px-6"
+        >
+          <motion.div variants={itemVariants} className="text-center mb-16">
+            <Badge className="mb-4 px-4 py-2 bg-steel-blue text-white border-steel-blue">
+              <Heart className="w-4 h-4 mr-2" style={{ color: '#fb7185' }} />
+              Redes Sociales
+            </Badge>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 font-marcellus" style={{ color: '#3e554d' }}>
+              Sígueme en mis redes sociales
+            </h2>
+            <p className="text-xl max-w-3xl mx-auto" style={{ color: '#3e554d' }}>
+              Mantente conectado conmigo y accede a contenido exclusivo sobre bienestar emocional y relaciones saludables.
+            </p>
+          </motion.div>
+
+          <div className="flex flex-col md:flex-row justify-center items-center gap-6 md:gap-8 max-w-4xl mx-auto">
+            {socialLinks.map((social, index) => (
+              <motion.div
+                key={social.label}
+                variants={itemVariants}
+                whileHover={{ y: -5 }}
+                className="w-full md:w-auto"
+              >
+                <a
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group block"
+                >
+                  <Card className="h-40 w-full md:w-60 shadow-elegant hover:shadow-hover transition-all duration-300">
+                    <CardContent className="p-6 text-center h-full flex flex-col justify-center">
+                      <motion.div
+                        whileHover={{ scale: 1.1, rotate: 5 }}
+                        className={`inline-flex p-4 rounded-full bg-steel-blue/10 mb-4 mx-auto ${social.color}`}
+                      >
+                        <social.icon size={28} />
+                      </motion.div>
+                      <h4 className="font-semibold text-foreground mb-2 text-sm">
+                        {social.label}
+                      </h4>
+                      <p className="text-xs text-muted-foreground break-words px-2">
+                        {social.username}
+                      </p>
+                    </CardContent>
+                  </Card>
+                </a>
+              </motion.div>
+            ))}
+          </div>
         </motion.div>
       </section>
     </div>

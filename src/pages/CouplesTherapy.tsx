@@ -158,13 +158,13 @@ Sí es posible, aunque requiere un proceso profundo que involucra tres elementos
                 Fortalece tu Relación
               </h1>
               
-              <p className="text-base text-muted-foreground mb-4 leading-relaxed">
+              <p className="text-base mb-4 leading-relaxed" style={{ color: '#3e554d' }}>
                 La terapia de pareja es un espacio para mejorar la comunicación, resolver conflictos y fortalecer el vínculo, no solo en momentos de crisis. También es ideal para novios y parejas que desean prepararse para el matrimonio o la convivencia, comenzando con claridad sobre las claves que les ayudarán a construir una relación estable, sana y feliz.
               </p>
               
               {/* Duración */}
               <div className="text-center lg:text-left">
-                <div className="inline-flex flex-col gap-2 bg-white text-[#5d8aa8] px-6 py-3 rounded-lg text-sm font-medium shadow-sm border border-gray-200">
+                <div className="inline-flex flex-col gap-2 bg-white text-[#5d8aa8] px-6 py-3 rounded-lg text-xs font-medium shadow-sm border border-gray-200">
                   <div className="flex items-center gap-3">
                     <Clock className="w-4 h-4" style={{ color: '#fb7185' }} />
                     <span><strong>Modalidades:</strong> Virtual / Presencial</span>
@@ -172,6 +172,10 @@ Sí es posible, aunque requiere un proceso profundo que involucra tres elementos
                   <div className="flex items-center gap-3">
                     <Clock className="w-4 h-4" style={{ color: '#fb7185' }} />
                     <span><strong>Duración de cada sesión:</strong> 50 minutos</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <Clock className="w-4 h-4" style={{ color: '#fb7185' }} />
+                    <span><strong>Horarios:</strong> Lunes a Viernes: 8:00 AM - 6:00 PM, Sábados: 8:00 AM - 12:00 PM</span>
                   </div>
                 </div>
               </div>
@@ -183,7 +187,7 @@ Sí es posible, aunque requiere un proceso profundo que involucra tres elementos
             <h2 className="text-2xl md:text-3xl font-bold mb-4 font-marcellus text-left" style={{ color: '#3e554d' }}>
               Motivos de Consulta Más Frecuentes
             </h2>
-            <p className="text-base text-muted-foreground mb-4 font-raleway text-left">
+            <p className="text-base mb-4 font-raleway text-left" style={{ color: '#3e554d' }}>
               Estos son algunos de los temas más comunes que trabajamos en terapia de pareja
             </p>
             
@@ -191,14 +195,14 @@ Sí es posible, aunque requiere un proceso profundo que involucra tres elementos
               <Accordion type="single" collapsible className="space-y-2">
                 {consultationReasons.map((reason) => (
                   <AccordionItem key={reason.id} value={reason.id} className="border-none p-0">
-                    <AccordionTrigger className="text-left text-muted-foreground hover:text-sage font-normal cursor-pointer text-sm p-0 h-auto">
+                    <AccordionTrigger className="text-left hover:text-sage font-normal cursor-pointer text-sm p-0 h-auto" style={{ color: '#3e554d' }}>
                       <div className="flex items-center gap-2">
                         <div className="w-1.5 h-1.5" style={{ backgroundColor: '#3e554d' }} />
                         <span>{reason.title}</span>
                       </div>
                     </AccordionTrigger>
                     <AccordionContent className="space-y-4 pb-4 mt-2">
-                      <div className="text-foreground leading-relaxed whitespace-pre-line font-medium text-sm bg-card p-4 rounded-lg border border-sage/20">
+                      <div className="leading-relaxed whitespace-pre-line font-medium text-sm bg-card p-4 rounded-lg border border-sage/20" style={{ color: '#3e554d' }}>
                         {reason.content}
                       </div>
                     </AccordionContent>

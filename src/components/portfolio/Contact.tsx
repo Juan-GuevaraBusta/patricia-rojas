@@ -20,103 +20,9 @@ const Contact = () => {
     triggerOnce: true,
   });
 
-  const contactInfo = [
-    {
-      icon: Phone,
-      title: 'Teléfono / WhatsApp',
-      value: '+57 311 836 1642',
-      link: 'https://wa.me/573118361642',
-      description: 'Respuesta en 24 horas'
-    },
-    {
-      icon: Mail,
-      title: 'Email',
-      value: 'patriciarojaspsicologia@gmail.com',
-      link: 'mailto:patriciarojaspsicologia@gmail.com',
-      description: 'Consultas y citas'
-    },
-    {
-      icon: MapPin,
-      title: 'Ubicación',
-      value: 'Carrera 100 #5-168 CC Unicentro',
-      link: '#',
-      description: 'Cali, Valle del Cauca'
-    },
-    {
-      icon: Clock,
-      title: 'Horarios',
-      value: 'Lunes a Viernes: 8:00 AM - 6:00 PM',
-      link: '#',
-      description: 'Sábados: 8:00 AM - 12:00 PM'
-    }
-  ];
 
-  const socialLinks = [
-    { 
-      icon: Instagram, 
-      href: 'https://instagram.com/patriciarojaspsicologa', 
-      label: 'Instagram',
-      color: 'text-magenta',
-      username: '@patriciarojaspsicologa'
-    },
-    { 
-      icon: () => (
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-4.59v13.59a2.83 2.83 0 0 1-5.66 0 2.83 2.83 0 0 1 2.83-2.83c.28 0 .56.04.83.1V9.76a6.54 6.54 0 0 0-1.83-.25 6.59 6.59 0 0 0-6.59 6.59 6.59 6.59 0 0 0 13.18 0V9.69a8.48 8.48 0 0 0 5.77 2.26V8.35a4.79 4.79 0 0 1-0.17-1.66z"/>
-        </svg>
-      ), 
-      href: 'https://tiktok.com/@patriciarojaspsicologa', 
-      label: 'TikTok',
-      color: 'text-steel-blue',
-      username: '@patriciarojaspsicologa'
-    },
-    { 
-      icon: MessageCircle, 
-      href: 'https://wa.me/573118361642', 
-      label: 'WhatsApp',
-      color: 'text-[#fb7185]',
-      username: '+57 311 836 1642'
-    },
-  ];
 
-  const modalidades = [
-    {
-      title: 'Terapia Individual',
-      icon: Calendar,
-      price: 'Consultar',
-      duration: '50 minutos',
-      description: 'Acompañamiento personalizado para ansiedad, depresión, duelos y crecimiento personal',
-      features: ['Enfoque ACT', 'Herramientas mindfulness', 'Proceso personalizado'],
-      link: '/individual-therapy'
-    },
-    {
-      title: 'Sesión Presencial',
-      icon: MapPin,
-      price: 'Consultar',
-      duration: '50 minutos',
-      description: 'En mi consultorio en Unicentro, ambiente cálido y confidencial',
-      features: ['Espacio privado', 'Ambiente controlado', 'Materiales terapéuticos'],
-      link: 'https://wa.me/573118361642'
-    },
-    {
-      title: 'Sesión Virtual',
-      icon: Video,
-      price: 'Consultar',
-      duration: '50 minutos',
-      description: 'Desde la comodidad de tu hogar con la misma calidad profesional',
-      features: ['Plataforma segura', 'Flexibilidad de ubicación', 'Misma efectividad'],
-      link: 'https://wa.me/573118361642'
-    },
-    {
-      title: 'Terapia de Pareja',
-      icon: Heart,
-      price: 'Consultar',
-      duration: '50 minutos',
-      description: 'Espacio especializado para trabajar la relación con Método Gottman',
-      features: ['Enfoque Gottman', 'Ambas modalidades', 'Proceso estructurado'],
-      link: '/couples-therapy'
-    }
-  ];
+
 
   const faqItems = [
     {
@@ -194,7 +100,7 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contacto" className="py-20 bg-white">
+    <section id="contacto" className="py-20 bg-[#4a6741]/10">
       <motion.div
         ref={ref}
         variants={containerVariants}
@@ -208,137 +114,11 @@ const Contact = () => {
             <Calendar className="w-4 h-4 mr-2" style={{ color: '#fb7185' }} />
             Contacto
           </Badge>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 font-marcellus" style={{ color: '#3e554d' }}>
-            Comienza tu proceso de sanación
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto font-raleway">
-            El primer paso hacia el bienestar emocional es decidir buscar ayuda. 
-            Estoy aquí para acompañarte en este camino de crecimiento y sanación.
-          </p>
         </motion.div>
 
-        {/* Información de Contacto */}
-        <motion.div variants={itemVariants} className="mb-16">
-          <h3 className="text-2xl font-bold text-center mb-8 font-marcellus">Información de Contacto</h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {contactInfo.map((info, index) => (
-              <motion.div
-                key={info.title}
-                variants={itemVariants}
-                whileHover={{ y: -5, scale: 1.02 }}
-              >
-                <Card className="h-full shadow-elegant hover:shadow-hover transition-all duration-300">
-                  <CardContent className="p-6 text-center">
-                    <motion.div
-                      whileHover={{ rotate: 10, scale: 1.1 }}
-                      className="inline-flex p-4 rounded-full bg-gradient-primary/10 text-accent mb-4"
-                    >
-                      <info.icon size={24} />
-                    </motion.div>
-                    <h4 className="font-semibold text-foreground mb-2">{info.title}</h4>
-                    <p className="text-muted-foreground text-sm mb-1">{info.value}</p>
-                    <p className="text-muted-foreground text-xs">{info.description}</p>
-                    {info.link.startsWith('http') || info.link.startsWith('mailto:') ? (
-                      <a
-                        href={info.link}
-                        target={info.link.startsWith('http') ? '_blank' : '_self'}
-                        rel={info.link.startsWith('http') ? 'noopener noreferrer' : ''}
-                        className="inline-block mt-3"
-                      >
-                        <Button variant="outline" size="sm">
-                          Contactar
-                        </Button>
-                      </a>
-                    ) : null}
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
 
-        {/* Redes Sociales */}
-        <motion.div variants={itemVariants} className="mb-16">
-          <h3 className="text-2xl font-bold text-center mb-8 font-marcellus">Sígueme en Redes Sociales</h3>
-          <div className="flex justify-center space-x-6">
-            {socialLinks.map((social, index) => (
-              <motion.a
-                key={social.label}
-                href={social.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                whileHover={{ scale: 1.1, y: -5 }}
-                whileTap={{ scale: 0.9 }}
-                className="flex flex-col items-center space-y-3 p-6 rounded-lg bg-card shadow-elegant hover:shadow-hover transition-all duration-300 border border-border"
-              >
-                <div className={`p-4 rounded-full bg-gradient-primary/10 ${social.color}`}>
-                  <social.icon />
-                </div>
-                <div className="text-center">
-                  <p className="font-semibold text-foreground">{social.label}</p>
-                  <p className="text-sm text-muted-foreground">{social.username}</p>
-                </div>
-              </motion.a>
-            ))}
-          </div>
-        </motion.div>
 
-        {/* Modalidades */}
-        <motion.div variants={itemVariants} className="mb-16">
-          <h3 className="text-2xl font-bold text-center mb-8 font-marcellus">Modalidades de Atención</h3>
-          <div className="grid md:grid-cols-2 gap-6">
-            {modalidades.map((modalidad, index) => (
-              <motion.div
-                key={modalidad.title}
-                variants={itemVariants}
-                whileHover={{ y: -5, scale: 1.02 }}
-              >
-                <Card className="h-full shadow-elegant hover:shadow-hover transition-all duration-300 flex flex-col">
-                  <CardHeader className="text-center">
-                    <motion.div
-                      whileHover={{ rotate: 10, scale: 1.1 }}
-                      className="inline-flex p-4 rounded-full bg-gradient-primary/10 text-accent mb-4 mx-auto"
-                    >
-                      <modalidad.icon size={32} />
-                    </motion.div>
-                    <CardTitle className="text-xl">{modalidad.title}</CardTitle>
-                    <div className="flex justify-center items-center space-x-4 text-sm text-muted-foreground">
-                      <span>{modalidad.duration}</span>
-                      <span>•</span>
-                      <span className="font-semibold text-accent">{modalidad.price}</span>
-                    </div>
-                  </CardHeader>
-                  <CardContent className="space-y-4 flex-1 flex flex-col">
-                    <p className="text-muted-foreground text-center">{modalidad.description}</p>
-                    <div className="space-y-2 flex-1">
-                      {modalidad.features.map((feature, idx) => (
-                        <div key={idx} className="flex items-center space-x-2">
-                          <CheckCircle className="w-4 h-4 text-accent" />
-                          <span className="text-sm text-muted-foreground">{feature}</span>
-                        </div>
-                      ))}
-                    </div>
-                    <div className="text-center pt-4 mt-auto">
-                      {modalidad.link.startsWith('/') ? (
-                        <a href={modalidad.link}>
-                          <Button className="bg-steel-blue hover:bg-steel-blue/90 text-white">
-                            Más información
-                          </Button>
-                        </a>
-                      ) : (
-                        <a href={modalidad.link} target="_blank" rel="noopener noreferrer">
-                          <Button className="bg-steel-blue hover:bg-steel-blue/90 text-white">
-                            Agendar por WhatsApp
-                          </Button>
-                        </a>
-                      )}
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
+
 
         {/* FAQ Section */}
         <motion.div variants={itemVariants} className="mb-16">

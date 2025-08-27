@@ -17,7 +17,7 @@ const TherapeuticApproaches = () => {
       {items.map((item, index) => (
         <div key={index} className="flex items-center">
           <div className={`w-2 h-2 ${bulletColor} rounded-full mr-3`}></div>
-          <span className="text-muted-foreground text-sm">{item}</span>
+          <span className="text-sm" style={{ color: '#3e554d' }}>{item}</span>
         </div>
       ))}
     </div>
@@ -38,7 +38,7 @@ const TherapeuticApproaches = () => {
           <motion.div variants={itemVariants} className="mb-16">
             <Card className="shadow-elegant">
               <CardHeader className="text-center pb-8">
-                <CardTitle className="text-4xl font-marcellus text-foreground mb-4">
+                <CardTitle className="text-4xl font-marcellus mb-4" style={{ color: '#3e554d' }}>
                   Mi Enfoque Terapéutico
                 </CardTitle>
                 <div className="w-32 h-1 bg-gradient-to-r from-accent to-sage mx-auto rounded-full"></div>
@@ -46,7 +46,7 @@ const TherapeuticApproaches = () => {
               <CardContent className="space-y-8">
                 {/* Introducción */}
                 <div className="bg-gradient-to-br from-accent/5 to-sage/10 p-8 rounded-lg border border-accent/20">
-                  <h3 className="text-xl font-marcellus text-foreground mb-4 text-center">
+                  <h3 className="text-xl font-marcellus mb-4 text-center" style={{ color: '#3e554d' }}>
                     Trabajo desde un enfoque integrativo, con fuerte base en la Terapia de Aceptación y Compromiso (ACT) y el método Gottman.
                   </h3>
                 </div>
@@ -55,22 +55,22 @@ const TherapeuticApproaches = () => {
                 <div className="grid md:grid-cols-2 gap-8">
                   {/* Columna izquierda - ACT */}
                   <div className="bg-card p-6 rounded-lg shadow-hover border-l-4 border-accent">
-                    <h4 className="text-lg font-marcellus text-foreground mb-4 flex items-center">
+                    <h4 className="text-lg font-marcellus mb-4 flex items-center" style={{ color: '#3e554d' }}>
                       <Target className="mr-2 text-accent" size={20} />
                       Terapia de Aceptación y Compromiso (ACT)
                     </h4>
-                    <p className="text-muted-foreground leading-relaxed mb-4">
+                    <p className="leading-relaxed mb-4" style={{ color: '#3e554d' }}>
                       La Terapia de Aceptación y Compromiso (ACT) es un enfoque psicológico basado en evidencia y nace del marco de la terapia cognitivo conductual. Utiliza ejercicios prácticos para ayudar a aceptar las emociones difíciles, tomar distancia de pensamientos limitantes y comprometerse con acciones coherentes con los propios valores.
                     </p>
                   </div>
 
                   {/* Columna derecha - Método Gottman */}
                   <div className="bg-card p-6 rounded-lg shadow-hover border-l-4 border-sage">
-                    <h4 className="text-lg font-marcellus text-foreground mb-4 flex items-center">
+                    <h4 className="text-lg font-marcellus mb-4 flex items-center" style={{ color: '#3e554d' }}>
                       <Heart className="mr-2 text-sage" size={20} />
                       Método Gottman
                     </h4>
-                    <p className="text-muted-foreground leading-relaxed mb-4">
+                    <p className="leading-relaxed mb-4" style={{ color: '#3e554d' }}>
                       El método Gottman ofrece herramientas prácticas y ejercicios en sesión para mejorar la comunicación, resolver conflictos y fortalecer la conexión emocional de la pareja.
                     </p>
                   </div>
@@ -94,7 +94,8 @@ const TherapeuticApproaches = () => {
             <Button
               variant="ghost"
               onClick={() => navigate(-1)}
-              className="mb-6 text-foreground hover:text-accent transition-colors"
+              className="mb-6 hover:text-accent transition-colors"
+              style={{ color: '#3e554d' }}
             >
               <ArrowLeft className="mr-2" size={20} />
               Volver
@@ -105,7 +106,7 @@ const TherapeuticApproaches = () => {
           <motion.div variants={itemVariants} className="mb-16">
             <Card className="shadow-elegant">
               <CardHeader className="text-center pb-8">
-                <CardTitle className="text-2xl font-marcellus text-foreground mb-4">
+                <CardTitle className="text-2xl font-marcellus mb-4" style={{ color: '#3e554d' }}>
                   Algunas herramientas terapéuticas
                 </CardTitle>
                 <div className="w-16 h-1 bg-gradient-to-r from-accent to-sage mx-auto rounded-full"></div>
@@ -127,10 +128,10 @@ const TherapeuticApproaches = () => {
 
                   {/* Estilo terapéutico */}
                   <div className="bg-gradient-to-br from-sage/5 to-accent/10 p-6 rounded-lg border border-sage/20">
-                    <h4 className="text-lg font-marcellus text-foreground mb-4">
+                    <h4 className="text-lg font-marcellus mb-4" style={{ color: '#3e554d' }}>
                       Mi estilo terapéutico
                     </h4>
-                    <p className="text-muted-foreground leading-relaxed">
+                    <p className="leading-relaxed" style={{ color: '#3e554d' }}>
                       Mi trabajo se desarrolla en un espacio confidencial, empático y libre de juicios, pensado para que cada persona o pareja pueda conectar con su historia, emociones y pensamientos de manera segura y auténtica.
                     </p>
                   </div>

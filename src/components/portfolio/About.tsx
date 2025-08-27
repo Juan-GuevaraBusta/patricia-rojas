@@ -73,14 +73,14 @@ const About = () => {
 
           <motion.div variants={itemVariants} className="space-y-6">
             <div className="bg-card p-6 rounded-lg shadow-elegant border">
-              <h3 className="text-2xl font-bold text-foreground mb-4 flex items-center">
+              <h3 className="text-2xl font-bold mb-4 flex items-center" style={{ color: '#3e554d' }}>
                 <Heart className="mr-3" size={24} style={{ color: '#fb7185' }} />
                 Mi Historia
               </h3>
-              <div className="space-y-4 text-muted-foreground leading-relaxed">
+              <div className="space-y-4 leading-relaxed" style={{ color: '#3e554d' }}>
                 <p>
-                  Soy <strong className="text-terracota">Patricia Rojas R.</strong>, psicóloga con una maestría en Consejería Clínica y Salud Mental, 
-                  con reconocimiento <strong className="text-terracota">Cum Laude</strong> y 25 años de experiencia profesional.
+                  Soy <strong style={{ color: '#3e554d' }}>Patricia Rojas R.</strong>, psicóloga con una maestría en Consejería Clínica y Salud Mental, 
+                  con reconocimiento <strong style={{ color: '#3e554d' }}>Cum Laude</strong> y 25 años de experiencia profesional.
                 </p>
                 <p>
                   Comencé mi carrera en el ámbito organizacional, liderando procesos de selección, 
@@ -89,7 +89,7 @@ const About = () => {
                   del pasado y reconectar con un propósito vital.
                 </p>
                 <p>
-                  Durante diez años tuve la oportunidad de vivir entre <strong className="text-terracota">El Salvador y Guatemala</strong>, 
+                  Durante diez años tuve la oportunidad de vivir entre <strong style={{ color: '#3e554d' }}>El Salvador y Guatemala</strong>, 
                   y en este último país realicé mis estudios de posgrado. Estas vivencias personales 
                   y profesionales ampliaron mi perspectiva y enriquecieron mi comprensión de la 
                   diversidad humana y sus realidades.
@@ -98,33 +98,33 @@ const About = () => {
             </div>
 
             <div className="bg-card p-6 rounded-lg shadow-elegant border">
-              <h4 className="text-lg font-semibold text-foreground mb-4 flex items-center">
+              <h4 className="text-lg font-semibold mb-4 flex items-center" style={{ color: '#3e554d' }}>
                 <Book className="mr-2" size={20} style={{ color: '#fb7185' }} />
                 Formación Complementaria en Psicoterapia
               </h4>
-              <ul className="text-muted-foreground leading-relaxed space-y-2">
+              <ul className="leading-relaxed space-y-2" style={{ color: '#3e554d' }}>
                 <li className="flex items-start">
-                  <span className="text-terracota mr-2">•</span>
+                  <span className="mr-2" style={{ color: '#3e554d' }}>•</span>
                   <span>Master en consejería clínica y salud mental</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-terracota mr-2">•</span>
+                  <span className="mr-2" style={{ color: '#3e554d' }}>•</span>
                   <span>Manejo de la infidelidad en terapia de pareja</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-terracota mr-2">•</span>
+                  <span className="mr-2" style={{ color: '#3e554d' }}>•</span>
                   <span>Nivel I y II de Método Gottman para terapia de pareja</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-terracota mr-2">•</span>
+                  <span className="mr-2" style={{ color: '#3e554d' }}>•</span>
                   <span>Terapias de tercera generación</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-terracota mr-2">•</span>
+                  <span className="mr-2" style={{ color: '#3e554d' }}>•</span>
                   <span>Terapia de aceptación y compromiso (ACT)</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-terracota mr-2">•</span>
+                  <span className="mr-2" style={{ color: '#3e554d' }}>•</span>
                   <span>Desarrollo de habilidades psicoterapéuticas (Gestalt, Terapia Cognitivo Conductual, Logoterapia)</span>
                 </li>
               </ul>
@@ -145,10 +145,10 @@ const About = () => {
                 <Card className="p-6 shadow-elegant hover:shadow-hover transition-all duration-300 h-full">
                   <CardContent className="p-0 flex flex-col justify-center h-full">
                     <stat.icon size={32} className="mx-auto mb-4" style={{ color: '#fb7185' }} />
-                    <div className="text-3xl font-bold text-foreground mb-2">
+                    <div className="text-3xl font-bold mb-2" style={{ color: '#3e554d' }}>
                       {stat.number}
                     </div>
-                    <div className="text-sm text-muted-foreground">
+                    <div className="text-sm" style={{ color: '#3e554d' }}>
                       {stat.label}
                     </div>
                   </CardContent>

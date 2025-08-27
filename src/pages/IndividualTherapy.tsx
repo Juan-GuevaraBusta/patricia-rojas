@@ -207,20 +207,24 @@ const IndividualTherapy = () => {
                 Sanar, comunicar, conectar
               </h1>
               
-              <p className="text-lg text-muted-foreground mb-3 leading-relaxed">
+              <p className="text-lg mb-3 leading-relaxed" style={{ color: '#3e554d' }}>
                 Te brindo un espacio para conocerte, comprender tus emociones y aprender a observar tus pensamientos sin quedarte atrapado en ellos, para que puedas vivir en coherencia con tus valores y construir una vida con sentido.
               </p>
               
               {/* Duración */}
               <div className="text-center lg:text-left">
-                <div className="inline-flex flex-col gap-2 bg-white text-[#5d8aa8] px-6 py-3 rounded-lg text-sm font-medium shadow-sm border border-gray-200">
+                <div className="inline-flex flex-col gap-2 bg-white text-[#5d8aa8] px-6 py-3 rounded-lg text-xs font-medium shadow-sm border border-gray-200">
                   <div className="flex items-center gap-3">
                     <Clock className="w-4 h-4" style={{ color: '#fb7185' }} />
-                    <span><strong>Modalidades:</strong> Virtual impresentable uso</span>
+                    <span><strong>Modalidades:</strong> Virtual / Presencial</span>
                   </div>
                   <div className="flex items-center gap-3">
                     <Clock className="w-4 h-4" style={{ color: '#fb7185' }} />
                     <span><strong>Duración de cada sesión:</strong> 50 minutos</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <Clock className="w-4 h-4" style={{ color: '#fb7185' }} />
+                    <span><strong>Horarios:</strong> Lunes a Viernes: 8:00 AM - 6:00 PM, Sábados: 8:00 AM - 12:00 PM</span>
                   </div>
                 </div>
               </div>
@@ -232,7 +236,7 @@ const IndividualTherapy = () => {
             <h2 className="text-2xl md:text-3xl font-bold mb-4 font-marcellus text-left" style={{ color: '#3e554d' }}>
               Motivos de Consulta Frecuentes
             </h2>
-            <p className="text-base text-muted-foreground mb-6 font-raleway text-left">
+            <p className="text-base mb-6 font-raleway text-left" style={{ color: '#3e554d' }}>
               Estos son algunos de los temas más comunes que trabajamos en terapia individual
             </p>
             
@@ -240,12 +244,12 @@ const IndividualTherapy = () => {
               <Accordion type="single" collapsible className="space-y-2">
                 {consultationReasons.map((reason) => (
                   <AccordionItem key={reason.id} value={reason.id} className="border-none p-0">
-                    <AccordionTrigger className="text-left text-muted-foreground hover:text-sage font-normal cursor-pointer text-sm p-0 h-auto">
+                    <AccordionTrigger className="text-left hover:text-sage font-normal cursor-pointer text-sm p-0 h-auto" style={{ color: '#3e554d' }}>
                       <div className="flex items-center gap-2">
                         <div className="w-1.5 h-1.5" style={{ backgroundColor: '#3e554d' }} />
                         <span>
                           {reason.title}
-                          {reason.subtitle && <span className="text-xs text-muted-foreground font-normal ml-2">{reason.subtitle}</span>}
+                          {reason.subtitle && <span className="text-xs font-normal ml-2" style={{ color: '#3e554d' }}>{reason.subtitle}</span>}
                         </span>
                       </div>
                     </AccordionTrigger>
@@ -255,7 +259,7 @@ const IndividualTherapy = () => {
                           <h4 className="text-sm font-semibold text-sage-dark mb-3">
                             {reason.content.title}
                           </h4>
-                          <p className="text-muted-foreground leading-relaxed text-sm">
+                          <p className="leading-relaxed text-sm" style={{ color: '#3e554d' }}>
                             {reason.content.description}
                           </p>
                         </div>
@@ -266,12 +270,12 @@ const IndividualTherapy = () => {
                             <h5 className="text-xs font-semibold text-sage-dark mb-3">
                               {reason.content.manifestations.title}
                             </h5>
-                            <p className="text-muted-foreground mb-4 text-sm">{reason.content.manifestations.description}</p>
+                            <p className="mb-4 text-sm" style={{ color: '#3e554d' }}>{reason.content.manifestations.description}</p>
                             <div className="grid grid-cols-2 gap-2">
                               {reason.content.manifestations.categories.map((category, idx) => (
                                 <div key={idx} className="bg-card p-3 rounded-lg shadow-hover border-l-4" style={{ borderLeftColor: '#3e554d' }}>
                                   <h6 className="font-semibold mb-2 text-xs" style={{ color: '#3e554d' }}>{category.type}:</h6>
-                                  <div className="text-xs text-muted-foreground">
+                                  <div className="text-xs" style={{ color: '#3e554d' }}>
                                     {category.symptoms.join(', ')}
                                   </div>
                                 </div>
@@ -290,7 +294,7 @@ const IndividualTherapy = () => {
                               {reason.content.whenToSeekHelp.list.map((item, idx) => (
                                 <li key={idx} className="flex items-start gap-3">
                                   <div className="w-2 h-2 rounded-full mt-2 flex-shrink-0" style={{ backgroundColor: '#3e554d' }}></div>
-                                  <span className="text-muted-foreground text-sm">{item}</span>
+                                  <span className="text-sm" style={{ color: '#3e554d' }}>{item}</span>
                                 </li>
                               ))}
                             </ul>
@@ -303,12 +307,12 @@ const IndividualTherapy = () => {
                             <h5 className="text-xs font-semibold text-sage-dark mb-3">
                               {reason.content.therapyBenefits.title}
                             </h5>
-                            <p className="text-muted-foreground mb-4 text-sm">{reason.content.therapyBenefits.description}</p>
+                            <p className="mb-4 text-sm" style={{ color: '#3e554d' }}>{reason.content.therapyBenefits.description}</p>
                             <ul className="space-y-2 mb-4">
                               {reason.content.therapyBenefits.list.map((benefit, idx) => (
                                 <li key={idx} className="flex items-start gap-3">
                                   <div className="w-2 h-2 rounded-full mt-2 flex-shrink-0" style={{ backgroundColor: '#3e554d' }}></div>
-                                  <span className="text-muted-foreground text-sm">{benefit}</span>
+                                  <span className="text-sm" style={{ color: '#3e554d' }}>{benefit}</span>
                                 </li>
                               ))}
                             </ul>
@@ -321,7 +325,7 @@ const IndividualTherapy = () => {
                             <h5 className="text-xs font-semibold text-sage-dark mb-3">
                               {reason.content.stages.title}
                             </h5>
-                            <p className="text-muted-foreground mb-4 text-sm">{reason.content.stages.description}</p>
+                            <p className="mb-4 text-sm" style={{ color: '#3e554d' }}>{reason.content.stages.description}</p>
                             <div className="bg-steel-blue/10 p-3 rounded-lg border border-steel-blue/20">
                               <p className="text-steel-blue text-xs font-medium">
                                 <strong>Nota:</strong> {reason.content.stages.note}
@@ -336,12 +340,12 @@ const IndividualTherapy = () => {
                             <h5 className="text-xs font-semibold text-sage-dark mb-3">
                               {reason.content.importance.title}
                             </h5>
-                            <p className="text-muted-foreground mb-4 text-sm">{reason.content.importance.description}</p>
+                            <p className="mb-4 text-sm" style={{ color: '#3e554d' }}>{reason.content.importance.description}</p>
                             <ul className="space-y-2">
                               {reason.content.importance.benefits.map((benefit, idx) => (
                                 <li key={idx} className="flex items-start gap-3">
                                   <div className="w-2 h-2 rounded-full mt-2 flex-shrink-0" style={{ backgroundColor: '#3e554d' }}></div>
-                                  <span className="text-muted-foreground text-sm">{benefit}</span>
+                                  <span className="text-sm" style={{ color: '#3e554d' }}>{benefit}</span>
                                 </li>
                               ))}
                             </ul>
@@ -358,7 +362,7 @@ const IndividualTherapy = () => {
                               {reason.content.symptoms.list.map((symptom, idx) => (
                                 <li key={idx} className="flex items-start gap-3">
                                   <div className="w-2 h-2 rounded-full mt-2 flex-shrink-0" style={{ backgroundColor: '#3e554d' }}></div>
-                                  <span className="text-muted-foreground text-sm">{symptom}</span>
+                                  <span className="text-sm" style={{ color: '#3e554d' }}>{symptom}</span>
                                 </li>
                               ))}
                             </ul>
