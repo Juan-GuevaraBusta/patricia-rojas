@@ -20,26 +20,7 @@ const Contact = () => {
     triggerOnce: true,
   });
 
-  const contactInfo = [
-    {
-      icon: Phone,
-      title: 'WhatsApp',
-      value: '+57 311 836 1642',
-      link: 'https://wa.me/573118361642'
-    },
-    {
-      icon: Mail,
-      title: 'Email',
-      value: 'patriciarojaspsicologia@gmail.com',
-      link: 'mailto:patriciarojaspsicologia@gmail.com'
-    },
-    {
-      icon: MapPin,
-      title: 'Ubicación',
-      value: 'Cali, Colombia',
-      link: '#'
-    }
-  ];
+
 
   const socialLinks = [
     { 
@@ -157,57 +138,9 @@ const Contact = () => {
         animate={inView ? "visible" : "hidden"}
         className="container mx-auto px-6"
       >
-        {/* Header */}
-        <motion.div variants={itemVariants} className="text-center mb-16">
-          <Badge className="mb-4 px-4 py-2 bg-steel-blue text-white border-steel-blue">
-            <Calendar className="w-4 h-4 mr-2" style={{ color: '#fb7185' }} />
-            Contacto
-          </Badge>
 
-        </motion.div>
 
-        {/* Contact Information */}
-        <motion.div variants={itemVariants} className="mb-16">
-          <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-12">
-            {contactInfo.map((contact, index) => (
-              <motion.div
-                key={contact.title}
-                variants={itemVariants}
-                whileHover={{ y: -5 }}
-              >
-                <Card className="h-40 shadow-elegant hover:shadow-hover transition-all duration-300">
-                  <CardContent className="p-6 text-center">
-                    <motion.div
-                      whileHover={{ scale: 1.1, rotate: 5 }}
-                      className="inline-flex p-3 rounded-full bg-steel-blue/10 mb-4 mx-auto"
-                    >
-                      <contact.icon size={24} style={{ color: '#fb7185' }} />
-                    </motion.div>
-                    <h4 className="font-semibold text-foreground mb-2">
-                      {contact.title}
-                    </h4>
-                    <p className="text-sm text-muted-foreground">
-                      {contact.value}
-                    </p>
-                  </CardContent>
-                </Card>
-                {contact.link.startsWith('http') || contact.link.startsWith('mailto:') ? (
-                  <div className="text-center mt-3">
-                    <a 
-                      href={contact.link} 
-                      target={contact.link.startsWith('http') ? '_blank' : '_self'}
-                      rel={contact.link.startsWith('http') ? 'noopener noreferrer' : ''}
-                    >
-                      <Button variant="outline" size="sm">
-                        Contactar
-                      </Button>
-                    </a>
-                  </div>
-                ) : null}
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
+
 
         {/* Social Media */}
         <motion.div variants={itemVariants} className="mb-16">
