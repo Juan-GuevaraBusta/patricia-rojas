@@ -704,10 +704,7 @@ Sí es posible, aunque requiere un proceso profundo que involucra tres elementos
           className="container mx-auto px-6"
         >
           <motion.div variants={itemVariants} className="text-center mb-12">
-            <Badge className="mb-4 px-4 py-2 bg-steel-blue text-white border-steel-blue">
-              <MessageCircle className="w-4 h-4 mr-2" style={{ color: '#fb7185' }} />
-              Preguntas Frecuentes
-            </Badge>
+
             <h2 className="text-3xl md:text-4xl font-bold mb-6 font-marcellus" style={{ color: '#3e554d' }}>
               ¿Tienes dudas sobre la terapia?
             </h2>

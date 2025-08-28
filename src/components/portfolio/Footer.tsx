@@ -44,7 +44,7 @@ const Footer = () => {
     { label: 'Terapia Individual', href: '/individual-therapy' },
     { label: 'Terapia de Pareja', href: '/couples-therapy' },
     { label: 'Testimonios', href: '/experiencia' },
-    { label: 'Contacto', href: '/contacto' },
+    { label: 'Preguntas Frecuentes', href: '/contacto' },
   ];
 
 
