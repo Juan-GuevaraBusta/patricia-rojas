@@ -20,6 +20,55 @@ const Contact = () => {
     triggerOnce: true,
   });
 
+  const contactInfo = [
+    {
+      icon: Phone,
+      title: 'WhatsApp',
+      value: '+57 311 836 1642',
+      link: 'https://wa.me/573118361642'
+    },
+    {
+      icon: Mail,
+      title: 'Email',
+      value: 'patriciarojaspsicologia@gmail.com',
+      link: 'mailto:patriciarojaspsicologia@gmail.com'
+    },
+    {
+      icon: MapPin,
+      title: 'Ubicación',
+      value: 'Cali, Colombia',
+      link: '#'
+    }
+  ];
+
+  const socialLinks = [
+    { 
+      icon: Instagram, 
+      href: 'https://instagram.com/patriciarojaspsicologa', 
+      label: 'Instagram',
+      color: 'text-magenta',
+      username: '@patriciarojaspsicologa'
+    },
+    { 
+      icon: () => (
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-4.59v13.59a2.83 2.83 0 0 1-5.66 0 2.83 2.83 0 0 1 2.83-2.83c.28 0 .56.04.83.1V9.76a6.54 6.54 0 0 0-1.83-.25 6.59 6.59 0 0 0-6.59 6.59 6.59 6.59 0 0 0 13.18 0V9.69a8.48 8.48 0 0 0 5.77 2.26V8.35a4.79 4.79 0 0 1-0.17-1.66z"/>
+        </svg>
+      ), 
+      href: 'https://tiktok.com/@patriciarojaspsicologa', 
+      label: 'TikTok',
+      color: 'text-steel-blue',
+      username: '@patriciarojaspsicologa'
+    },
+    { 
+      icon: MessageCircle, 
+      href: 'https://wa.me/573118361642', 
+      label: 'WhatsApp',
+      color: 'text-[#fb7185]',
+      username: '+57 311 836 1642'
+    },
+  ];
+
 
 
 
@@ -114,11 +163,100 @@ const Contact = () => {
             <Calendar className="w-4 h-4 mr-2" style={{ color: '#fb7185' }} />
             Contacto
           </Badge>
+
         </motion.div>
 
+        {/* Contact Information */}
+        <motion.div variants={itemVariants} className="mb-16">
+          <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-12">
+            {contactInfo.map((contact, index) => (
+              <motion.div
+                key={contact.title}
+                variants={itemVariants}
+                whileHover={{ y: -5 }}
+              >
+                <Card className="h-40 shadow-elegant hover:shadow-hover transition-all duration-300">
+                  <CardContent className="p-6 text-center">
+                    <motion.div
+                      whileHover={{ scale: 1.1, rotate: 5 }}
+                      className="inline-flex p-3 rounded-full bg-steel-blue/10 mb-4 mx-auto"
+                    >
+                      <contact.icon size={24} style={{ color: '#fb7185' }} />
+                    </motion.div>
+                    <h4 className="font-semibold text-foreground mb-2">
+                      {contact.title}
+                    </h4>
+                    <p className="text-sm text-muted-foreground">
+                      {contact.value}
+                    </p>
+                  </CardContent>
+                </Card>
+                {contact.link.startsWith('http') || contact.link.startsWith('mailto:') ? (
+                  <div className="text-center mt-3">
+                    <a 
+                      href={contact.link} 
+                      target={contact.link.startsWith('http') ? '_blank' : '_self'}
+                      rel={contact.link.startsWith('http') ? 'noopener noreferrer' : ''}
+                    >
+                      <Button variant="outline" size="sm">
+                        Contactar
+                      </Button>
+                    </a>
+                  </div>
+                ) : null}
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
 
-
-
+        {/* Social Media */}
+        <motion.div variants={itemVariants} className="mb-16">
+          <h3 className="text-2xl font-bold text-center mb-8 font-marcellus" style={{ color: '#3e554d' }}>
+            Sígueme en mis redes sociales
+          </h3>
+          <div className="flex flex-col md:flex-row justify-center items-center gap-6 md:gap-8 max-w-4xl mx-auto">
+            {socialLinks.map((social, index) => (
+              <motion.div
+                key={social.label}
+                variants={itemVariants}
+                whileHover={{ y: -5 }}
+                className="w-full md:w-auto"
+              >
+                <a
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group block"
+                >
+                  <Card className="h-40 w-full md:w-60 shadow-elegant hover:shadow-hover transition-all duration-300">
+                    <CardContent className="p-6 text-center h-full flex flex-col justify-center">
+                      <motion.div
+                        whileHover={{ scale: 1.1, rotate: 5 }}
+                        className={`inline-flex p-4 rounded-full bg-steel-blue/10 mb-4 mx-auto ${social.color}`}
+                      >
+                        <social.icon size={28} />
+                      </motion.div>
+                      <h4 className="font-semibold text-foreground mb-2 text-sm">
+                        {social.label}
+                      </h4>
+                      <p className="text-xs text-muted-foreground break-words px-2">
+                        {social.username}
+                      </p>
+                    </CardContent>
+                  </Card>
+                </a>
+              </motion.div>
+            ))}
+          </div>
+          <motion.div variants={itemVariants} className="text-center mt-8">
+            <a href="https://wa.me/573118361642" target="_blank" rel="noopener noreferrer">
+              <Button size="lg" className="bg-steel-blue hover:bg-steel-blue/90 text-white shadow-hover hover:shadow-glow">
+                <Calendar className="w-5 h-5 mr-2" style={{ color: '#fb7185' }} />
+                Agenda tu cita
+              </Button>
+            </a>
+          </motion.div>
+        </motion.div>
 
         {/* FAQ Section */}
         <motion.div variants={itemVariants} className="mb-16">
@@ -152,7 +290,7 @@ const Contact = () => {
                   <p className="text-red-700 text-sm leading-relaxed">
                     Si estás experimentando pensamientos de autolesión o crisis emocional severa, 
                     busca ayuda inmediata en el servicio de urgencias más cercano o contacta la 
-                    Línea Nacional de Prevención del Suicidio: <strong>123</strong> (disponible 24/7).
+                    Línea Nacional de Prevención del Suicidio: <strong>106</strong> (disponible 24/7).
                   </p>
                 </div>
               </div>

@@ -693,6 +693,44 @@ Sí es posible, aunque requiere un proceso profundo que involucra tres elementos
           </div>
         </motion.div>
       </section>
+
+      {/* Sección de Preguntas Frecuentes */}
+      <section className="py-20 bg-[#4a6741]/10">
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.3 }}
+          className="container mx-auto px-6"
+        >
+          <motion.div variants={itemVariants} className="text-center mb-12">
+            <Badge className="mb-4 px-4 py-2 bg-steel-blue text-white border-steel-blue">
+              <MessageCircle className="w-4 h-4 mr-2" style={{ color: '#fb7185' }} />
+              Preguntas Frecuentes
+            </Badge>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 font-marcellus" style={{ color: '#3e554d' }}>
+              ¿Tienes dudas sobre la terapia?
+            </h2>
+            <p className="text-lg max-w-3xl mx-auto" style={{ color: '#3e554d' }}>
+              Encuentra respuestas a las preguntas más comunes sobre mis servicios, 
+              metodología y proceso terapéutico.
+            </p>
+          </motion.div>
+
+          <motion.div variants={itemVariants} className="text-center">
+            <Button 
+              size="lg" 
+              className="shadow-hover hover:shadow-glow px-8 py-4 text-lg font-medium rounded-full min-w-[250px] bg-steel-blue hover:bg-steel-blue/90 text-white"
+              asChild
+            >
+              <Link to="/contact#contacto" className="flex items-center gap-2">
+                <ArrowRight className="w-5 h-5" style={{ color: '#fb7185' }} />
+                Ver Preguntas Frecuentes
+              </Link>
+            </Button>
+          </motion.div>
+        </motion.div>
+      </section>
     </div>
   );
 };
