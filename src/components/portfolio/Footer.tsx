@@ -136,7 +136,7 @@ const Footer = () => {
             </div>
             
             <p className="text-primary-foreground/80 leading-relaxed text-sm">
-              Te acompaño a sanar tus relaciones y reconectar contigo mismo. 
+              Te ayudo a fortalecer tus relaciones y reconectar contigo mismo. 
               Especializada en terapia de parejas y terapia individual con 
               enfoques basados en evidencia científica.
             </p>
